@@ -1,0 +1,71 @@
+name: Discord Class Updater
+description: Updates Discord class names in CSS files, with checks, exclusion lists and a pull request
+branding:
+  icon: refresh-cw
+  color: blue
+
+inputs:
+  files:
+    description: Files to process (glob patterns, comma-separated or one per line)
+    default: '**/*.css'
+  ignores:
+    description: Files, folders or patterns to leave untouched (comma-separated or one per line)
+    default: ''
+  ignore-class-names:
+    description: Terms to ignore; a class containing one of them (case-insensitive) is never touched (comma-separated or one per line)
+    default: ''
+  language:
+    description: Language of the pull request and warnings (ar, de, en, es, fr, it, ja, ko, pl, pt, ru, tr, uk, zh)
+    default: 'en'
+  report:
+    description: Path of the Markdown report (defaults to the runner temp folder)
+    default: ''
+  pull-request:
+    description: "true to open (or update) a pull request when classes were replaced"
+    default: 'true'
+  branch:
+    description: Branch used for the pull request
+    default: 'discord-class-updater'
+  title:
+    description: Pull request title (defaults to a title in the chosen language)
+    default: ''
+  commit-message:
+    description: Commit message (defaults to the pull request title)
+    default: ''
+
+outputs:
+  changed:
+    description: "true if at least one class was replaced"
+    value: ${{ steps.update.outputs.changed }}
+  replaced:
+    description: Number of classes replaced
+    value: ${{ steps.update.outputs.replaced }}
+  missing:
+    description: Number of classes not found
+    value: ${{ steps.update.outputs.missing }}
+  report:
+    description: Path of the Markdown report
+    value: ${{ steps.update.outputs.report }}
+
+runs:
+  using: composite
+  steps:
+    - id: update
+      shell: bash
+      env:
+        INPUT_FILES: ${{ inputs.files }}
+        INPUT_IGNORES: ${{ inputs.ignores }}
+        INPUT_IGNORE_CLASS_NAMES: ${{ inputs.ignore-class-names }}
+        INPUT_LANGUAGE: ${{ inputs.language }}
+        INPUT_REPORT: ${{ inputs.report }}
+      run: python3 "${{ github.action_path }}/update_classes.py"
+
+    # Only when something really changed in the CSS files
+    - if: inputs.pull-request == 'true' && steps.update.outputs.changed == 'true'
+      uses: peter-evans/create-pull-request@v8
+      with:
+        branch: ${{ inputs.branch }}
+        delete-branch: true
+        commit-message: ${{ inputs.commit-message || inputs.title || steps.update.outputs.title }}
+        title: ${{ inputs.title || steps.update.outputs.title }}
+        body-path: ${{ steps.update.outputs.report }}

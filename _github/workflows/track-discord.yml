@@ -1,0 +1,36 @@
+name: Track Discord classes
+
+on:
+  schedule:
+    - cron: '42 */6 * * *'                # Every 6 hours (downloads only happen when there's a new build)
+  workflow_dispatch:                      # Manual run from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: track-discord
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Reads the Stable and Canary builds on discord.com, extracts the classes
+      # and adds the new old -> new matches to data/
+      - name: Extract Discord classes
+        run: python3 track_discord.py
+
+      - name: Save data
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "Nothing new"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "📦 Discord classes: $(jq -r '[.[] | .build] | join(" / ")' data/builds.json)"
+            git push
+          fi

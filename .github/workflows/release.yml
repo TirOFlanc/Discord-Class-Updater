@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  release:
+    types: [published]                    # When a release like v1.2.0 is published
+
+permissions:
+  contents: write
+
+jobs:
+  move-major-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # Users write @v1: move the v1 tag (or v2...) to this release, so they get it
+      - name: Move the major version tag to this release
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::The release tag must look like v1.2.3 (got '$TAG')"
+            exit 1
+          fi
+          major="${TAG%%.*}"
+          git tag -f "$major" "$TAG"
+          git push -f origin "$major"
+          echo "$major now points to $TAG"

@@ -25,7 +25,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v6
-      - uses: TirOFlanc/Discord-Class-Updater@main
+      - uses: TirOFlanc/Discord-Class-Updater@v1
         with:
           files: '*.css'
           language: en
@@ -34,6 +34,8 @@ jobs:
 Then, in your repository settings, enable **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**, otherwise the pull request can't be created.
 
 That's it. When a class in your CSS has changed, you get a pull request with a report. When nothing changed, nothing happens.
+
+`@v1` uses the latest stable code of version 1, and always the latest data (downloaded at each run). Use `@main` instead if you want every code change as soon as it's pushed.
 
 ## Inputs
 
@@ -50,6 +52,7 @@ That's it. When a class in your CSS has changed, you get a pull request with a r
 | `report` | runner temp folder | Path of the Markdown report |
 | `max-data-age` | `3` | Warn when Discord tracking hasn't worked for more than this many days |
 | `fail-if-stale` | `false` | `true` to also make the run fail when the data is too old, so GitHub sends you its failure email |
+| `data-url` | this repository's `main` branch | Where the latest data is downloaded from at each run. Empty to only use the data bundled with the version |
 
 ## Outputs
 
@@ -82,7 +85,7 @@ If the extraction finds far fewer classes than usual (Discord changed the way it
 
 ### 2. Updating CSS files (the action, `update_classes.py`)
 
-- It only uses this repository's `data/` folder: no call to any other project.
+- At each run, it downloads the latest `data/` from this repository's `main` branch (about 3 MB, a couple of seconds), so a pinned version (`@v1`) still gets fresh data. If the download fails, it uses the data bundled with the version and says so in a warning. No other project is ever called.
 - Changes confirmed by hand in `data/manual.txt` come first: renamed classes that no algorithm can guess (e.g. `nickname` → `displayName`) and classes removed by Discord.
 - A class is only replaced **if the new one exists in Discord Stable today**.
 - If a class changed several times (a → b → c), it follows the chain up to the current name, even if your theme missed several updates.
@@ -126,9 +129,18 @@ The `.github/workflows/test.yml` workflow runs `tests/run_tests.py` on every cha
 - the format of `data/` (`map.txt`, `manual.txt`, `builds.json`, class lists);
 - the extraction on a sample of Discord's JS (the 3 shapes of CSS modules, the specially named chunks);
 - the matching of old and new classes;
-- the CSS results on fixed examples (`tests/input` → `tests/expected`): renames, chains, inferred and ambiguous classes, manual fixes, removed and missing classes, ignored files and terms, languages and the stale data warning.
+- the CSS results on fixed examples (`tests/input` → `tests/expected`): renames, chains, inferred and ambiguous classes, manual fixes, removed and missing classes, ignored files and terms, languages and the stale data warning;
+- the download of fresh data, and the fallback to the bundled data when it fails.
 
 The tests use their own small data (`tests/data`), so they never break when Discord renames classes. Run them locally with `python3 tests/run_tests.py`.
+
+## Versions
+
+Users pin a major version (`@v1`): they get bug fixes and improvements, never a breaking change, and always fresh data.
+
+To release a new version: **Releases → Draft a new release**, create a tag like `v1.2.0` (a new major version, `v2.0.0`, only for a breaking change such as a renamed input), then **Publish release**. The `.github/workflows/release.yml` workflow then moves the `v1` tag to it automatically.
+
+Since every version reads the latest data, the format of the `data/` files must stay compatible with older versions.
 
 ## Languages
 

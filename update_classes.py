@@ -1,6 +1,8 @@
 """Update Discord class names in CSS files.
 
-Data (data/ folder next to this script, kept up to date by track_discord.py):
+Data (data/ folder, kept up to date by track_discord.py on the main branch). In the GitHub Action,
+the latest data is downloaded from the main branch at each run (data-url), so a pinned version of
+the code (@v1) still gets fresh data; the data bundled with the code is only a fallback.
   - stable.txt : every class of Discord Stable today;
   - map.txt    : old name -> new name table, one pair per line.
 
@@ -22,6 +24,11 @@ import json
 import os
 import re
 import sys
+import tempfile
+import time
+import urllib.request
+
+DATA_FILES = ("stable.txt", "map.txt", "manual.txt", "builds.json")
 
 # .className_hash6  (old format: name__1a2b3 / name_1a2b3c, new format: name_aB3-x_)
 RE_CLASS = re.compile(r"\.([A-Za-z][\w-]*_[\w-]{6})(?![\w-])")
@@ -48,6 +55,7 @@ MESSAGES = {
         "data": "البيانات: Discord Stable، الإصدار {build} ({date})",
         "warning": "الفئات غير الموجودة: {n}",
         "stale": "⚠️ لم تُحدَّث البيانات منذ مدة (عدد الأيام: {n}): قد يكون تتبّع Discord متوقفًا، ولن تُكتشف الفئات التي أُعيدت تسميتها منذ ذلك الحين.",
+        "download_failed": "تعذّر تنزيل البيانات المحدّثة، يتم استخدام البيانات المرفقة بهذا الإصدار.",
     },
     "de": {
         "title": "🔄 Aktualisierung der Discord-Klassen",
@@ -66,6 +74,7 @@ MESSAGES = {
         "data": "Daten: Discord Stable Build {build} ({date})",
         "warning": "Nicht gefundene Klassen: {n}",
         "stale": "⚠️ Daten seit {n} Tagen nicht aktualisiert: Die Discord-Überwachung hängt möglicherweise, seitdem umbenannte Klassen werden nicht erkannt.",
+        "download_failed": "Aktuelle Daten konnten nicht heruntergeladen werden, es werden die Daten dieser Version verwendet.",
     },
     "en": {
         "title": "🔄 Update Discord class names",
@@ -84,6 +93,7 @@ MESSAGES = {
         "data": "Data: Discord Stable build {build} ({date})",
         "warning": "Classes not found: {n}",
         "stale": "⚠️ Data not updated for {n} days: Discord tracking may be stuck, classes renamed since then won't be detected.",
+        "download_failed": "Fresh data couldn't be downloaded, using the data bundled with this version.",
     },
     "es": {
         "title": "🔄 Actualización de las clases de Discord",
@@ -102,6 +112,7 @@ MESSAGES = {
         "data": "Datos: Discord Stable build {build} ({date})",
         "warning": "Clases no encontradas: {n}",
         "stale": "⚠️ Datos sin actualizar desde hace {n} días: el seguimiento de Discord puede estar bloqueado, las clases renombradas desde entonces no se detectarán.",
+        "download_failed": "No se pudieron descargar los datos actualizados, se usan los datos incluidos en esta versión.",
     },
     "fr": {
         "title": "🔄 Mise à jour des classes Discord",
@@ -120,6 +131,7 @@ MESSAGES = {
         "data": "Données : Discord Stable build {build} ({date})",
         "warning": "Classes introuvables : {n}",
         "stale": "⚠️ Données non mises à jour depuis {n} jours : le suivi de Discord est peut-être bloqué, les classes renommées depuis ne seront pas détectées.",
+        "download_failed": "Impossible de télécharger les données à jour, utilisation des données livrées avec cette version.",
     },
     "it": {
         "title": "🔄 Aggiornamento delle classi Discord",
@@ -138,6 +150,7 @@ MESSAGES = {
         "data": "Dati: Discord Stable build {build} ({date})",
         "warning": "Classi non trovate: {n}",
         "stale": "⚠️ Dati non aggiornati da {n} giorni: il monitoraggio di Discord potrebbe essere bloccato, le classi rinominate da allora non verranno rilevate.",
+        "download_failed": "Impossibile scaricare i dati aggiornati, uso dei dati inclusi in questa versione.",
     },
     "ja": {
         "title": "🔄 Discord クラス名の更新",
@@ -156,6 +169,7 @@ MESSAGES = {
         "data": "データ：Discord Stable ビルド {build}（{date}）",
         "warning": "見つからないクラス：{n}",
         "stale": "⚠️ データが {n} 日間更新されていません。Discord の追跡が止まっている可能性があり、それ以降に名前が変わったクラスは検出されません。",
+        "download_failed": "最新データをダウンロードできなかったため、このバージョンに含まれるデータを使用します。",
     },
     "ko": {
         "title": "🔄 Discord 클래스 업데이트",
@@ -174,6 +188,7 @@ MESSAGES = {
         "data": "데이터: Discord Stable 빌드 {build} ({date})",
         "warning": "찾을 수 없는 클래스: {n}",
         "stale": "⚠️ 데이터가 {n}일 동안 업데이트되지 않았습니다. Discord 추적이 멈췄을 수 있으며, 그 이후 이름이 바뀐 클래스는 감지되지 않습니다.",
+        "download_failed": "최신 데이터를 다운로드할 수 없어 이 버전에 포함된 데이터를 사용합니다.",
     },
     "pl": {
         "title": "🔄 Aktualizacja klas Discorda",
@@ -192,6 +207,7 @@ MESSAGES = {
         "data": "Dane: Discord Stable, build {build} ({date})",
         "warning": "Nieznalezione klasy: {n}",
         "stale": "⚠️ Dane nieaktualizowane od {n} dni: śledzenie Discorda może być zablokowane, klasy zmienione od tego czasu nie zostaną wykryte.",
+        "download_failed": "Nie udało się pobrać aktualnych danych, używane są dane dołączone do tej wersji.",
     },
     "pt": {
         "title": "🔄 Atualização das classes do Discord",
@@ -210,6 +226,7 @@ MESSAGES = {
         "data": "Dados: Discord Stable build {build} ({date})",
         "warning": "Classes não encontradas: {n}",
         "stale": "⚠️ Dados não atualizados há {n} dias: o monitoramento do Discord pode estar travado, as classes renomeadas desde então não serão detectadas.",
+        "download_failed": "Não foi possível baixar os dados atualizados, usando os dados incluídos nesta versão.",
     },
     "ru": {
         "title": "🔄 Обновление классов Discord",
@@ -228,6 +245,7 @@ MESSAGES = {
         "data": "Данные: Discord Stable, сборка {build} ({date})",
         "warning": "Не найдено классов: {n}",
         "stale": "⚠️ Данные не обновлялись {n} дн.: отслеживание Discord, возможно, остановилось, переименованные с тех пор классы не будут обнаружены.",
+        "download_failed": "Не удалось загрузить актуальные данные, используются данные, поставляемые с этой версией.",
     },
     "tr": {
         "title": "🔄 Discord sınıflarının güncellenmesi",
@@ -246,6 +264,7 @@ MESSAGES = {
         "data": "Veriler: Discord Stable, sürüm {build} ({date})",
         "warning": "Bulunamayan sınıflar: {n}",
         "stale": "⚠️ Veriler {n} gündür güncellenmedi: Discord takibi takılmış olabilir, o zamandan beri yeniden adlandırılan sınıflar algılanmayacak.",
+        "download_failed": "Güncel veriler indirilemedi, bu sürümle gelen veriler kullanılıyor.",
     },
     "uk": {
         "title": "🔄 Оновлення класів Discord",
@@ -264,6 +283,7 @@ MESSAGES = {
         "data": "Дані: Discord Stable, збірка {build} ({date})",
         "warning": "Не знайдено класів: {n}",
         "stale": "⚠️ Дані не оновлювалися {n} дн.: відстеження Discord, можливо, зупинилося, перейменовані відтоді класи не буде виявлено.",
+        "download_failed": "Не вдалося завантажити актуальні дані, використовуються дані, що постачаються з цією версією.",
     },
     "zh": {
         "title": "🔄 更新 Discord 类名",
@@ -282,6 +302,7 @@ MESSAGES = {
         "data": "数据：Discord Stable 构建 {build}（{date}）",
         "warning": "未找到的类：{n}",
         "stale": "⚠️ 数据已 {n} 天未更新：Discord 跟踪可能已停止，此后重命名的类将不会被检测到。",
+        "download_failed": "无法下载最新数据，改用此版本自带的数据。",
     },
 }
 
@@ -345,6 +366,32 @@ def load_data(folder):
         with open(builds_path, encoding="utf-8") as f:
             builds = json.load(f)
     return live, table, manual, removed, builds
+
+
+def fetch_data(url):
+    """Download the latest data files into a temporary folder. Return the folder, or None on failure."""
+    folder = tempfile.mkdtemp(prefix="discord-class-updater-", dir=os.environ.get("RUNNER_TEMP") or None)
+    try:
+        for name in DATA_FILES:
+            for attempt in range(3):
+                try:
+                    req = urllib.request.Request(f"{url.rstrip('/')}/{name}", headers={"User-Agent": "discord-class-updater"})
+                    with urllib.request.urlopen(req, timeout=60) as r:
+                        content = r.read()
+                    break
+                except Exception:
+                    if attempt == 2:
+                        raise
+                    time.sleep(2 * (attempt + 1))
+            with open(os.path.join(folder, name), "wb") as f:
+                f.write(content)
+        with open(os.path.join(folder, "stable.txt"), encoding="utf-8") as f:
+            if sum(1 for l in f if l.strip()) < 10000:
+                return None
+        json.load(open(os.path.join(folder, "builds.json"), encoding="utf-8"))
+        return folder
+    except Exception:
+        return None
 
 
 def data_age(builds):
@@ -500,6 +547,7 @@ def main():
     p.add_argument("--language", default=os.environ.get("INPUT_LANGUAGE") or "en")
     p.add_argument("--max-data-age", type=int, default=int(os.environ.get("INPUT_MAX_DATA_AGE") or 3))
     p.add_argument("--data", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
+    p.add_argument("--data-url", default=os.environ.get("INPUT_DATA_URL") or "")
     args = p.parse_args()
 
     t = MESSAGES[pick_language(args.language)]
@@ -509,7 +557,15 @@ def main():
     files = sorted({f for pattern in split_list(args.files) for f in glob.glob(pattern, recursive=True) if os.path.isfile(f)})
     files = [f for f in files if not is_ignored_file(f, ignores)]
 
-    live, table, manual, removed, builds = load_data(args.data)
+    data = args.data
+    if args.data_url:
+        fresh = fetch_data(args.data_url)
+        if fresh:
+            data = fresh
+            print(f"Data downloaded from {args.data_url}")
+        else:
+            print(f"::warning title=Discord Class Updater::{escape_data(t['download_failed'])}")
+    live, table, manual, removed, builds = load_data(data)
     build = builds.get("stable", {})
     age = data_age(builds)
     stale = age is not None and age > args.max_data_age

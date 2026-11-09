@@ -20,6 +20,9 @@ inputs:
   report:
     description: Path of the Markdown report (defaults to the runner temp folder)
     default: ''
+  data-url:
+    description: Where the latest data is downloaded from at each run (empty to only use the data bundled with this version)
+    default: 'https://raw.githubusercontent.com/TirOFlanc/Discord-Class-Updater/main/data'
   max-data-age:
     description: Warn when Discord tracking hasn't worked for more than this many days
     default: '3'
@@ -68,6 +71,7 @@ runs:
         INPUT_LANGUAGE: ${{ inputs.language }}
         INPUT_REPORT: ${{ inputs.report }}
         INPUT_MAX_DATA_AGE: ${{ inputs.max-data-age }}
+        INPUT_DATA_URL: ${{ inputs.data-url }}
       run: python3 "${{ github.action_path }}/update_classes.py"
 
     # Only when something really changed in the CSS files

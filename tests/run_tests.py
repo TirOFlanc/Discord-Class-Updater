@@ -32,7 +32,7 @@ def load(name):
     return module
 
 
-def prepare_data(folder, last_check_days_ago=0):
+def prepare_data(folder, last_check_days_ago=0, build="123456"):
     """Copy the test data and add what the tool needs: enough classes and a builds.json."""
     shutil.copytree(os.path.join(TESTS, "data"), folder)
     with open(os.path.join(folder, "stable.txt"), "a", encoding="utf-8") as f:
@@ -40,16 +40,17 @@ def prepare_data(folder, last_check_days_ago=0):
     date = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=last_check_days_ago)
     with open(os.path.join(folder, "builds.json"), "w", encoding="utf-8") as f:
         json.dump({"last_check": date.strftime("%Y-%m-%d %H:%M UTC"),
-                   "stable": {"build": "123456", "classes": 10011, "date": "2026-11-08 12:00 UTC"}}, f)
+                   "stable": {"build": build, "classes": 10011, "date": "2026-11-08 12:00 UTC"}}, f)
 
 
-def run_action(work, data, language="en", max_age="3"):
+def run_action(work, data, language="en", max_age="3", data_url=""):
     """Run update_classes.py like the GitHub Action does, return (stdout, outputs, report)."""
     out_file = os.path.join(work, "outputs.txt")
     report = os.path.join(work, "report.md")
     open(out_file, "w").close()
     env = dict(os.environ, INPUT_FILES="*.css", INPUT_IGNORES="ignored.css", INPUT_IGNORE_CLASS_NAMES="vc-",
-               INPUT_LANGUAGE=language, INPUT_REPORT=report, INPUT_MAX_DATA_AGE=max_age, GITHUB_OUTPUT=out_file)
+               INPUT_LANGUAGE=language, INPUT_REPORT=report, INPUT_MAX_DATA_AGE=max_age, INPUT_DATA_URL=data_url,
+               GITHUB_OUTPUT=out_file, RUNNER_TEMP=work)
     env.pop("GITHUB_STEP_SUMMARY", None)
     result = subprocess.run([sys.executable, "-B", os.path.join(ROOT, "update_classes.py"), "--data", data],
                             cwd=os.path.join(work, "css"), env=env, capture_output=True, text=True)
@@ -162,8 +163,26 @@ def test_update():
         check("max-data-age raises the limit", outputs.get("stale") == "false", f"{outputs}")
 
 
+def test_data_download():
+    with tempfile.TemporaryDirectory() as work:
+        bundled, remote = os.path.join(work, "data"), os.path.join(work, "remote")
+        prepare_data(bundled, build="111111")
+        prepare_data(remote, build="222222")
+        shutil.copytree(os.path.join(TESTS, "input"), os.path.join(work, "css"))
+        url = "file://" + remote.replace(os.sep, "/")
+        stdout, outputs, report = run_action(work, bundled, data_url=url)
+        check("Fresh data is downloaded from data-url and used", "build 222222" in report and "Data downloaded" in stdout,
+              stdout)
+        shutil.rmtree(os.path.join(work, "css"))
+        shutil.copytree(os.path.join(TESTS, "input"), os.path.join(work, "css"))
+        stdout, outputs, report = run_action(work, bundled, data_url="file:///nowhere/at/all")
+        check("If the download fails, the bundled data is used with a warning",
+              "build 111111" in report and "couldn't be downloaded" in stdout and outputs.get("replaced") == "8", stdout)
+
+
 if __name__ == "__main__":
-    for test in (test_scripts_and_languages, test_real_data, test_extraction, test_matching, test_update):
+    for test in (test_scripts_and_languages, test_real_data, test_extraction, test_matching, test_update,
+                 test_data_download):
         try:
             test()
         except Exception as e:  # a crash is a failure too

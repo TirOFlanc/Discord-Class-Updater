@@ -1,0 +1,21 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]                      # Every change pushed by a person (bot commits don't trigger it)
+  pull_request:                           # Every proposed change, before it's merged
+  workflow_dispatch:                      # Manual run from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Checks the scripts, the 14 languages, the data format, the extraction,
+      # the matching and the CSS results on fixed examples (tests/)
+      - name: Run tests
+        run: python3 tests/run_tests.py

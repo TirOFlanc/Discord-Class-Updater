@@ -31,6 +31,13 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "📦 Discord classes: $(jq -r '[.[] | .build] | join(" / ")' data/builds.json)"
+            # Only the daily check date changed, or a real new build?
+            if [ "$(git diff --cached --name-only)" = "data/builds.json" ] && \
+               [ "$(git show HEAD:data/builds.json | jq -S 'del(.last_check)')" = "$(jq -S 'del(.last_check)' data/builds.json)" ]; then
+              message="✅ Discord classes: check $(jq -r '.last_check' data/builds.json)"
+            else
+              message="📦 Discord classes: $(jq -r '"\(.stable.build) / \(.canary.build)"' data/builds.json)"
+            fi
+            git commit -m "$message"
             git push
           fi

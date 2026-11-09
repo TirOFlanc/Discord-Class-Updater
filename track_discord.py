@@ -6,6 +6,8 @@ On each run, for each Discord version:
   3. compare with the previous list: when a CSS module changes hash, its classes are
      matched one by one (old name -> new name) and added to data/map.txt;
   4. save the new list (data/stable.txt, data/canary.txt) and data/builds.json.
+Each successful run also records "last_check" in data/builds.json (at most once a day when
+there's nothing new), so the action can warn when tracking is stuck.
 
 No dependencies: Python 3 is enough.
   python3 track_discord.py [--data data] [--versions stable,canary]
@@ -29,6 +31,8 @@ RE_SCRIPT = re.compile(r'<script defer src="/assets/([\w.-]+\.js)"></script>')
 RE_BUILD = re.compile(r'BUILD_NUMBER"\s*:\s*"(\d+)"')
 RE_CHUNKS = re.compile(r'\(({(?:\w+:"\w+",)*\w+:"\w+"})\)\[\w+\]\+"\.js"')
 RE_TERNARY = re.compile(r'"(\d+)"===\w+\?(?:""\+\w+\+)?"(?:\d+)?\.([a-f0-9]+)\.js"')
+# Chunks named outside the main map: if(715528===e)return""+e+".4b47d81567290fff.js"
+RE_SPECIAL = re.compile(r'(\d+)===\w+\)return""\+\w+\+"\.([a-f0-9]+)\.js"')
 
 # CSS modules in Discord's JS, 3 known shapes:
 #   123(e){e.exports={a:"name_hash",...}}   123(e,t,n){n.r(e.exports={...})}   123(e,t,n){var r={...}
@@ -100,6 +104,17 @@ def extract_classes(js):
     return classes
 
 
+def chunk_files(js):
+    """File names of every JS chunk referenced by the main script."""
+    files = set()
+    for block in RE_CHUNKS.findall(js):
+        for h in json.loads(re.sub(r"(\w+):", r'"\1":', block)).values():
+            files.add(f"{h}.js")
+    for key, h in RE_TERNARY.findall(js) + RE_SPECIAL.findall(js):
+        files.add(f"{key}.{h}.js")
+    return files
+
+
 def list_files(site):
     html = get(f"{site}/app")
     build = RE_BUILD.search(html)
@@ -108,30 +123,41 @@ def list_files(site):
     if not scripts or not web:
         raise RuntimeError("scripts not found in the app page")
     js = get(f"{site}/assets/{web}")
-    files = set(scripts)
-    for block in RE_CHUNKS.findall(js):
-        for h in json.loads(re.sub(r"(\w+):", r'"\1":', block)).values():
-            files.add(f"{h}.js")
-    for key, h in RE_TERNARY.findall(js):
-        files.add(f"{key}.{h}.js")
+    files = set(scripts) | chunk_files(js)
     if len(files) < 100:
         raise RuntimeError(f"suspicious list of JS files ({len(files)} files)")
     return (build.group(1) if build else web), sorted(files)
 
 
+MAX_FAILED = 0.02        # more than 2% of the files unreachable: something is wrong, stop
+
+
 def build_classes(site, files, cache):
-    """Download and parse the files (files already seen during this run are reused)."""
+    """Download and parse the files (files already seen during this run are reused).
+    A few unreachable files are skipped; too many stop the run."""
     todo = [f for f in files if f not in cache]
 
     def one(f):
-        return f, extract_classes(get(f"{site}/assets/{f}"))
+        try:
+            return f, extract_classes(get(f"{site}/assets/{f}"))
+        except Exception:
+            return f, None
 
+    failed = []
     with concurrent.futures.ThreadPoolExecutor(16) as pool:
         for i, (f, cl) in enumerate(pool.map(one, todo), 1):
-            cache[f] = cl
+            if cl is None:
+                failed.append(f)
+            else:
+                cache[f] = cl
             if i % 1000 == 0:
                 log(f"  {i}/{len(todo)} files")
-    return set().union(*(cache[f] for f in files))
+    if failed:
+        log(f"  {len(failed)} file(s) unreachable, skipped: {', '.join(failed[:5])}")
+    if len(failed) > len(files) * MAX_FAILED:
+        print(f"::error::{len(failed)} of {len(files)} files unreachable, data left untouched")
+        sys.exit(1)
+    return set().union(*(cache[f] for f in files if f in cache))
 
 
 # ---------------------------------------------------------------- matching
@@ -232,6 +258,11 @@ def main():
         }
         summary.append(f"- **{version}**: build {build}, {len(classes)} classes, {len(added)} new matches")
         log(summary[-1][2:].replace("**", ""))
+
+    # Proof that tracking works: refreshed on each new build, otherwise at most once a day
+    now = datetime.datetime.now(datetime.timezone.utc)
+    if summary or str(builds.get("last_check", ""))[:10] != now.strftime("%Y-%m-%d"):
+        builds["last_check"] = now.strftime("%Y-%m-%d %H:%M UTC")
 
     write_list(map_path, table)
     with open(builds_path, "w", encoding="utf-8", newline="\n") as f:

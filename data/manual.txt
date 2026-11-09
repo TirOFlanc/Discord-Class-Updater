@@ -1,0 +1,10 @@
+# Changes confirmed by hand, used before the automatic table.
+# One per line: "old new", or "old -" when Discord removed the class.
+# Lines starting with # are ignored. Corrections are welcome.
+
+# Profile name block, rebuilt by Discord on 2026-04-25
+nickname__63ed3 displayName_C2XpHA
+usernameRow__63ed3 displayNameRow_C2XpHA
+
+# Profile nicknames list, replaced by a per-server popover menu
+nicknames__488b1 -

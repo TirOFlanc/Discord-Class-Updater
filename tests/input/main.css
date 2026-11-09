@@ -1,0 +1,13 @@
+/* Discord Class Updater test file */
+.container__1a2b3 .header__1a2b3 { color: red; }       /* simple rename */
+.title__1a2b3 { color: blue; }                        /* inferred from its module */
+.glow__9f8e7 { color: green; }                        /* chain a -> b -> c */
+.sidebar_SIDE01 { color: black; }                     /* already current: untouched */
+.nickname__00003 { font-weight: 500; }                /* manual rename */
+.gone__00002 { display: none; }                       /* removed by Discord */
+.lost__00001 { margin: 0; }                           /* not found */
+.name__20a53 { color: pink; }                         /* must never become "name__20a53 text-md/medium__20a53" */
+div.name__20a53:hover, [class*="name__20a53"] { opacity: .5; }
+.icon_fa285e { width: 16px; }                         /* ambiguous, no context: closest module */
+.vc-toolbar_ABC123 { gap: 4px; }                      /* ignored term */
+.my-own-class { padding: 1.5em; }                     /* not a Discord class */

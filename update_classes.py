@@ -15,6 +15,7 @@ INPUT_FILES / INPUT_IGNORES / INPUT_IGNORE_CLASS_NAMES / INPUT_REPORT / INPUT_LA
 
 import argparse
 import collections
+import datetime
 import fnmatch
 import glob
 import json
@@ -38,12 +39,15 @@ MESSAGES = {
         "missing": "⚠️ الفئات غير الموجودة: **{n}** (غيّر Discord هذا المكوّن، أصلِحه يدويًا باستخدام DevTools)",
         "replacements": "الاستبدالات",
         "inferred": "مُستنتَجة، يُرجى المراجعة",
+        "ambiguous": "يُرجى المراجعة، احتمال آخر: {list}",
         "missing_title": "الفئات غير الموجودة",
         "line": "السطر {n}",
-        "same_name": "الاسم نفسه حاليًا: {list}",
-        "none": "لا شيء",
+        "module": "الوحدة الجديدة المحتملة: {list}",
+        "none": "لا توجد أدلة",
+        "removed": "حذفها Discord",
         "data": "البيانات: Discord Stable، الإصدار {build} ({date})",
         "warning": "الفئات غير الموجودة: {n}",
+        "stale": "⚠️ لم تُحدَّث البيانات منذ مدة (عدد الأيام: {n}): قد يكون تتبّع Discord متوقفًا، ولن تُكتشف الفئات التي أُعيدت تسميتها منذ ذلك الحين.",
     },
     "de": {
         "title": "🔄 Aktualisierung der Discord-Klassen",
@@ -53,12 +57,15 @@ MESSAGES = {
         "missing": "⚠️ Nicht gefundene Klassen: **{n}** (Komponente von Discord geändert, bitte manuell mit den DevTools korrigieren)",
         "replacements": "Ersetzungen",
         "inferred": "abgeleitet, bitte prüfen",
+        "ambiguous": "bitte prüfen, andere Möglichkeit: {list}",
         "missing_title": "Nicht gefundene Klassen",
         "line": "Zeile {n}",
-        "same_name": "heute gleicher Name: {list}",
-        "none": "keine",
+        "module": "wahrscheinliches neues Modul: {list}",
+        "none": "kein Hinweis",
+        "removed": "von Discord entfernt",
         "data": "Daten: Discord Stable Build {build} ({date})",
         "warning": "Nicht gefundene Klassen: {n}",
+        "stale": "⚠️ Daten seit {n} Tagen nicht aktualisiert: Die Discord-Überwachung hängt möglicherweise, seitdem umbenannte Klassen werden nicht erkannt.",
     },
     "en": {
         "title": "🔄 Update Discord class names",
@@ -68,12 +75,15 @@ MESSAGES = {
         "missing": "⚠️ Classes not found: **{n}** (component changed by Discord, fix it manually with DevTools)",
         "replacements": "Replacements",
         "inferred": "inferred, please check",
+        "ambiguous": "please check, other possibility: {list}",
         "missing_title": "Classes not found",
         "line": "line {n}",
-        "same_name": "same name today: {list}",
-        "none": "none",
+        "module": "probable new module: {list}",
+        "none": "no lead",
+        "removed": "removed by Discord",
         "data": "Data: Discord Stable build {build} ({date})",
         "warning": "Classes not found: {n}",
+        "stale": "⚠️ Data not updated for {n} days: Discord tracking may be stuck, classes renamed since then won't be detected.",
     },
     "es": {
         "title": "🔄 Actualización de las clases de Discord",
@@ -83,12 +93,15 @@ MESSAGES = {
         "missing": "⚠️ Clases no encontradas: **{n}** (componente modificado por Discord, corrígelo a mano con las DevTools)",
         "replacements": "Reemplazos",
         "inferred": "deducida, por revisar",
+        "ambiguous": "por revisar, otra posibilidad: {list}",
         "missing_title": "Clases no encontradas",
         "line": "línea {n}",
-        "same_name": "mismo nombre hoy: {list}",
-        "none": "ninguno",
+        "module": "nuevo módulo probable: {list}",
+        "none": "sin pistas",
+        "removed": "eliminada por Discord",
         "data": "Datos: Discord Stable build {build} ({date})",
         "warning": "Clases no encontradas: {n}",
+        "stale": "⚠️ Datos sin actualizar desde hace {n} días: el seguimiento de Discord puede estar bloqueado, las clases renombradas desde entonces no se detectarán.",
     },
     "fr": {
         "title": "🔄 Mise à jour des classes Discord",
@@ -98,12 +111,15 @@ MESSAGES = {
         "missing": "⚠️ Classes introuvables : **{n}** (composant modifié par Discord, à corriger à la main avec les DevTools)",
         "replacements": "Remplacements",
         "inferred": "déduite, à vérifier",
+        "ambiguous": "à vérifier, autre possibilité : {list}",
         "missing_title": "Classes introuvables",
         "line": "ligne {n}",
-        "same_name": "même nom aujourd'hui : {list}",
-        "none": "aucun",
+        "module": "nouveau module probable : {list}",
+        "none": "aucune piste",
+        "removed": "supprimée par Discord",
         "data": "Données : Discord Stable build {build} ({date})",
         "warning": "Classes introuvables : {n}",
+        "stale": "⚠️ Données non mises à jour depuis {n} jours : le suivi de Discord est peut-être bloqué, les classes renommées depuis ne seront pas détectées.",
     },
     "it": {
         "title": "🔄 Aggiornamento delle classi Discord",
@@ -113,12 +129,15 @@ MESSAGES = {
         "missing": "⚠️ Classi non trovate: **{n}** (componente modificato da Discord, da correggere a mano con i DevTools)",
         "replacements": "Sostituzioni",
         "inferred": "dedotta, da verificare",
+        "ambiguous": "da verificare, altra possibilità: {list}",
         "missing_title": "Classi non trovate",
         "line": "riga {n}",
-        "same_name": "stesso nome oggi: {list}",
-        "none": "nessuno",
+        "module": "probabile nuovo modulo: {list}",
+        "none": "nessuna pista",
+        "removed": "rimossa da Discord",
         "data": "Dati: Discord Stable build {build} ({date})",
         "warning": "Classi non trovate: {n}",
+        "stale": "⚠️ Dati non aggiornati da {n} giorni: il monitoraggio di Discord potrebbe essere bloccato, le classi rinominate da allora non verranno rilevate.",
     },
     "ja": {
         "title": "🔄 Discord クラス名の更新",
@@ -128,12 +147,15 @@ MESSAGES = {
         "missing": "⚠️ 見つからないクラス：**{n}**（Discord によりコンポーネントが変更されました。DevTools で手動で修正してください）",
         "replacements": "置き換え一覧",
         "inferred": "推定、要確認",
+        "ambiguous": "要確認、別の候補：{list}",
         "missing_title": "見つからないクラス",
         "line": "{n} 行目",
-        "same_name": "現在同じ名前：{list}",
-        "none": "なし",
+        "module": "新しいモジュールの候補：{list}",
+        "none": "手がかりなし",
+        "removed": "Discord により削除",
         "data": "データ：Discord Stable ビルド {build}（{date}）",
         "warning": "見つからないクラス：{n}",
+        "stale": "⚠️ データが {n} 日間更新されていません。Discord の追跡が止まっている可能性があり、それ以降に名前が変わったクラスは検出されません。",
     },
     "ko": {
         "title": "🔄 Discord 클래스 업데이트",
@@ -143,12 +165,15 @@ MESSAGES = {
         "missing": "⚠️ 찾을 수 없는 클래스: **{n}** (Discord가 컴포넌트를 변경함, DevTools로 직접 수정하세요)",
         "replacements": "교체 목록",
         "inferred": "추정, 확인 필요",
+        "ambiguous": "확인 필요, 다른 후보: {list}",
         "missing_title": "찾을 수 없는 클래스",
         "line": "{n}번째 줄",
-        "same_name": "현재 같은 이름: {list}",
-        "none": "없음",
+        "module": "새 모듈 후보: {list}",
+        "none": "단서 없음",
+        "removed": "Discord에서 삭제됨",
         "data": "데이터: Discord Stable 빌드 {build} ({date})",
         "warning": "찾을 수 없는 클래스: {n}",
+        "stale": "⚠️ 데이터가 {n}일 동안 업데이트되지 않았습니다. Discord 추적이 멈췄을 수 있으며, 그 이후 이름이 바뀐 클래스는 감지되지 않습니다.",
     },
     "pl": {
         "title": "🔄 Aktualizacja klas Discorda",
@@ -158,12 +183,15 @@ MESSAGES = {
         "missing": "⚠️ Nieznalezione klasy: **{n}** (komponent zmieniony przez Discorda, popraw ręcznie w DevTools)",
         "replacements": "Zamiany",
         "inferred": "wywnioskowana, do sprawdzenia",
+        "ambiguous": "do sprawdzenia, inna możliwość: {list}",
         "missing_title": "Nieznalezione klasy",
         "line": "wiersz {n}",
-        "same_name": "dziś ta sama nazwa: {list}",
-        "none": "brak",
+        "module": "prawdopodobny nowy moduł: {list}",
+        "none": "brak wskazówek",
+        "removed": "usunięta przez Discorda",
         "data": "Dane: Discord Stable, build {build} ({date})",
         "warning": "Nieznalezione klasy: {n}",
+        "stale": "⚠️ Dane nieaktualizowane od {n} dni: śledzenie Discorda może być zablokowane, klasy zmienione od tego czasu nie zostaną wykryte.",
     },
     "pt": {
         "title": "🔄 Atualização das classes do Discord",
@@ -173,12 +201,15 @@ MESSAGES = {
         "missing": "⚠️ Classes não encontradas: **{n}** (componente alterado pelo Discord, corrija manualmente com as DevTools)",
         "replacements": "Substituições",
         "inferred": "deduzida, a verificar",
+        "ambiguous": "a verificar, outra possibilidade: {list}",
         "missing_title": "Classes não encontradas",
         "line": "linha {n}",
-        "same_name": "mesmo nome hoje: {list}",
-        "none": "nenhum",
+        "module": "provável novo módulo: {list}",
+        "none": "nenhuma pista",
+        "removed": "removida pelo Discord",
         "data": "Dados: Discord Stable build {build} ({date})",
         "warning": "Classes não encontradas: {n}",
+        "stale": "⚠️ Dados não atualizados há {n} dias: o monitoramento do Discord pode estar travado, as classes renomeadas desde então não serão detectadas.",
     },
     "ru": {
         "title": "🔄 Обновление классов Discord",
@@ -188,12 +219,15 @@ MESSAGES = {
         "missing": "⚠️ Не найдено классов: **{n}** (компонент изменён Discord, исправьте вручную через DevTools)",
         "replacements": "Замены",
         "inferred": "предположение, проверьте",
+        "ambiguous": "проверьте, другой вариант: {list}",
         "missing_title": "Ненайденные классы",
         "line": "строка {n}",
-        "same_name": "сейчас с тем же именем: {list}",
-        "none": "нет",
+        "module": "вероятный новый модуль: {list}",
+        "none": "нет подсказок",
+        "removed": "удалён Discord",
         "data": "Данные: Discord Stable, сборка {build} ({date})",
         "warning": "Не найдено классов: {n}",
+        "stale": "⚠️ Данные не обновлялись {n} дн.: отслеживание Discord, возможно, остановилось, переименованные с тех пор классы не будут обнаружены.",
     },
     "tr": {
         "title": "🔄 Discord sınıflarının güncellenmesi",
@@ -203,12 +237,15 @@ MESSAGES = {
         "missing": "⚠️ Bulunamayan sınıflar: **{n}** (bileşen Discord tarafından değiştirildi, DevTools ile elle düzeltin)",
         "replacements": "Değişiklikler",
         "inferred": "tahmini, kontrol edin",
+        "ambiguous": "kontrol edin, diğer olasılık: {list}",
         "missing_title": "Bulunamayan sınıflar",
         "line": "satır {n}",
-        "same_name": "bugün aynı ada sahip: {list}",
-        "none": "yok",
+        "module": "olası yeni modül: {list}",
+        "none": "ipucu yok",
+        "removed": "Discord tarafından kaldırıldı",
         "data": "Veriler: Discord Stable, sürüm {build} ({date})",
         "warning": "Bulunamayan sınıflar: {n}",
+        "stale": "⚠️ Veriler {n} gündür güncellenmedi: Discord takibi takılmış olabilir, o zamandan beri yeniden adlandırılan sınıflar algılanmayacak.",
     },
     "uk": {
         "title": "🔄 Оновлення класів Discord",
@@ -218,12 +255,15 @@ MESSAGES = {
         "missing": "⚠️ Не знайдено класів: **{n}** (компонент змінено Discord, виправте вручну через DevTools)",
         "replacements": "Заміни",
         "inferred": "припущення, перевірте",
+        "ambiguous": "перевірте, інший варіант: {list}",
         "missing_title": "Не знайдені класи",
         "line": "рядок {n}",
-        "same_name": "зараз з тією ж назвою: {list}",
-        "none": "немає",
+        "module": "ймовірний новий модуль: {list}",
+        "none": "немає підказок",
+        "removed": "видалено Discord",
         "data": "Дані: Discord Stable, збірка {build} ({date})",
         "warning": "Не знайдено класів: {n}",
+        "stale": "⚠️ Дані не оновлювалися {n} дн.: відстеження Discord, можливо, зупинилося, перейменовані відтоді класи не буде виявлено.",
     },
     "zh": {
         "title": "🔄 更新 Discord 类名",
@@ -233,12 +273,15 @@ MESSAGES = {
         "missing": "⚠️ 未找到的类：**{n}**（Discord 修改了该组件，请用 DevTools 手动修复）",
         "replacements": "替换列表",
         "inferred": "推断结果，请检查",
+        "ambiguous": "请检查，其他可能：{list}",
         "missing_title": "未找到的类",
         "line": "第 {n} 行",
-        "same_name": "当前同名：{list}",
-        "none": "无",
+        "module": "可能的新模块：{list}",
+        "none": "无线索",
+        "removed": "已被 Discord 删除",
         "data": "数据：Discord Stable 构建 {build}（{date}）",
         "warning": "未找到的类：{n}",
+        "stale": "⚠️ 数据已 {n} 天未更新：Discord 跟踪可能已停止，此后重命名的类将不会被检测到。",
     },
 }
 
@@ -282,29 +325,66 @@ def load_data(folder):
             parts = line.split()
             if len(parts) == 2:
                 table[parts[0]].append(parts[1])
-    build = {}
+    # Changes confirmed by hand: used before the automatic table
+    removed, manual = set(), {}
+    manual_path = os.path.join(folder, "manual.txt")
+    if os.path.exists(manual_path):
+        with open(manual_path, encoding="utf-8") as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) != 2 or parts[0].startswith("#"):
+                    continue
+                if parts[1] == "-":
+                    removed.add(parts[0])
+                else:
+                    manual[parts[0]] = parts[1]
+                    table[parts[0]].insert(0, parts[1])
+    builds = {}
     builds_path = os.path.join(folder, "builds.json")
     if os.path.exists(builds_path):
         with open(builds_path, encoding="utf-8") as f:
-            build = json.load(f).get("stable", {})
-    return live, table, build
+            builds = json.load(f)
+    return live, table, manual, removed, builds
 
 
-def follow(table, name, live):
-    """Follow chains a -> b -> c (a class may have several successors)
-    and return the closest class that exists today."""
+def data_age(builds):
+    """Days since tracking last worked (last_check, or else the most recent build), or None."""
+    dates = [builds.get("last_check")] if builds.get("last_check") else [
+        v.get("date") for v in builds.values() if isinstance(v, dict) and v.get("date")
+    ]
+    parsed = []
+    for d in dates:
+        try:
+            parsed.append(datetime.datetime.strptime(d, "%Y-%m-%d %H:%M UTC").replace(tzinfo=datetime.timezone.utc))
+        except (TypeError, ValueError):
+            pass
+    if not parsed:
+        return None
+    return (datetime.datetime.now(datetime.timezone.utc) - max(parsed)).days
+
+
+def follow_all(table, name, live):
+    """Follow chains a -> b -> c (a class may have several successors) and return
+    every class that exists today at the closest step (usually just one)."""
     seen, level = {name}, [name]
     while level:
-        following = []
+        found, following = [], []
         for c in level:
             for n in table.get(c, ()):
-                if n in live:
-                    return n
+                if n in live and n not in found:
+                    found.append(n)
                 if n not in seen:
                     seen.add(n)
                     following.append(n)
+        if found:
+            return found
         level = following
-    return None
+    return []
+
+
+def follow(table, name, live):
+    found = follow_all(table, name, live)
+    return found[0] if found else None
 
 
 def sibling_votes(table, live):
@@ -317,18 +397,61 @@ def sibling_votes(table, live):
     return votes
 
 
-def find(name, table, votes, live):
-    """Return (new class, inferred?) or (None, False)."""
-    new = follow(table, name, live)
-    if new:
-        return new, False
+def find(name, table, manual, votes, live):
+    """Return (candidates, inferred?): one candidate when sure, several when ambiguous,
+    none when not found."""
+    if name in manual:  # confirmed by hand: no ambiguity
+        target = manual[name]
+        found = [target] if target in live else follow_all(table, target, live)[:1]
+        if found:
+            return found, False
+    found = follow_all(table, name, live)
+    if found:
+        return found, False
     # Last resort: the other classes of the same module changed hash,
     # so try the same name with that new hash (it must exist).
     base, h = split_class(name)
     for new_h, _ in votes[h].most_common() if h in votes else []:
         if f"{base}_{new_h}" in live:
-            return f"{base}_{new_h}", True
-    return None, False
+            return [f"{base}_{new_h}"], True
+    return [], False
+
+
+class ModuleFinder:
+    """Finds the current CSS module that looks most like the old module of a missing class
+    (same class names), to point to where the class probably went."""
+
+    def __init__(self, table, live):
+        self.old_names = collections.defaultdict(set)
+        for old, news in table.items():
+            for c in [old, *news]:
+                if len(c) > 7:
+                    self.old_names[split_class(c)[1]].add(split_class(c)[0])
+        self.modules = collections.defaultdict(set)
+        for c in live:
+            self.modules[split_class(c)[1]].add(split_class(c)[0])
+        self.index = collections.defaultdict(set)
+        for h, names in self.modules.items():
+            for n in names:
+                self.index[n].add(h)
+
+    def similarity(self, old, candidate):
+        """How much the candidate's current module looks like the old module (0 to 1)."""
+        a = self.old_names.get(split_class(old)[1], set())
+        b = self.modules.get(split_class(candidate)[1], set())
+        return len(a & b) / len(a | b) if a | b else 0.0
+
+    def hint(self, name, threshold=0.25, shown=8):
+        names = self.old_names.get(split_class(name)[1], set())
+        common = collections.Counter(h for n in names for h in self.index.get(n, ()))
+        best = max(
+            ((n / (len(names) + len(self.modules[h]) - n), n, h) for h, n in common.items()),
+            default=None,
+        )
+        if not best or best[0] < threshold or best[1] < 2:
+            return None
+        members = sorted(self.modules[best[2]])
+        return f"`_{best[2]}` (" + ", ".join(members[:shown]) + (", …" if len(members) > shown else "") + ")"
 
 
 def is_ignored_file(path, ignores):
@@ -375,6 +498,7 @@ def main():
     p.add_argument("--ignore-class-names", default=os.environ.get("INPUT_IGNORE_CLASS_NAMES") or "")
     p.add_argument("--report", default=os.environ.get("INPUT_REPORT") or "")
     p.add_argument("--language", default=os.environ.get("INPUT_LANGUAGE") or "en")
+    p.add_argument("--max-data-age", type=int, default=int(os.environ.get("INPUT_MAX_DATA_AGE") or 3))
     p.add_argument("--data", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
     args = p.parse_args()
 
@@ -385,8 +509,14 @@ def main():
     files = sorted({f for pattern in split_list(args.files) for f in glob.glob(pattern, recursive=True) if os.path.isfile(f)})
     files = [f for f in files if not is_ignored_file(f, ignores)]
 
-    live, table, build = load_data(args.data)
+    live, table, manual, removed, builds = load_data(args.data)
+    build = builds.get("stable", {})
+    age = data_age(builds)
+    stale = age is not None and age > args.max_data_age
+    if stale:
+        print(f"::warning title=Discord Class Updater::{escape_data(t['stale'].format(n=age))}")
     votes = sibling_votes(table, live)
+    modules = ModuleFinder(table, live)
     print(f"{len(live)} current Discord classes, {len(files)} files to check")
 
     report_ok, report_missing = [], []
@@ -394,17 +524,31 @@ def main():
     for path in files:
         with open(path, encoding="utf-8") as f:
             text = f.read()
-        replacements, inferred, missing = {}, set(), []
-        for name in sorted(set(RE_CLASS.findall(text))):
+        replacements, inferred, missing, ambiguous, others = {}, set(), [], {}, {}
+        names = sorted(set(RE_CLASS.findall(text)))
+        for name in names:
             if name in live or not RE_DISCORD.search(name) or is_ignored_class(name, ignored_terms):
                 continue
-            new, guessed = find(name, table, votes, live)
-            if new:
-                replacements[name] = new
+            found, guessed = ([], False) if name in removed else find(name, table, manual, votes, live)
+            if len(found) == 1:
+                replacements[name] = found[0]
                 if guessed:
                     inferred.add(name)
+            elif found:
+                ambiguous[name] = found
             else:
                 missing.append(name)
+
+        # Several current classes possible (Discord split a module): pick the one whose module
+        # the file already uses the most, then the one whose module looks most like the old one.
+        if ambiguous:
+            context = collections.Counter(
+                split_class(c)[1] for c in [*names, *replacements.values()] if c in live
+            )
+            for name, found in ambiguous.items():
+                best = max(found, key=lambda c: (context[split_class(c)[1]], modules.similarity(name, c)))
+                replacements[name] = best
+                others[name] = [c for c in found if c != best]
 
         if replacements:
             # A single pass, whole class names only: no double replacement
@@ -417,11 +561,13 @@ def main():
             with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(text)
             nb_ok += len(replacements)
-            nb_inferred += len(inferred)
+            nb_inferred += len(inferred) + len(others)
             report_ok.append(f"\n**{path}**\n")
             report_ok += [
-                f"- `{a}` → `{n}`" + (f" *({t['inferred']})*" if a in inferred else "")
-                for a, n in replacements.items()
+                f"- `{a}` → `{n}`"
+                + (f" *({t['inferred']})*" if a in inferred else "")
+                + (f" *({t['ambiguous'].format(list=', '.join(f'`{c}`' for c in others[a]))})*" if a in others else "")
+                for a, n in sorted(replacements.items())
             ]
 
         if missing:
@@ -434,11 +580,13 @@ def main():
 
             report_missing.append(f"\n**{path}**\n")
             for name in missing:
-                base = split_class(name)[0]
-                hints = sorted(c for c in live if split_class(c)[0] == base)
-                hint = ", ".join(f"`{c}`" for c in hints[:5]) + (" …" if len(hints) > 5 else "")
                 line = t["line"].format(n=lines[name])
-                report_missing.append(f"- `{name}` ({line}) — {t['same_name'].format(list=hint or t['none'])}")
+                if name in removed:
+                    note = t["removed"]
+                else:
+                    hint = modules.hint(name)
+                    note = t["module"].format(list=hint) if hint else t["none"]
+                report_missing.append(f"- `{name}` ({line}) — {note}")
                 nb_missing += 1
 
             # One warning per file (GitHub only shows 10 per step), linking to the first missing class
@@ -451,6 +599,7 @@ def main():
 
     report = [
         t["intro"],
+        *(["", "> " + t["stale"].format(n=age)] if stale else []),
         "",
         "- " + t["replaced"].format(n=nb_ok) + (t["to_check"].format(n=nb_inferred) if nb_inferred else ""),
         "- " + t["missing"].format(n=nb_missing),
@@ -474,6 +623,7 @@ def main():
     output("missing", nb_missing)
     output("report", os.path.abspath(report_path))
     output("title", t["title"])
+    output("stale", "true" if stale else "false")
     print(f"{nb_ok} replaced, {nb_missing} not found, report: {report_path}")
 
 

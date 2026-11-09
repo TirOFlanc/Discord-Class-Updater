@@ -1,0 +1,3 @@
+# Test data: changes confirmed by hand
+nickname__00003 displayName_PROF01
+gone__00002 -

@@ -20,6 +20,12 @@ inputs:
   report:
     description: Path of the Markdown report (defaults to the runner temp folder)
     default: ''
+  max-data-age:
+    description: Warn when Discord tracking hasn't worked for more than this many days
+    default: '3'
+  fail-if-stale:
+    description: "true to make the run fail (and GitHub send its failure email) when the data is too old"
+    default: 'false'
   pull-request:
     description: "true to open (or update) a pull request when classes were replaced"
     default: 'true'
@@ -46,6 +52,9 @@ outputs:
   report:
     description: Path of the Markdown report
     value: ${{ steps.update.outputs.report }}
+  stale:
+    description: "true if the data is older than max-data-age"
+    value: ${{ steps.update.outputs.stale }}
 
 runs:
   using: composite
@@ -58,6 +67,7 @@ runs:
         INPUT_IGNORE_CLASS_NAMES: ${{ inputs.ignore-class-names }}
         INPUT_LANGUAGE: ${{ inputs.language }}
         INPUT_REPORT: ${{ inputs.report }}
+        INPUT_MAX_DATA_AGE: ${{ inputs.max-data-age }}
       run: python3 "${{ github.action_path }}/update_classes.py"
 
     # Only when something really changed in the CSS files
@@ -69,3 +79,10 @@ runs:
         commit-message: ${{ inputs.commit-message || inputs.title || steps.update.outputs.title }}
         title: ${{ inputs.title || steps.update.outputs.title }}
         body-path: ${{ steps.update.outputs.report }}
+
+    # Optional: fail loudly when tracking seems stuck (after the pull request, so fixes still arrive)
+    - if: inputs.fail-if-stale == 'true' && steps.update.outputs.stale == 'true'
+      shell: bash
+      run: |
+        echo "::error title=Discord Class Updater::Discord tracking data is older than ${{ inputs.max-data-age }} days"
+        exit 1

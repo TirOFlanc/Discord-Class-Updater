@@ -43,15 +43,20 @@ def prepare_data(folder, last_check_days_ago=0, build="123456"):
                    "stable": {"build": build, "classes": 10011, "date": "2026-11-08 12:00 UTC"}}, f)
 
 
-def run_action(work, data, language="en", max_age="3", data_url=""):
-    """Run update_classes.py like the GitHub Action does, return (stdout, outputs, report)."""
+def run_action(work, data, language="en", max_age="3", data_url="", github=None):
+    """Run update_classes.py like the GitHub Action does, return (stdout, outputs, report).
+    github: GitHub Actions variables to simulate (repository, commit...), none by default."""
     out_file = os.path.join(work, "outputs.txt")
     report = os.path.join(work, "report.md")
     open(out_file, "w").close()
     env = dict(os.environ, INPUT_FILES="*.css", INPUT_IGNORES="ignored.css", INPUT_IGNORE_CLASS_NAMES="vc-",
                INPUT_LANGUAGE=language, INPUT_REPORT=report, INPUT_MAX_DATA_AGE=max_age, INPUT_DATA_URL=data_url,
                GITHUB_OUTPUT=out_file, RUNNER_TEMP=work)
-    env.pop("GITHUB_STEP_SUMMARY", None)
+    # The tests themselves run in GitHub Actions: start from a clean state, then add what is asked
+    for name in ("GITHUB_STEP_SUMMARY", "GITHUB_REPOSITORY", "GITHUB_SERVER_URL", "GITHUB_WORKSPACE", "GITHUB_SHA",
+                 "INPUT_LINK_BRANCH"):
+        env.pop(name, None)
+    env.update(github or {})
     result = subprocess.run([sys.executable, "-B", os.path.join(ROOT, "update_classes.py"), "--data", data],
                             cwd=os.path.join(work, "css"), env=env, capture_output=True, text=True)
     if result.returncode:
@@ -142,6 +147,9 @@ def test_update():
             check(label, text in report, f"not found in the report:\n{report}")
         check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
         check("Ignored terms are neither replaced nor reported", "vc-toolbar" not in report)
+        check("Outside GitHub Actions, file names and lines are plain text", "](" not in report, report)
+        check("The folded block closes right after the last replacement (no gap in Discord)",
+              re.search(r"\n- `[^\n]+\n</details>\n\n### ", report) is not None, report)
 
         stdout, outputs, report = run_action(work, data)
         check("A second run changes nothing", outputs.get("replaced") == "0", f"{outputs}")
@@ -163,6 +171,38 @@ def test_update():
         check("max-data-age raises the limit", outputs.get("stale") == "false", f"{outputs}")
 
 
+def test_links():
+    update = load("update_classes")
+    with tempfile.TemporaryDirectory() as work:
+        os.environ.update(GITHUB_REPOSITORY="owner/repo", GITHUB_SERVER_URL="https://github.com", GITHUB_WORKSPACE=work)
+        try:
+            url = update.file_url(os.path.join(work, "themes", "my theme (2).css"), "updates")
+            outside = update.file_url(os.path.join(os.path.dirname(work), "elsewhere.css"), "updates")
+        finally:
+            for name in ("GITHUB_REPOSITORY", "GITHUB_SERVER_URL", "GITHUB_WORKSPACE"):
+                os.environ.pop(name, None)
+        check("File addresses keep the folders and encode spaces and brackets",
+              url == "https://github.com/owner/repo/blob/updates/themes/my%20theme%20%282%29.css", url)
+        check("No address for a file outside the repository", outside is None, f"{outside}")
+
+    with tempfile.TemporaryDirectory() as work:
+        data = os.path.join(work, "data")
+        prepare_data(data)
+        css = os.path.join(work, "css")
+        shutil.copytree(os.path.join(TESTS, "input"), css)
+        github = {"GITHUB_REPOSITORY": "owner/repo", "GITHUB_SERVER_URL": "https://github.com",
+                  "GITHUB_WORKSPACE": css, "GITHUB_SHA": "abc123", "INPUT_LINK_BRANCH": "discord-class-updater"}
+        base = "https://github.com/owner/repo/blob/"
+        stdout, outputs, report = run_action(work, data, github=github)
+        check("In the pull request, file names link to the files on its branch",
+              f"**[main.css]({base}discord-class-updater/main.css)**" in report, report)
+        check("In the pull request, line numbers link to the lines",
+              f"`gone__00002` ([line 7]({base}discord-class-updater/main.css#L7))" in report, report)
+        stdout, outputs, report = run_action(work, data, github=github)
+        check("Without replacements (no pull request), links point to the checked commit",
+              f"([line 7]({base}abc123/main.css#L7))" in report and "discord-class-updater" not in report, report)
+
+
 def test_data_download():
     with tempfile.TemporaryDirectory() as work:
         bundled, remote = os.path.join(work, "data"), os.path.join(work, "remote")
@@ -182,7 +222,7 @@ def test_data_download():
 
 if __name__ == "__main__":
     for test in (test_scripts_and_languages, test_real_data, test_extraction, test_matching, test_update,
-                 test_data_download):
+                 test_links, test_data_download):
         try:
             test()
         except Exception as e:  # a crash is a failure too

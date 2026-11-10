@@ -92,6 +92,7 @@ If the extraction finds far fewer classes than usual (Discord changed the way it
 - When Discord split a module in two, an old class can lead to two current classes. The tool then picks the one whose module your file already uses, or else the one whose module looks most like the old one, and marks it *please check* in the report with the other possibility.
 - As a last resort, if the other classes of the same module changed hash, it tries the same name with that new hash. These replacements are marked *inferred, please check* in the report.
 - Classes that can't be found are left untouched: they are listed in the report with their line and, when there is one, the current module that looks most like their old one (or *removed by Discord* when confirmed). They are also shown as one warning per file in the run.
+- In the report, each file name is a link to the file and each line number a link to the line, on the pull request branch (or on the checked commit when there is no pull request).
 - A single pass per file, whole class names only: no double replacement.
 - If tracking hasn't worked for more than `max-data-age` days (`last_check` too old), it warns in the run and at the top of the report, because classes renamed since then can't be detected. With `fail-if-stale: true`, the run also fails, after the pull request is created.
 
@@ -130,6 +131,7 @@ The `.github/workflows/test.yml` workflow runs `tests/run_tests.py` on every cha
 - the extraction on a sample of Discord's JS (the 3 shapes of CSS modules, the specially named chunks);
 - the matching of old and new classes;
 - the CSS results on fixed examples (`tests/input` → `tests/expected`): renames, chains, inferred and ambiguous classes, manual fixes, removed and missing classes, ignored files and terms, languages and the stale data warning;
+- the links to the files and lines in the report;
 - the download of fresh data, and the fallback to the bundled data when it fails.
 
 The tests use their own small data (`tests/data`), so they never break when Discord renames classes. Run them locally with `python3 tests/run_tests.py`.

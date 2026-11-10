@@ -72,6 +72,8 @@ runs:
         INPUT_REPORT: ${{ inputs.report }}
         INPUT_MAX_DATA_AGE: ${{ inputs.max-data-age }}
         INPUT_DATA_URL: ${{ inputs.data-url }}
+        # Not an input: the report links point to the pull request branch, so they show the updated files
+        INPUT_LINK_BRANCH: ${{ inputs.pull-request == 'true' && inputs.branch || '' }}
       run: python3 "${{ github.action_path }}/update_classes.py"
 
     # Only when something really changed in the CSS files

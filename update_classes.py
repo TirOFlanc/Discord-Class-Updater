@@ -13,6 +13,7 @@ Locally:
   python3 update_classes.py --files "*.css" --ignores "RefreshTitleBar.css" --ignore-class-names "bd-,vc-" --language en
 In a GitHub Action, settings come from
 INPUT_FILES / INPUT_IGNORES / INPUT_IGNORE_CLASS_NAMES / INPUT_REPORT / INPUT_LANGUAGE.
+There, file names and line numbers in the report are also links to the files on GitHub.
 """
 
 import argparse
@@ -26,9 +27,13 @@ import re
 import sys
 import tempfile
 import time
+import urllib.parse
 import urllib.request
 
 DATA_FILES = ("stable.txt", "map.txt", "manual.txt", "builds.json")
+
+# Stands for the branch or commit in the report links until the end, when we know which one to use
+LINK_REF = "\0ref\0"
 
 # .className_hash6  (old format: name__1a2b3 / name_1a2b3c, new format: name_aB3-x_)
 RE_CLASS = re.compile(r"\.([A-Za-z][\w-]*_[\w-]{6})(?![\w-])")
@@ -532,6 +537,28 @@ def escape_property(text):
     return escape_data(text).replace(":", "%3A").replace(",", "%2C")
 
 
+def file_url(path, ref):
+    """Address of a file of the repository on GitHub, or None outside GitHub Actions.
+    'themes/my theme.css', 'updates' -> 'https://github.com/owner/repo/blob/updates/themes/my%20theme.css'"""
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not repo:
+        return None
+    root = os.environ.get("GITHUB_WORKSPACE") or os.getcwd()
+    try:
+        relative = os.path.relpath(os.path.abspath(path), os.path.abspath(root)).replace(os.sep, "/")
+    except ValueError:  # another drive (Windows)
+        return None
+    if relative.startswith("../"):
+        return None
+    server = (os.environ.get("GITHUB_SERVER_URL") or "https://github.com").rstrip("/")
+    return f"{server}/{repo}/blob/{ref}/{urllib.parse.quote(relative)}"
+
+
+def linked(text, url):
+    """Markdown link, or the plain text when there is no address."""
+    return f"[{text}]({url})" if url else text
+
+
 def output(key, value):
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
@@ -548,6 +575,9 @@ def main():
     p.add_argument("--max-data-age", type=int, default=int(os.environ.get("INPUT_MAX_DATA_AGE") or 3))
     p.add_argument("--data", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
     p.add_argument("--data-url", default=os.environ.get("INPUT_DATA_URL") or "")
+    # Branch of the pull request: the report links point to it when classes were replaced,
+    # otherwise to the current commit (GITHUB_SHA)
+    p.add_argument("--link-branch", default=os.environ.get("INPUT_LINK_BRANCH") or "")
     args = p.parse_args()
 
     t = MESSAGES[pick_language(args.language)]
@@ -581,6 +611,7 @@ def main():
         with open(path, encoding="utf-8") as f:
             text = f.read()
         replacements, inferred, missing, ambiguous, others = {}, set(), [], {}, {}
+        url = file_url(path, LINK_REF)
         names = sorted(set(RE_CLASS.findall(text)))
         for name in names:
             if name in live or not RE_DISCORD.search(name) or is_ignored_class(name, ignored_terms):
@@ -618,7 +649,7 @@ def main():
                 f.write(text)
             nb_ok += len(replacements)
             nb_inferred += len(inferred) + len(others)
-            report_ok.append(f"\n**{path}**\n")
+            report_ok.append(f"\n**{linked(path, url)}**\n")
             report_ok += [
                 f"- `{a}` → `{n}`"
                 + (f" *({t['inferred']})*" if a in inferred else "")
@@ -634,9 +665,9 @@ def main():
                 lines[name] = text.count("\n", 0, m.start()) + 1 if m else 1
             missing.sort(key=lambda c: lines[c])
 
-            report_missing.append(f"\n**{path}**\n")
+            report_missing.append(f"\n**{linked(path, url)}**\n")
             for name in missing:
-                line = t["line"].format(n=lines[name])
+                line = linked(t["line"].format(n=lines[name]), url and f"{url}#L{lines[name]}")
                 if name in removed:
                     note = t["removed"]
                 else:
@@ -661,12 +692,23 @@ def main():
         "- " + t["missing"].format(n=nb_missing),
     ]
     if report_ok:
-        report += ["", f"<details><summary>{t['replacements']}</summary>", *report_ok, "", "</details>"]
+        # No empty line before </details>: Discord removes the tag but keeps its line, which made a big gap
+        report += ["", f"<details><summary>{t['replacements']}</summary>", *report_ok, "</details>"]
     if report_missing:
         report += ["", f"### {t['missing_title']}", *report_missing]
     if build:
         report += ["", "---", t["data"].format(build=build.get("build", "?"), date=build.get("date", "?"))]
     report_text = "\n".join(report) + "\n"
+
+    # Links: to the pull request branch when one is opened, so they show the updated files,
+    # otherwise to the commit that was checked (same line numbers, since only class names change)
+    commit = os.environ.get("GITHUB_SHA", "")
+    ref = args.link_branch if args.link_branch and (nb_ok or not commit) else commit
+    if LINK_REF in report_text:
+        if ref:
+            report_text = report_text.replace(LINK_REF, urllib.parse.quote(ref))
+        else:  # nowhere to point to: plain text
+            report_text = re.sub(r"\[([^\]]*)\]\([^)]*" + LINK_REF + r"[^)]*\)", r"\1", report_text)
 
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_text)

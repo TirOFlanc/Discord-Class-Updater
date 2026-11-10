@@ -147,14 +147,14 @@ def test_update():
             check(label, text in report, f"not found in the report:\n{report}")
         check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
         check("Ignored terms are neither replaced nor reported", "vc-toolbar" not in report)
-        check("Outside GitHub Actions, file names and lines are plain text", "](" not in report, report)
+        check("Outside GitHub Actions, file names and lines are plain text", "<a " not in report, report)
         check("Report starts with the review reminder as a title",
               report.startswith("# Review before merging!\n"), report)
         check("Classes not found come first, then the folded replacements",
               re.search(r"\n### Classes not found\n.*\n<details><summary><b>Replacements</b></summary>\n", report, re.S)
               is not None, report)
-        check("The folded block closes right after the last replacement (no gap in Discord)",
-              re.search(r"\n- `[^\n]+\n</details>\n", report) is not None, report)
+        check("The folded block closes right after the last replacement, then the data line (no gap in Discord)",
+              re.search(r"\n- `[^\n]+\n</details>\n<hr>Data: Discord Stable build 123456 ", report) is not None, report)
 
         stdout, outputs, report = run_action(work, data)
         check("A second run changes nothing", outputs.get("replaced") == "0", f"{outputs}")
@@ -200,12 +200,14 @@ def test_links():
         base = "https://github.com/owner/repo/blob/"
         stdout, outputs, report = run_action(work, data, github=github)
         check("In the pull request, file names link to the files on its branch",
-              f"**[main.css]({base}discord-class-updater/main.css)**" in report, report)
+              f'**<a href="{base}discord-class-updater/main.css">main.css</a>**' in report, report)
         check("In the pull request, line numbers link to the lines",
-              f"`gone__00002` ([line 7]({base}discord-class-updater/main.css#L7))" in report, report)
+              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">line 7</a>)' in report, report)
+        check("Links are HTML, so Discord's 500 characters never cut one in the middle", "](" not in report, report)
         stdout, outputs, report = run_action(work, data, github=github)
         check("Without replacements (no pull request), links point to the checked commit",
-              f"([line 7]({base}abc123/main.css#L7))" in report and "discord-class-updater" not in report, report)
+              f'(<a href="{base}abc123/main.css#L7">line 7</a>)' in report and "discord-class-updater" not in report,
+              report)
 
 
 def test_data_download():

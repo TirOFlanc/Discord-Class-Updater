@@ -21,6 +21,7 @@ import collections
 import datetime
 import fnmatch
 import glob
+import html
 import json
 import os
 import re
@@ -555,8 +556,12 @@ def file_url(path, ref):
 
 
 def linked(text, url):
-    """Markdown link, or the plain text when there is no address."""
-    return f"[{text}]({url})" if url else text
+    """HTML link, or the plain text when there is no address.
+    Not a Markdown link: Discord removes HTML tags before cutting a pull request to 500 characters,
+    so the addresses don't use up that space and are never cut in the middle (the text stays, without link).
+    GitHub shows it as a normal link."""
+    text = html.escape(text, quote=False)
+    return f'<a href="{url}">{text}</a>' if url else text
 
 
 def output(key, value):
@@ -699,7 +704,10 @@ def main():
         # No empty line before </details>: Discord removes the tag but keeps its line, which makes a gap
         report += ["", f"<details><summary><b>{t['replacements']}</b></summary>", *report_ok, "</details>"]
     if build:
-        report += ["", "---", t["data"].format(build=build.get("build", "?"), date=build.get("date", "?"))]
+        # HTML line, right after </details>: a single empty line in Discord, and no "---" shown as text
+        footer = "<hr>" + html.escape(t["data"].format(build=build.get("build", "?"), date=build.get("date", "?")),
+                                      quote=False)
+        report += [footer] if report_ok else ["", footer]
     report_text = "\n".join(report) + "\n"
 
     # Links: to the pull request branch when one is opened, so they show the updated files,
@@ -710,7 +718,7 @@ def main():
         if ref:
             report_text = report_text.replace(LINK_REF, urllib.parse.quote(ref))
         else:  # nowhere to point to: plain text
-            report_text = re.sub(r"\[([^\]]*)\]\([^)]*" + LINK_REF + r"[^)]*\)", r"\1", report_text)
+            report_text = re.sub(r'<a href="[^"]*' + LINK_REF + r'[^"]*">([^<]*)</a>', r"\1", report_text)
 
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_text)

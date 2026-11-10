@@ -45,10 +45,10 @@ RE_DISCORD = re.compile(r"(__[0-9a-f]{5}|_[0-9a-f]{6}|_[\w-]*[A-Z0-9_-][\w-]*)$"
 MESSAGES = {
     "ar": {
         "title": "🔄 تحديث أسماء فئات Discord",
-        "intro": "تحديث تلقائي لأسماء فئات Discord. يُرجى المراجعة قبل الدمج.",
+        "intro": "يُرجى المراجعة قبل الدمج!",
         "replaced": "✅ الفئات المستبدلة: **{n}**",
         "to_check": " (منها {n} بحاجة إلى مراجعة)",
-        "missing": "⚠️ الفئات غير الموجودة: **{n}** (غيّر Discord هذا المكوّن، أصلِحه يدويًا باستخدام DevTools)",
+        "missing": "⚠️ الفئات غير الموجودة: **{n}**",
         "replacements": "الاستبدالات",
         "inferred": "مُستنتَجة، يُرجى المراجعة",
         "ambiguous": "يُرجى المراجعة، احتمال آخر: {list}",
@@ -64,10 +64,10 @@ MESSAGES = {
     },
     "de": {
         "title": "🔄 Aktualisierung der Discord-Klassen",
-        "intro": "Automatische Aktualisierung der Discord-Klassennamen. Bitte vor dem Mergen prüfen.",
+        "intro": "Vor dem Mergen prüfen!",
         "replaced": "✅ Ersetzte Klassen: **{n}**",
         "to_check": " (davon {n} zu prüfen)",
-        "missing": "⚠️ Nicht gefundene Klassen: **{n}** (Komponente von Discord geändert, bitte manuell mit den DevTools korrigieren)",
+        "missing": "⚠️ Nicht gefundene Klassen: **{n}**",
         "replacements": "Ersetzungen",
         "inferred": "abgeleitet, bitte prüfen",
         "ambiguous": "bitte prüfen, andere Möglichkeit: {list}",
@@ -83,10 +83,10 @@ MESSAGES = {
     },
     "en": {
         "title": "🔄 Update Discord class names",
-        "intro": "Automatic update of Discord class names. Please review before merging.",
+        "intro": "Review before merging!",
         "replaced": "✅ Classes replaced: **{n}**",
         "to_check": " (including {n} to check)",
-        "missing": "⚠️ Classes not found: **{n}** (component changed by Discord, fix it manually with DevTools)",
+        "missing": "⚠️ Classes not found: **{n}**",
         "replacements": "Replacements",
         "inferred": "inferred, please check",
         "ambiguous": "please check, other possibility: {list}",
@@ -102,10 +102,10 @@ MESSAGES = {
     },
     "es": {
         "title": "🔄 Actualización de las clases de Discord",
-        "intro": "Actualización automática de los nombres de clases de Discord. Revísala antes de fusionar.",
+        "intro": "¡Revisar antes de fusionar!",
         "replaced": "✅ Clases reemplazadas: **{n}**",
         "to_check": " (de las cuales {n} por revisar)",
-        "missing": "⚠️ Clases no encontradas: **{n}** (componente modificado por Discord, corrígelo a mano con las DevTools)",
+        "missing": "⚠️ Clases no encontradas: **{n}**",
         "replacements": "Reemplazos",
         "inferred": "deducida, por revisar",
         "ambiguous": "por revisar, otra posibilidad: {list}",
@@ -121,10 +121,10 @@ MESSAGES = {
     },
     "fr": {
         "title": "🔄 Mise à jour des classes Discord",
-        "intro": "Mise à jour automatique des classes Discord. À vérifier avant de fusionner.",
+        "intro": "À vérifier avant de fusionner !",
         "replaced": "✅ Classes remplacées : **{n}**",
         "to_check": " (dont {n} à vérifier)",
-        "missing": "⚠️ Classes introuvables : **{n}** (composant modifié par Discord, à corriger à la main avec les DevTools)",
+        "missing": "⚠️ Classes introuvables : **{n}**",
         "replacements": "Remplacements",
         "inferred": "déduite, à vérifier",
         "ambiguous": "à vérifier, autre possibilité : {list}",
@@ -140,10 +140,10 @@ MESSAGES = {
     },
     "it": {
         "title": "🔄 Aggiornamento delle classi Discord",
-        "intro": "Aggiornamento automatico dei nomi delle classi Discord. Da verificare prima del merge.",
+        "intro": "Da verificare prima del merge!",
         "replaced": "✅ Classi sostituite: **{n}**",
         "to_check": " (di cui {n} da verificare)",
-        "missing": "⚠️ Classi non trovate: **{n}** (componente modificato da Discord, da correggere a mano con i DevTools)",
+        "missing": "⚠️ Classi non trovate: **{n}**",
         "replacements": "Sostituzioni",
         "inferred": "dedotta, da verificare",
         "ambiguous": "da verificare, altra possibilità: {list}",
@@ -159,10 +159,10 @@ MESSAGES = {
     },
     "ja": {
         "title": "🔄 Discord クラス名の更新",
-        "intro": "Discord のクラス名の自動更新です。マージする前に確認してください。",
+        "intro": "マージする前に確認してください！",
         "replaced": "✅ 置き換えたクラス：**{n}**",
         "to_check": "（うち {n} 件は要確認）",
-        "missing": "⚠️ 見つからないクラス：**{n}**（Discord によりコンポーネントが変更されました。DevTools で手動で修正してください）",
+        "missing": "⚠️ 見つからないクラス：**{n}**",
         "replacements": "置き換え一覧",
         "inferred": "推定、要確認",
         "ambiguous": "要確認、別の候補：{list}",
@@ -178,10 +178,10 @@ MESSAGES = {
     },
     "ko": {
         "title": "🔄 Discord 클래스 업데이트",
-        "intro": "Discord 클래스 이름 자동 업데이트입니다. 병합하기 전에 확인하세요.",
+        "intro": "병합하기 전에 확인하세요!",
         "replaced": "✅ 교체된 클래스: **{n}**",
         "to_check": " (그중 {n}개는 확인 필요)",
-        "missing": "⚠️ 찾을 수 없는 클래스: **{n}** (Discord가 컴포넌트를 변경함, DevTools로 직접 수정하세요)",
+        "missing": "⚠️ 찾을 수 없는 클래스: **{n}**",
         "replacements": "교체 목록",
         "inferred": "추정, 확인 필요",
         "ambiguous": "확인 필요, 다른 후보: {list}",
@@ -197,10 +197,10 @@ MESSAGES = {
     },
     "pl": {
         "title": "🔄 Aktualizacja klas Discorda",
-        "intro": "Automatyczna aktualizacja nazw klas Discorda. Sprawdź przed scaleniem.",
+        "intro": "Sprawdź przed scaleniem!",
         "replaced": "✅ Zastąpione klasy: **{n}**",
         "to_check": " (w tym {n} do sprawdzenia)",
-        "missing": "⚠️ Nieznalezione klasy: **{n}** (komponent zmieniony przez Discorda, popraw ręcznie w DevTools)",
+        "missing": "⚠️ Nieznalezione klasy: **{n}**",
         "replacements": "Zamiany",
         "inferred": "wywnioskowana, do sprawdzenia",
         "ambiguous": "do sprawdzenia, inna możliwość: {list}",
@@ -216,10 +216,10 @@ MESSAGES = {
     },
     "pt": {
         "title": "🔄 Atualização das classes do Discord",
-        "intro": "Atualização automática dos nomes de classes do Discord. Revise antes de fazer o merge.",
+        "intro": "Revise antes de fazer o merge!",
         "replaced": "✅ Classes substituídas: **{n}**",
         "to_check": " (das quais {n} a verificar)",
-        "missing": "⚠️ Classes não encontradas: **{n}** (componente alterado pelo Discord, corrija manualmente com as DevTools)",
+        "missing": "⚠️ Classes não encontradas: **{n}**",
         "replacements": "Substituições",
         "inferred": "deduzida, a verificar",
         "ambiguous": "a verificar, outra possibilidade: {list}",
@@ -235,10 +235,10 @@ MESSAGES = {
     },
     "ru": {
         "title": "🔄 Обновление классов Discord",
-        "intro": "Автоматическое обновление имён классов Discord. Проверьте перед слиянием.",
+        "intro": "Проверьте перед слиянием!",
         "replaced": "✅ Заменено классов: **{n}**",
         "to_check": " (из них {n} нужно проверить)",
-        "missing": "⚠️ Не найдено классов: **{n}** (компонент изменён Discord, исправьте вручную через DevTools)",
+        "missing": "⚠️ Не найдено классов: **{n}**",
         "replacements": "Замены",
         "inferred": "предположение, проверьте",
         "ambiguous": "проверьте, другой вариант: {list}",
@@ -254,10 +254,10 @@ MESSAGES = {
     },
     "tr": {
         "title": "🔄 Discord sınıflarının güncellenmesi",
-        "intro": "Discord sınıf adlarının otomatik güncellemesi. Birleştirmeden önce kontrol edin.",
+        "intro": "Birleştirmeden önce kontrol edin!",
         "replaced": "✅ Değiştirilen sınıflar: **{n}**",
         "to_check": " (bunlardan {n} tanesi kontrol edilmeli)",
-        "missing": "⚠️ Bulunamayan sınıflar: **{n}** (bileşen Discord tarafından değiştirildi, DevTools ile elle düzeltin)",
+        "missing": "⚠️ Bulunamayan sınıflar: **{n}**",
         "replacements": "Değişiklikler",
         "inferred": "tahmini, kontrol edin",
         "ambiguous": "kontrol edin, diğer olasılık: {list}",
@@ -273,10 +273,10 @@ MESSAGES = {
     },
     "uk": {
         "title": "🔄 Оновлення класів Discord",
-        "intro": "Автоматичне оновлення імен класів Discord. Перевірте перед злиттям.",
+        "intro": "Перевірте перед злиттям!",
         "replaced": "✅ Замінено класів: **{n}**",
         "to_check": " (з них {n} потрібно перевірити)",
-        "missing": "⚠️ Не знайдено класів: **{n}** (компонент змінено Discord, виправте вручну через DevTools)",
+        "missing": "⚠️ Не знайдено класів: **{n}**",
         "replacements": "Заміни",
         "inferred": "припущення, перевірте",
         "ambiguous": "перевірте, інший варіант: {list}",
@@ -292,10 +292,10 @@ MESSAGES = {
     },
     "zh": {
         "title": "🔄 更新 Discord 类名",
-        "intro": "自动更新 Discord 类名。合并前请检查。",
+        "intro": "合并前请检查！",
         "replaced": "✅ 已替换的类：**{n}**",
         "to_check": "（其中 {n} 个需要检查）",
-        "missing": "⚠️ 未找到的类：**{n}**（Discord 修改了该组件，请用 DevTools 手动修复）",
+        "missing": "⚠️ 未找到的类：**{n}**",
         "replacements": "替换列表",
         "inferred": "推断结果，请检查",
         "ambiguous": "请检查，其他可能：{list}",
@@ -684,18 +684,20 @@ def main():
                 f"title={escape_property(title)}::{escape_data(detail)}"
             )
 
+    # Kept short, classes to fix by hand first: Discord only shows the first 500 characters
+    # of a pull request. The replacements come last, folded.
     report = [
-        t["intro"],
+        "# " + t["intro"],
         *(["", "> " + t["stale"].format(n=age)] if stale else []),
         "",
         "- " + t["replaced"].format(n=nb_ok) + (t["to_check"].format(n=nb_inferred) if nb_inferred else ""),
         "- " + t["missing"].format(n=nb_missing),
     ]
-    if report_ok:
-        # No empty line before </details>: Discord removes the tag but keeps its line, which made a big gap
-        report += ["", f"<details><summary>{t['replacements']}</summary>", *report_ok, "</details>"]
     if report_missing:
         report += ["", f"### {t['missing_title']}", *report_missing]
+    if report_ok:
+        # No empty line before </details>: Discord removes the tag but keeps its line, which makes a gap
+        report += ["", f"<details><summary><b>{t['replacements']}</b></summary>", *report_ok, "</details>"]
     if build:
         report += ["", "---", t["data"].format(build=build.get("build", "?"), date=build.get("date", "?"))]
     report_text = "\n".join(report) + "\n"

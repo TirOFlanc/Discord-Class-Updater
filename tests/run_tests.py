@@ -139,10 +139,11 @@ def test_update():
               == ("true", "8", "2", "false"), f"{outputs}")
         for label, text in [
             ("Report counts the classes to check", "**8** (including 3 to check)"),
-            ("Report marks the inferred class", "`title__1a2b3` → `title_AAAAAA` *(inferred, please check)*"),
+            ("Report marks the inferred class", "`title__1a2b3` → `title_AAAAAA` (L3 — inferred, please check)"),
             ("Report marks the class found by hand (manual.txt)",
-             "`nickname__00003` → `displayName_PROF01` *(manual.txt)*\n"),
-            ("Report doesn't mark a class found by automatic tracking", "`container__1a2b3` → `container_AAAAAA`\n"),
+             "`nickname__00003` → `displayName_PROF01` (L6 — manual.txt)\n"),
+            ("Report gives the line of each replacement, without a note when it's automatic",
+             "`container__1a2b3` → `container_AAAAAA` (L2)\n"),
             ("Report gives the other possibility of an ambiguous class", "other possibility: `icon_SPLITa`"),
             ("Report shows the class removed by Discord", "`gone__00002` (L7) — removed by Discord"),
             ("Report shows the missing class without a fake lead", "`lost__00001` (L8) — no lead"),

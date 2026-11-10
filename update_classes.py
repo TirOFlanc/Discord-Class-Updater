@@ -551,6 +551,12 @@ def linked(text, url):
     return f'<a href="{url}">{text}</a>' if url else text
 
 
+def first_line(text, name):
+    """Line number of the first occurrence of a whole class name in a file (1 if not found)."""
+    m = re.search(r"(?<![\w-])" + re.escape(name) + r"(?![\w-])", text)
+    return text.count("\n", 0, m.start()) + 1 if m else 1
+
+
 def manual_url(data_url):
     """Page of manual.txt on GitHub, found from the address the data is downloaded from, or None.
     'https://raw.githubusercontent.com/owner/repo/main/data' -> 'https://github.com/owner/repo/blob/main/data/manual.txt'"""
@@ -647,26 +653,27 @@ def main():
                 + "|".join(re.escape(c) for c in sorted(replacements, key=len, reverse=True))
                 + r")(?![\w-])"
             )
+            where = {a: first_line(text, a) for a in replacements}  # before replacing
             text = pattern.sub(lambda m: replacements[m.group(1)], text)
             with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(text)
             nb_ok += len(replacements)
             nb_inferred += len(inferred) + len(others)
             report_ok.append(f"\n**{linked(path, url)}**\n")
-            report_ok += [
-                f"- `{a}` → `{n}`"
-                + (f" *({t['inferred']})*" if a in inferred else "")
-                + (f" *({manual_link})*" if a in by_hand else "")
-                + (f" *({t['ambiguous'].format(list=', '.join(f'`{c}`' for c in others[a]))})*" if a in others else "")
-                for a, n in sorted(replacements.items())
-            ]
+            for a in sorted(replacements, key=lambda c: (where[c], c)):
+                # (L52), then where it comes from or what to check: (L52 — manual.txt)
+                notes = [linked(f"L{where[a]}", url and f"{url}#L{where[a]}")]
+                if a in inferred:
+                    notes.append(t["inferred"])
+                if a in by_hand:
+                    notes.append(manual_link)
+                if a in others:
+                    notes.append(t["ambiguous"].format(list=", ".join(f"`{c}`" for c in others[a])))
+                report_ok.append(f"- `{a}` → `{replacements[a]}` ({' — '.join(notes)})")
 
         if missing:
             # Line of the first occurrence of each class, for the report and the warning link
-            lines = {}
-            for name in missing:
-                m = re.search(r"(?<![\w-])" + re.escape(name) + r"(?![\w-])", text)
-                lines[name] = text.count("\n", 0, m.start()) + 1 if m else 1
+            lines = {name: first_line(text, name) for name in missing}
             missing.sort(key=lambda c: lines[c])
 
             report_missing.append(f"\n**{linked(path, url)}**\n")

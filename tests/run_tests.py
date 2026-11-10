@@ -145,8 +145,8 @@ def test_update():
             ("Report gives the line of each replacement, without a note when it's automatic",
              "`container__1a2b3` → `container_AAAAAA` (L2)\n"),
             ("Report gives the other possibility of an ambiguous class", "other possibility: `icon_SPLITa`"),
-            ("Report shows the class removed by Discord", "`gone__00002` (L7) — removed by Discord"),
-            ("Report shows the missing class without a fake lead", "`lost__00001` (L8) — no lead"),
+            ("Report shows the class removed by Discord", "`gone__00002` (L7 — manual.txt): removed\n"),
+            ("Report shows the missing class without a fake lead", "`lost__00001` (L8 — manual.txt): no lead\n"),
         ]:
             check(label, text in report, f"not found in the report:\n{report}")
         check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
@@ -158,7 +158,7 @@ def test_update():
               re.search(r"\n### Classes not found\n.*\n<details><summary><b>Replacements</b></summary>\n", report, re.S)
               is not None, report)
         check("The folded block closes right after the last replacement, then the data line (no gap in Discord)",
-              re.search(r"\n- `[^\n]+\n</details>\n<hr>Data: Discord Stable build 123456 ", report) is not None, report)
+              re.search(r"\n- `[^\n]+\n</details>\n<hr>Discord Stable build 123456 ", report) is not None, report)
 
         stdout, outputs, report = run_action(work, data)
         check("A second run changes nothing", outputs.get("replaced") == "0", f"{outputs}")
@@ -211,11 +211,11 @@ def test_links():
         check("In the pull request, file names link to the files on its branch",
               f'**<a href="{base}discord-class-updater/main.css">main.css</a>**' in report, report)
         check("In the pull request, line numbers link to the lines",
-              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">L7</a>)' in report, report)
+              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">L7</a> — manual.txt): removed' in report, report)
         check("Links are HTML, so Discord's 500 characters never cut one in the middle", "](" not in report, report)
         stdout, outputs, report = run_action(work, data, github=github)
         check("Without replacements (no pull request), links point to the checked commit",
-              f'(<a href="{base}abc123/main.css#L7">L7</a>)' in report and "discord-class-updater" not in report,
+              f'(<a href="{base}abc123/main.css#L7">L7</a> — ' in report and "discord-class-updater" not in report,
               report)
 
 

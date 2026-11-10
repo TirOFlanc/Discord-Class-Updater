@@ -160,7 +160,9 @@ def test_update():
             ("Report shows the missing class without a fake lead", "`lost__00001` (L8 — no lead)\n"),
         ]:
             check(label, text in report, f"not found in the report:\n{report}")
-        check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
+        check("One warning per file, with the file and the lines, without a link to an unrelated commit",
+              "::warning title=Classes not found%3A 2::main.css: gone__00002 (L7), lost__00001 (L8)\n" in stdout
+              and "file=" not in stdout, stdout)
         check("Ignored terms are neither replaced nor reported", "vc-toolbar" not in report)
         check("Outside GitHub Actions, file names and lines are plain text", "<a " not in report, report)
         check("Report starts with the review reminder as a title",

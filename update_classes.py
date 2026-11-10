@@ -716,13 +716,12 @@ def main():
                 report_missing.append(f"- `{name}` ({line} — {note})")
                 nb_missing += 1
 
-            # One warning per file (GitHub only shows 10 per step), linking to the first missing class
-            detail = ", ".join(f"{c} (L{lines[c]})" for c in missing)
+            # One warning per file (GitHub only shows 10 per step). No file/line link: GitHub attaches it
+            # to the commit the run started from, which almost never touches the CSS file, so the link
+            # opened an unrelated commit. The report has the right links.
+            detail = f"{path}: " + ", ".join(f"{c} (L{lines[c]})" for c in missing)
             title = t["warning"].format(n=len(missing))
-            print(
-                f"::warning file={escape_property(path)},line={lines[missing[0]]},"
-                f"title={escape_property(title)}::{escape_data(detail)}"
-            )
+            print(f"::warning title={escape_property(title)}::{escape_data(detail)}")
 
     # Kept short, classes to fix by hand first: Discord only shows the first 500 characters
     # of a pull request. The replacements come last, folded.

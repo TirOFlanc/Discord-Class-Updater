@@ -140,9 +140,12 @@ def test_update():
         for label, text in [
             ("Report counts the classes to check", "**8** (including 3 to check)"),
             ("Report marks the inferred class", "`title__1a2b3` → `title_AAAAAA` *(inferred, please check)*"),
+            ("Report marks the class found by hand (manual.txt)",
+             "`nickname__00003` → `displayName_PROF01` *(manual.txt)*\n"),
+            ("Report doesn't mark a class found by automatic tracking", "`container__1a2b3` → `container_AAAAAA`\n"),
             ("Report gives the other possibility of an ambiguous class", "other possibility: `icon_SPLITa`"),
-            ("Report shows the class removed by Discord", "`gone__00002` (line 7) — removed by Discord"),
-            ("Report shows the missing class without a fake lead", "`lost__00001` (line 8) — no lead"),
+            ("Report shows the class removed by Discord", "`gone__00002` (L7) — removed by Discord"),
+            ("Report shows the missing class without a fake lead", "`lost__00001` (L8) — no lead"),
         ]:
             check(label, text in report, f"not found in the report:\n{report}")
         check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
@@ -189,6 +192,11 @@ def test_links():
         check("File addresses keep the folders and encode spaces and brackets",
               url == "https://github.com/owner/repo/blob/updates/themes/my%20theme%20%282%29.css", url)
         check("No address for a file outside the repository", outside is None, f"{outside}")
+        manual = update.manual_url("https://raw.githubusercontent.com/owner/repo/main/data/")
+        check("manual.txt links to its page on GitHub, found from data-url",
+              manual == "https://github.com/owner/repo/blob/main/data/manual.txt", f"{manual}")
+        check("No manual.txt link when the data comes from elsewhere",
+              update.manual_url("file:///somewhere/data") is None and update.manual_url("") is None)
 
     with tempfile.TemporaryDirectory() as work:
         data = os.path.join(work, "data")
@@ -202,11 +210,11 @@ def test_links():
         check("In the pull request, file names link to the files on its branch",
               f'**<a href="{base}discord-class-updater/main.css">main.css</a>**' in report, report)
         check("In the pull request, line numbers link to the lines",
-              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">line 7</a>)' in report, report)
+              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">L7</a>)' in report, report)
         check("Links are HTML, so Discord's 500 characters never cut one in the middle", "](" not in report, report)
         stdout, outputs, report = run_action(work, data, github=github)
         check("Without replacements (no pull request), links point to the checked commit",
-              f'(<a href="{base}abc123/main.css#L7">line 7</a>)' in report and "discord-class-updater" not in report,
+              f'(<a href="{base}abc123/main.css#L7">L7</a>)' in report and "discord-class-updater" not in report,
               report)
 
 

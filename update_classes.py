@@ -54,7 +54,6 @@ MESSAGES = {
         "inferred": "مُستنتَجة، يُرجى المراجعة",
         "ambiguous": "يُرجى المراجعة، احتمال آخر: {list}",
         "missing_title": "الفئات غير الموجودة",
-        "line": "السطر {n}",
         "module": "الوحدة الجديدة المحتملة: {list}",
         "none": "لا توجد أدلة",
         "removed": "حذفها Discord",
@@ -73,7 +72,6 @@ MESSAGES = {
         "inferred": "abgeleitet, bitte prüfen",
         "ambiguous": "bitte prüfen, andere Möglichkeit: {list}",
         "missing_title": "Nicht gefundene Klassen",
-        "line": "Zeile {n}",
         "module": "wahrscheinliches neues Modul: {list}",
         "none": "kein Hinweis",
         "removed": "von Discord entfernt",
@@ -92,7 +90,6 @@ MESSAGES = {
         "inferred": "inferred, please check",
         "ambiguous": "please check, other possibility: {list}",
         "missing_title": "Classes not found",
-        "line": "line {n}",
         "module": "probable new module: {list}",
         "none": "no lead",
         "removed": "removed by Discord",
@@ -111,7 +108,6 @@ MESSAGES = {
         "inferred": "deducida, por revisar",
         "ambiguous": "por revisar, otra posibilidad: {list}",
         "missing_title": "Clases no encontradas",
-        "line": "línea {n}",
         "module": "nuevo módulo probable: {list}",
         "none": "sin pistas",
         "removed": "eliminada por Discord",
@@ -130,7 +126,6 @@ MESSAGES = {
         "inferred": "déduite, à vérifier",
         "ambiguous": "à vérifier, autre possibilité : {list}",
         "missing_title": "Classes introuvables",
-        "line": "ligne {n}",
         "module": "nouveau module probable : {list}",
         "none": "aucune piste",
         "removed": "supprimée par Discord",
@@ -149,7 +144,6 @@ MESSAGES = {
         "inferred": "dedotta, da verificare",
         "ambiguous": "da verificare, altra possibilità: {list}",
         "missing_title": "Classi non trovate",
-        "line": "riga {n}",
         "module": "probabile nuovo modulo: {list}",
         "none": "nessuna pista",
         "removed": "rimossa da Discord",
@@ -168,7 +162,6 @@ MESSAGES = {
         "inferred": "推定、要確認",
         "ambiguous": "要確認、別の候補：{list}",
         "missing_title": "見つからないクラス",
-        "line": "{n} 行目",
         "module": "新しいモジュールの候補：{list}",
         "none": "手がかりなし",
         "removed": "Discord により削除",
@@ -187,7 +180,6 @@ MESSAGES = {
         "inferred": "추정, 확인 필요",
         "ambiguous": "확인 필요, 다른 후보: {list}",
         "missing_title": "찾을 수 없는 클래스",
-        "line": "{n}번째 줄",
         "module": "새 모듈 후보: {list}",
         "none": "단서 없음",
         "removed": "Discord에서 삭제됨",
@@ -206,7 +198,6 @@ MESSAGES = {
         "inferred": "wywnioskowana, do sprawdzenia",
         "ambiguous": "do sprawdzenia, inna możliwość: {list}",
         "missing_title": "Nieznalezione klasy",
-        "line": "wiersz {n}",
         "module": "prawdopodobny nowy moduł: {list}",
         "none": "brak wskazówek",
         "removed": "usunięta przez Discorda",
@@ -225,7 +216,6 @@ MESSAGES = {
         "inferred": "deduzida, a verificar",
         "ambiguous": "a verificar, outra possibilidade: {list}",
         "missing_title": "Classes não encontradas",
-        "line": "linha {n}",
         "module": "provável novo módulo: {list}",
         "none": "nenhuma pista",
         "removed": "removida pelo Discord",
@@ -244,7 +234,6 @@ MESSAGES = {
         "inferred": "предположение, проверьте",
         "ambiguous": "проверьте, другой вариант: {list}",
         "missing_title": "Ненайденные классы",
-        "line": "строка {n}",
         "module": "вероятный новый модуль: {list}",
         "none": "нет подсказок",
         "removed": "удалён Discord",
@@ -263,7 +252,6 @@ MESSAGES = {
         "inferred": "tahmini, kontrol edin",
         "ambiguous": "kontrol edin, diğer olasılık: {list}",
         "missing_title": "Bulunamayan sınıflar",
-        "line": "satır {n}",
         "module": "olası yeni modül: {list}",
         "none": "ipucu yok",
         "removed": "Discord tarafından kaldırıldı",
@@ -282,7 +270,6 @@ MESSAGES = {
         "inferred": "припущення, перевірте",
         "ambiguous": "перевірте, інший варіант: {list}",
         "missing_title": "Не знайдені класи",
-        "line": "рядок {n}",
         "module": "ймовірний новий модуль: {list}",
         "none": "немає підказок",
         "removed": "видалено Discord",
@@ -301,7 +288,6 @@ MESSAGES = {
         "inferred": "推断结果，请检查",
         "ambiguous": "请检查，其他可能：{list}",
         "missing_title": "未找到的类",
-        "line": "第 {n} 行",
         "module": "可能的新模块：{list}",
         "none": "无线索",
         "removed": "已被 Discord 删除",
@@ -451,23 +437,24 @@ def sibling_votes(table, live):
 
 
 def find(name, table, manual, votes, live):
-    """Return (candidates, inferred?): one candidate when sure, several when ambiguous,
-    none when not found."""
+    """Return (candidates, source): one candidate when sure, several when ambiguous,
+    none when not found. source says where it comes from: "manual" (manual.txt),
+    "table" (automatic tracking), "inferred" (guessed from its module) or None."""
     if name in manual:  # confirmed by hand: no ambiguity
         target = manual[name]
         found = [target] if target in live else follow_all(table, target, live)[:1]
         if found:
-            return found, False
+            return found, "manual"
     found = follow_all(table, name, live)
     if found:
-        return found, False
+        return found, "table"
     # Last resort: the other classes of the same module changed hash,
     # so try the same name with that new hash (it must exist).
     base, h = split_class(name)
     for new_h, _ in votes[h].most_common() if h in votes else []:
         if f"{base}_{new_h}" in live:
-            return [f"{base}_{new_h}"], True
-    return [], False
+            return [f"{base}_{new_h}"], "inferred"
+    return [], None
 
 
 class ModuleFinder:
@@ -564,6 +551,13 @@ def linked(text, url):
     return f'<a href="{url}">{text}</a>' if url else text
 
 
+def manual_url(data_url):
+    """Page of manual.txt on GitHub, found from the address the data is downloaded from, or None.
+    'https://raw.githubusercontent.com/owner/repo/main/data' -> 'https://github.com/owner/repo/blob/main/data/manual.txt'"""
+    m = re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/(.+?)/*$", data_url or "")
+    return f"https://github.com/{m[1]}/{m[2]}/blob/{m[3]}/manual.txt" if m else None
+
+
 def output(key, value):
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
@@ -608,6 +602,8 @@ def main():
         print(f"::warning title=Discord Class Updater::{escape_data(t['stale'].format(n=age))}")
     votes = sibling_votes(table, live)
     modules = ModuleFinder(table, live)
+    # Note of the replacements from manual.txt: a file name, the same in every language, linked to the file
+    manual_link = linked("manual.txt", manual_url(args.data_url))
     print(f"{len(live)} current Discord classes, {len(files)} files to check")
 
     report_ok, report_missing = [], []
@@ -615,17 +611,19 @@ def main():
     for path in files:
         with open(path, encoding="utf-8") as f:
             text = f.read()
-        replacements, inferred, missing, ambiguous, others = {}, set(), [], {}, {}
+        replacements, inferred, by_hand, missing, ambiguous, others = {}, set(), set(), [], {}, {}
         url = file_url(path, LINK_REF)
         names = sorted(set(RE_CLASS.findall(text)))
         for name in names:
             if name in live or not RE_DISCORD.search(name) or is_ignored_class(name, ignored_terms):
                 continue
-            found, guessed = ([], False) if name in removed else find(name, table, manual, votes, live)
+            found, source = ([], None) if name in removed else find(name, table, manual, votes, live)
             if len(found) == 1:
                 replacements[name] = found[0]
-                if guessed:
+                if source == "inferred":
                     inferred.add(name)
+                elif source == "manual":
+                    by_hand.add(name)
             elif found:
                 ambiguous[name] = found
             else:
@@ -658,6 +656,7 @@ def main():
             report_ok += [
                 f"- `{a}` → `{n}`"
                 + (f" *({t['inferred']})*" if a in inferred else "")
+                + (f" *({manual_link})*" if a in by_hand else "")
                 + (f" *({t['ambiguous'].format(list=', '.join(f'`{c}`' for c in others[a]))})*" if a in others else "")
                 for a, n in sorted(replacements.items())
             ]
@@ -672,7 +671,8 @@ def main():
 
             report_missing.append(f"\n**{linked(path, url)}**\n")
             for name in missing:
-                line = linked(t["line"].format(n=lines[name]), url and f"{url}#L{lines[name]}")
+                # "L99", like GitHub writes it (#L99): the same in every language, and short
+                line = linked(f"L{lines[name]}", url and f"{url}#L{lines[name]}")
                 if name in removed:
                     note = t["removed"]
                 else:
@@ -682,7 +682,7 @@ def main():
                 nb_missing += 1
 
             # One warning per file (GitHub only shows 10 per step), linking to the first missing class
-            detail = ", ".join(f"{c} ({t['line'].format(n=lines[c])})" for c in missing)
+            detail = ", ".join(f"{c} (L{lines[c]})" for c in missing)
             title = t["warning"].format(n=len(missing))
             print(
                 f"::warning file={escape_property(path)},line={lines[missing[0]]},"

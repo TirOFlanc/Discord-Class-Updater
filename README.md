@@ -86,7 +86,7 @@ If the extraction finds far fewer classes than usual (Discord changed the way it
 ### 2. Updating CSS files (the action, `update_classes.py`)
 
 - At each run, it downloads the latest `data/` from this repository's `main` branch (about 3 MB, a couple of seconds), so a pinned version (`@v1`) still gets fresh data. If the download fails, it uses the data bundled with the version and says so in a warning. No other project is ever called.
-- Changes confirmed by hand in `data/manual.txt` come first: renamed classes that no algorithm can guess (e.g. `nickname` → `displayName`) and classes removed by Discord.
+- Changes confirmed by hand in `data/manual.txt` come first: renamed classes that no algorithm can guess (e.g. `nickname` → `displayName`) and classes removed by Discord. These replacements are marked *(manual.txt)* in the report, with a link to the file.
 - A class is only replaced **if the new one exists in Discord Stable today**.
 - If a class changed several times (a → b → c), it follows the chain up to the current name, even if your theme missed several updates.
 - When Discord split a module in two, an old class can lead to two current classes. The tool then picks the one whose module your file already uses, or else the one whose module looks most like the old one, and marks it *please check* in the report with the other possibility.

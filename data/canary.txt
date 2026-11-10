@@ -640,6 +640,7 @@ analyticsCard_4_3FtQ
 anchorContainer_EAE2zZ
 anchorTabButtonDuringPanelCollapse_s3DB6Y
 anchorUnderlineOnHover_R6ReNl
+anchor_4z_RMD
 anchor_R6ReNl
 anchor_kHW3rq
 anchor_n_L45-
@@ -905,6 +906,7 @@ artOverlay_R69lUn
 artTile_G2Wl9L
 art_-hWC0t
 art_3rN_rc
+art_67I0_g
 art_D8O-nd
 art_JnchWv
 art_M5fVqw
@@ -1746,6 +1748,7 @@ bannerWrapper_v5eeZH
 banner_07a9AE
 banner_1qoVzk
 banner_2igI1n
+banner_67I0_g
 banner_7pDS2B
 banner_97cZH-
 banner_98tF3N
@@ -4251,6 +4254,8 @@ closeIcon_zln_tS
 closeLink_l2fz5u
 closeWithCircleBackground__KoJTP
 close_5qg940
+close_67I0_g
+close_8PBDGr
 close_9Joo3U
 close_FjiXGc
 close_KxXBlr
@@ -5685,7 +5690,6 @@ contentExpanded_A1jYpL
 contentGameImageStreamPreview_ZbIvmP
 contentGameImageVoiceChannel_ZbIvmP
 contentGrid_xFL7Bm
-contentHeaderGameInfo_hFq1lM
 contentHeaderLeft_3Rvb29
 contentHeaderSolid_AH5XKr
 contentHeader_3Rvb29
@@ -5976,7 +5980,6 @@ content_qZsksx
 content_rafRmG
 content_rfDq2B
 content_rmCN9_
-content_rzVTBa
 content_sBvCzX
 content_snAk_X
 content_srJQZC
@@ -6138,6 +6141,7 @@ copyStateHidden_ymaupl
 copyStateVisible_ymaupl
 copyText__B28cF
 copy_07a9AE
+copy_67I0_g
 copy_HMJaME
 copy_JnchWv
 copy_OQEDys
@@ -6345,6 +6349,7 @@ ctaContent_XZfC2c
 ctaContent_a6nmV7
 ctaDescription_Gl3WZ2
 ctaFiller_sKmXSu
+ctaFlush_KzYe0w
 ctaIcon_sKmXSu
 ctaInner_3ByYm5
 ctaInner_EaQw3u
@@ -6367,6 +6372,7 @@ cta_7NOr2f
 cta_D8O-nd
 cta_EaQw3u
 cta_JssJMN
+cta_KzYe0w
 cta_PupK8L
 cta_Vs-TKU
 cta_XFjmsP
@@ -6843,7 +6849,6 @@ detailsContainer_TJpZiO
 detailsContainer_bwNRJo
 detailsContent_6ew4r1
 detailsDescription_A8Q7GL
-detailsFlush_KzYe0w
 detailsGrid_WLmcxR
 detailsGrid_rzQMrV
 detailsIcon__wphjE
@@ -6867,7 +6872,6 @@ details_Bu4Al8
 details_DKsPd0
 details_G4pija
 details_HjAsMI
-details_KzYe0w
 details_LDGylj
 details_M5fVqw
 details_NLtuwI
@@ -7395,6 +7399,7 @@ dotSpacer_KzYe0w
 dotSpacer_yzIZMq
 dot_2kXYLF
 dot_2nqf8W
+dot_44_CBJ
 dot_7N-Bri
 dot_7RsUnm
 dot_B8IhI-
@@ -7665,7 +7670,7 @@ editPanel_AH5XKr
 editPencilIcon_vAufct
 editProfilesRow_iVwosX
 editResources_nhgNJ0
-editText_BWNyeu
+editText_QxuwH1
 editTextarea_NohLgP
 editVanityUrlCard_LzBW0j
 editWelcomeButton_nhgNJ0
@@ -9234,7 +9239,6 @@ footer_oszuaw
 footer_p-On7-
 footer_pGS-85
 footer_pI1Qq5
-footer_rzVTBa
 footer_s4Cv6K
 footer_srE3KQ
 footer_sxJVDx
@@ -9826,6 +9830,7 @@ gradient_-6JdM0
 gradient_1i8KgA
 gradient_2i8Bfm
 gradient_BorJ2C
+gradient_LCY8WT
 gradient_PHnyXK
 gradient_Qbh8dz
 gradient_YuplL1
@@ -11050,7 +11055,6 @@ header_r0937z
 header_rfDq2B
 header_ro3Uxe
 header_rqKwHz
-header_rzVTBa
 header_s2-xHg
 header_sIRx9p
 header_sKmXSu
@@ -11335,13 +11339,11 @@ hiddenVoiceStatesText_ieJ4Sq
 hiddenVoiceStates_ieJ4Sq
 hidden_-JvGQh
 hidden_0_7_Rr
-hidden_1i8KgA
 hidden_2DNqcO
 hidden_5dqHTG
 hidden_5x0vse
 hidden_69M0s9
 hidden_8qMUr2
-hidden_AJis7Y
 hidden_BKJg6Y
 hidden_CHR0Z4
 hidden_CbAHMP
@@ -11355,6 +11357,7 @@ hidden_MMA_-K
 hidden_Mzv_GO
 hidden_NUIl5Z
 hidden_NZ34f3
+hidden_Nz_hf6
 hidden_Pwp5qW
 hidden_Q_Lllm
 hidden_RftUXv
@@ -11432,6 +11435,7 @@ hintSubtleText_x30rfK
 hintText_VEvtF1
 hintText_x30rfK
 hintText_xu8B3s
+hint_BFckb0
 hint_C77viY
 hint_IGFm0V
 hint_yoCgi_
@@ -11798,6 +11802,7 @@ icon_2rsQxy
 icon_2zQQDh
 icon_3qIpbl
 icon_3s6r26
+icon_44_CBJ
 icon_4I8LkS
 icon_4cZzdX
 icon_4cz-WN
@@ -12164,6 +12169,7 @@ image_1lwQ1X
 image_2E0EiK
 image_2zb7OH
 image_5XjRF-
+image_67I0_g
 image_6QglCi
 image_6bgemo
 image_765Z3w
@@ -12847,6 +12853,7 @@ itemDetail_tVJ6Al
 itemDetailsSection_gtEi_P
 itemFilled_jqZBm0
 itemGroup_Hjz4i6
+itemHighlighted_Cv_a5E
 itemIconBackground__E1q45
 itemIcon_Vi4xeN
 itemIcon__E1q45
@@ -13121,6 +13128,7 @@ label_tJLRhf
 label_uH52YQ
 label_vDbele
 label_vTUVyc
+label_wNbNna
 label_yW5Dvc
 labeled_9EByBZ
 labeled_vDbele
@@ -13196,7 +13204,9 @@ layer_AJis7Y
 layer_C_WHpX
 layer_Fd0FEH
 layer_HRhm0U
+layer_Nz_hf6
 layer_VVADeK
+layer_Z2THFa
 layer_akUibV
 layer_b5iyAa
 layer_dyTp5R
@@ -13350,9 +13360,8 @@ libraryLink_c9v7J5
 lift_pq5qUF
 lifted_p22bPt
 lightBackgroundPill_Ku7pX2
-lightBrandRefreshBanner_LCY8WT
-lightBrandRefreshBanner_NPgbd9
 lightElevationHigh_LyjY5_
+lightGradient_LCY8WT
 lightIcon_8kgd8A
 lightIcon_IhyaN_
 lightOne_TLgD1o
@@ -16397,7 +16406,6 @@ pill_4_iwh6
 pill_66YLV6
 pill_Goax4j
 pill_KUkQ06
-pill_PW_tfH
 pill_QDCvh-
 pill_XZfC2c
 pill_nFH31_
@@ -16753,6 +16761,7 @@ popoverContentWithGradient_81IzEA
 popoverContentWithGradient_tYiMSv
 popoverGradientWrapper_81IzEA
 popoverGradientWrapper_tYiMSv
+popoverRoot_81IzEA
 popoverVisible_YGS36Q
 popover_09oJNZ
 popover_81IzEA
@@ -16896,7 +16905,7 @@ premiumShine_RmOtW7
 premiumStreamIcon__be5Bx
 premiumSubscribeButton_EHx6SK
 premiumSubscriptionAccountCredit_ysRrD_
-premiumSwitchPlanSelectText_NSzynq
+premiumSwitchPlanSelectText_VZtJTx
 premiumText_2zQQDh
 premiumTier2Divider_A7cGXu
 premiumTier2Divider_DabBgV
@@ -17079,7 +17088,7 @@ previewTitleContainer_0GYscM
 previewTitle_Of7Y-V
 previewTitle_TpS9Es
 previewToggleContainer_Z7qi7m
-previewTotalSectionContainer_NSzynq
+previewTotalSectionContainer_VZtJTx
 previewViewport_FQ6w_n
 previewWidgetFull_No5Lww
 previewWidgetPopout_No5Lww
@@ -17353,6 +17362,7 @@ profile_pHGfKY
 profile_s3DB6Y
 profile_tYuRNZ
 profile_v0Hfhf
+profile_wNbNna
 progressAltGlow_loRtN1
 progressAssetRow_Dj1lPY
 progressBackground_gm2kSr
@@ -19850,6 +19860,7 @@ sidebar_pI94My
 sidebar_pog62O
 sidebar_s4Cv6K
 sidebar_vY_q7s
+sidebar_wNbNna
 sidebar_wpwRpZ
 sidebar_z-Dk_P
 sidekickDetails_Gv2-5Z
@@ -21774,6 +21785,7 @@ text_H3wG8M
 text_IGFm0V
 text_J7xGAd
 text_KXlsKA
+text_KzYe0w
 text_LDGylj
 text_NFyjfB
 text_OlkxSE
@@ -22542,6 +22554,7 @@ toggle_62dgo7
 toggle__63UDX
 toggle__lF4Mf
 toggle_qpHMhc
+toggle_s7QiTL
 toggledIconOn_UB4ZYW
 toggled_EWrVB9
 toggled_xX0l5K

@@ -906,6 +906,7 @@ artTile_G2Wl9L
 art_-hWC0t
 art_3rN_rc
 art_D8O-nd
+art_JnchWv
 art_M5fVqw
 art_MOgwqs
 art_MdxyIO
@@ -961,6 +962,7 @@ assetContainer_xlDuA-
 assetControlLabel_Z7qi7m
 assetControlRow_Z7qi7m
 assetControls_Z7qi7m
+assetImage_Yr443h
 assetImage_fjEEwW
 assetLayers_pGS-85
 assetSection_GFcYTa
@@ -977,6 +979,7 @@ asset_AR-I8-
 asset_GOn4W8
 asset_X0BdZm
 asset_YGli6m
+asset_Yr443h
 asset_fjEEwW
 asset_u8EsgA
 assetsLargeImageActivityFeedTwitch_ZbIvmP
@@ -1391,6 +1394,7 @@ backdropLeaving_zBOVVJ
 backdrop_2njDLD
 backdrop_JHO5jQ
 backdrop_JeyAv-
+backdrop_JnchWv
 backdrop_NOlkhE
 backdrop_S_xUx6
 backdrop_UQqFnR
@@ -1500,8 +1504,6 @@ badgeAccessoryText_Nw13mb
 badgeAccessoryText_zoUCAE
 badgeActive_8OcjHa
 badgeAssetRow_Dj1lPY
-badgeBetaTagIcon_zoUCAE
-badgeBetaTag_zoUCAE
 badgeContainer_81IzEA
 badgeContainer_CTWncy
 badgeContainer_L4PiGG
@@ -1743,6 +1745,7 @@ bannerWrapper_R69lUn
 bannerWrapper_v5eeZH
 banner_07a9AE
 banner_1qoVzk
+banner_2igI1n
 banner_7pDS2B
 banner_97cZH-
 banner_98tF3N
@@ -1903,7 +1906,6 @@ bestOfNitroSectionContainer_0fgkqL
 betaBadgeContainer_c9deIk
 betaBadge_EoAHv7
 betaBadge_xSUNKU
-betaPill_Nw13mb
 betaPill_nkh6Dx
 betaTag_-6JdM0
 betaTag_BFckb0
@@ -2080,6 +2082,7 @@ body_Freh-X
 body_GOn4W8
 body_IM8diO
 body_JXWxLd
+body_JnchWv
 body_KOkKTK
 body_KWWX2H
 body_KXlsKA
@@ -2315,10 +2318,10 @@ boxSelected_1HiOnx
 boxVideo_iPIbS8
 box_0JZW4Z
 box_1HiOnx
-box_70vT0W
 box_8b5Lkq
 box_L5c99o
 box_hHhMrs
+box_pqX-ln
 box_qCRz2b
 box_tAQGQi
 brandLogoContainer_RftUXv
@@ -3066,6 +3069,7 @@ card_UYsof2
 card_VNJAgF
 card_Vwa3As
 card_YGli6m
+card_Yr443h
 card_Zi5jmx
 card_ZjaEbs
 card_ZlNLGi
@@ -3806,6 +3810,7 @@ children_TNyK-N
 children_pDnMjx
 children_pM2RE8
 children_s64Ydp
+children_w5-7vi
 children_yOdhm_
 children_ybUK7Z
 children_z-Dk_P
@@ -4097,6 +4102,15 @@ clip_2LrOmL
 clip_AqLaeB
 clipsEnabledIndicator_U6LhXD
 clipsGallery_AqLaeB
+clipsModeChevron_OAv3mC
+clipsModeContainer_OAv3mC
+clipsModeKeyCombo_OAv3mC
+clipsModeRowOpen_OAv3mC
+clipsModeRow_OAv3mC
+clipsModeSeparator_OAv3mC
+clipsModeText_OAv3mC
+clipsModeWithShortcut_OAv3mC
+clipsModeWithoutShortcut_OAv3mC
 clipsPlayer_6t5fy-
 clipsRow_2njDLD
 clipsRow_yzLwxU
@@ -4253,6 +4267,7 @@ close_isqatr
 close_jOZ0iO
 close_s4Cv6K
 close_snX-u4
+close_uCc2Ud
 closedOverlay_Ff_24N
 closing_O2ifdm
 closing_akUibV
@@ -4604,6 +4619,7 @@ composerSendButton_CQ1SDL
 composerSendSeparator_CQ1SDL
 composerSend_CQ1SDL
 composerSlot_ElNoP4
+composerStopButton_CQ1SDL
 composerTabHintKey_CQ1SDL
 composerTabHint_CQ1SDL
 composerTabPinned_CQ1SDL
@@ -5969,6 +5985,7 @@ content_tPzYCm
 content_tYiMSv
 content_tqapBM
 content_tu5953
+content_uCc2Ud
 content_uFkqU2
 content_ua4KT5
 content_v35VuH
@@ -6000,6 +6017,7 @@ contents_2i8Bfm
 contents_9OQtot
 contents_CXA5dw
 contents_oITdBA
+contents_qZv3Qq
 contents_ydey4M
 contextBoundary_3DqJuB
 contextCommandMessage_2i8Bfm
@@ -6121,6 +6139,7 @@ copyStateVisible_ymaupl
 copyText__B28cF
 copy_07a9AE
 copy_HMJaME
+copy_JnchWv
 copy_OQEDys
 copy_R69lUn
 copy_Vp8y6R
@@ -6301,6 +6320,7 @@ crumbDivider_b0Gizz
 crumbSeparator_b0Gizz
 crumb_b0Gizz
 crunchyroll_1AI0dL
+cs2Tint_JnchWv
 ctaBarReducedMargin_0jpYct
 ctaButtonContainer_YUQhib
 ctaButtonText_RmOtW7
@@ -6329,6 +6349,7 @@ ctaIcon_sKmXSu
 ctaInner_3ByYm5
 ctaInner_EaQw3u
 ctaItem_DLRZY4
+ctaLabel_uCc2Ud
 ctaNotInteractable_Vp8y6R
 ctaNotInteractable_ZzrVHV
 ctaPlaceholder_EaQw3u
@@ -6353,6 +6374,7 @@ cta_ZzrVHV
 cta_g2fiji
 cta_lhBl94
 cta_oX1O9t
+cta_uCc2Ud
 cta_zEJODa
 ctas_9jC23S
 ctas_vVEhpw
@@ -7399,6 +7421,7 @@ dot_wfmW80
 dot_x01_g7
 dot_yFHu6Z
 dot_ybUK7Z
+dotaTint_JnchWv
 dots_7N-Bri
 dots_B8IhI-
 dots_C1dbpS
@@ -9610,6 +9633,7 @@ gemImage_Wn95fS
 gemWrapper_Wn95fS
 gem_xB0cp8
 generateCodeRow_eJTan7
+genericTint_JnchWv
 genres_Oyz7Y6
 geoRestrictedBadge_1czW-w
 getAppButton_gVbU0s
@@ -9955,6 +9979,7 @@ groupWarning_DKMuWq
 groupWrapper_lm2_KW
 group_2rG0YD
 group_8GP31u
+group_DY30Hz
 group_ExYoxz
 group_I_XU7P
 group_MeMr9t
@@ -10276,6 +10301,7 @@ h2_csPsk2
 h3_csPsk2
 h4_csPsk2
 halfHighlight_4kkZbu
+halfInput_KRD9f3
 halfWidth__GKiD4
 half_nFRzXP
 halloweenAnimationOverlay_M2FQyv
@@ -10381,6 +10407,7 @@ hasTooltip__E1q45
 hasTooltip_ge8IFm
 hasTrailing_0PLWhS
 hasTrailing_CJLDJI
+hasUnreadDot_IqWmhA
 hasUnreads_nwIAlp
 hasWarning_IEutSJ
 headerActionsVisible_fBxaQT
@@ -10741,6 +10768,7 @@ headerToolbar_8iSxT3
 headerTop_YCKlZ1
 headerTrailingAbsolute_dvN-MP
 headerTrailingSpacer_dvN-MP
+headerTrailing_AH5XKr
 headerTrailing_GuH4Z2
 headerTrailing_dvN-MP
 headerTrailing_dzgIu6
@@ -11201,8 +11229,11 @@ heroBannerHidden_-l8fcd
 heroBanner_a6nmV7
 heroBanner_iar92T
 heroBlockContentPromotion_XBXDcd
+heroBlockContentTakeover_XBXDcd
 heroBlockContent_XBXDcd
 heroBlockContent_sIa-bu
+heroBlockEmptyCards_XBXDcd
+heroBlockTakeover_XBXDcd
 heroBlock_XBXDcd
 heroBlock_sIa-bu
 heroContainerTopSpacing_67wC2_
@@ -12040,6 +12071,7 @@ illustration_0FCMV2
 illustration_3vxkcg
 illustration_8Prnmt
 illustration_A6Ola4
+illustration_GzEjGT
 illustration_N-Y7ZJ
 illustration_RL7BaR
 illustration_VHp4GX
@@ -12226,6 +12258,7 @@ improved_XFAI1O
 inCall_6Ln5ei
 inCard_nkh6Dx
 inExpressionPicker_1lN7Eh
+inFullscreenFrame_qZv3Qq
 inGameActive_UB4ZYW
 inGameActive_XLKukn
 inGameItemLabelContainer_RGwqSL
@@ -12394,6 +12427,7 @@ info_P1Eoy1
 info_PQuVz8
 info_PTA1Mz
 info_PY60v2
+info_Yr443h
 info_aTj-E2
 info_ipBn6f
 info_jqZBm0
@@ -13213,6 +13247,7 @@ leading_d8EjQE
 leading_j5xNzb
 leading_o2hjBM
 leading_u5soQM
+leading_uCc2Ud
 learnMoreButton_JZRLB9
 learnMoreButton_R69lUn
 learnMoreButton_asFdry
@@ -13841,6 +13876,7 @@ logsControls_3VQvL6
 logsPanel_3VQvL6
 logsSearch_3VQvL6
 logsTab_3VQvL6
+lolTint_JnchWv
 longText_Gi8li2
 longerMessagesImage_hNerlt
 lookBlank_9OQtot
@@ -14354,6 +14390,7 @@ messageWrapper_cXmH6r
 messageWrapper_xY-A-b
 message_0MZZOr
 message_12gY2-
+message_2igI1n
 message_4aSOFi
 message_9nPBCw
 message_Fpve0_
@@ -15246,6 +15283,7 @@ nonText_lm2_KW
 nonTier2_YCKlZ1
 nonVisualMediaItemContainer_idVBIj
 nonVisualMediaItem_idVBIj
+noneIcon_NgozOX
 none_1lwQ1X
 none_JFqgFB
 none_nFRzXP
@@ -15371,6 +15409,7 @@ nowPlayingNotificationWrapper_LCQ2_0
 nowPlayingNotification_LCQ2_0
 nowPlaying_kQPUsd
 nowrap_omevcu
+nudge_uCc2Ud
 numberBadge_QwUPp6
 numberBadge_TNyK-N
 numberBadge_lMvXrQ
@@ -16002,6 +16041,7 @@ panel_BfN7RR
 panel_DlQpER
 panel_GNlW7Y
 panel_Jlqe0z
+panel_JnchWv
 panel_Jtnpgj
 panel_L68mQE
 panel_LSN_s0
@@ -17792,6 +17832,7 @@ reaction_39obR1
 reaction_MmKct8
 reaction_UNkajC
 reaction_oEcaml
+reaction_vY_q7s
 reactions_HeWz1C
 reactions_LuYMto
 reactions_MmKct8
@@ -18282,6 +18323,7 @@ rive_d6Z3Ps
 rive_sYj23M
 rive_xUm6kF
 robot_wTuOih
+rocketLeagueTint_JnchWv
 roleCheckmark_GifsdZ
 roleChiplet_6JOTb4
 roleCircle_7RsUnm
@@ -18603,7 +18645,6 @@ row_2EKmKY
 row_3MXiRB
 row_5z8c5P
 row_6_68tM
-row_70vT0W
 row_72PQI1
 row_7GJfGX
 row_7NrAL2
@@ -18678,6 +18719,7 @@ row_oQWonh
 row_oevdhO
 row_ohxi6x
 row_pjcvYh
+row_pqX-ln
 row_qF1Ceg
 row_qUlUyR
 row_qpHMhc
@@ -19262,6 +19304,7 @@ segmentContainer_bktSrU
 segmentMask_bktSrU
 segmentPanningLayer_bktSrU
 segment_0CIbxS
+segment_DY30Hz
 segment_vxox-C
 segmentedControlOption_oszuaw
 segmentedControl_KcIo31
@@ -21165,6 +21208,7 @@ suggestionsList_AV6l5m
 suggestions_AV6l5m
 summariesBetaTag_j9Vvzj
 summaries_vY_q7s
+summaryActions_vY_q7s
 summaryContainer_FDTnC5
 summaryDetail_kLiT4t
 summaryDividerEnd_a7hhRZ
@@ -21667,6 +21711,7 @@ textContent_yId8-H
 textEmoji_ZMR-xe
 textFill_sHD20e
 textGroup_FNz3hO
+textGroup_Yr443h
 textGroup_Zw-dUC
 textGroup_idf9mq
 textGroup_mwdTRW
@@ -22605,7 +22650,6 @@ topEmojiContainer_6OcK5D
 topEmojiSectionContainer_6OcK5D
 topFade_zBOVVJ
 topFilterContainer_efZcjx
-topGame_M5fVqw
 topGuildEmojiBadge_1bDrGE
 topInBetweenSpacer_v15Jql
 topLeft_Ykwe0q
@@ -22957,9 +23001,11 @@ unreadAccessoryContainer_yoCgi_
 unreadBar_ysO7Gy
 unreadBottom_ysO7Gy
 unreadCount_5w784r
+unreadDot_IqWmhA
 unreadDot_N9h0kO
 unreadDot_SfYygu
 unreadDot_TsSh-L
+unreadDot_i44TZ4
 unreadFavoritesDotPulsing__emG3x
 unreadFavoritesDot__emG3x
 unreadIcon_t1P8Sn

@@ -43,9 +43,10 @@ def prepare_data(folder, last_check_days_ago=0, build="123456"):
                    "stable": {"build": build, "classes": 10011, "date": "2026-11-08 12:00 UTC"}}, f)
 
 
-def run_action(work, data, language="en", max_age="3", data_url="", github=None):
+def run_action(work, data, language="en", max_age="3", data_url="", github=None, manual_page=None):
     """Run update_classes.py like the GitHub Action does, return (stdout, outputs, report).
-    github: GitHub Actions variables to simulate (repository, commit...), none by default."""
+    github: GitHub Actions variables to simulate (repository, commit...), none by default.
+    manual_page: address of manual.txt on GitHub to use, without downloading anything."""
     out_file = os.path.join(work, "outputs.txt")
     report = os.path.join(work, "report.md")
     open(out_file, "w").close()
@@ -57,8 +58,18 @@ def run_action(work, data, language="en", max_age="3", data_url="", github=None)
                  "INPUT_LINK_BRANCH"):
         env.pop(name, None)
     env.update(github or {})
-    result = subprocess.run([sys.executable, "-B", os.path.join(ROOT, "update_classes.py"), "--data", data],
-                            cwd=os.path.join(work, "css"), env=env, capture_output=True, text=True)
+    script = os.path.join(ROOT, "update_classes.py")
+    command = [sys.executable, "-B", script, "--data", data]
+    if manual_page:  # same run, with the address of manual.txt replaced
+        command = [sys.executable, "-B", "-c",
+                   "import importlib.util, sys\n"
+                   f"spec = importlib.util.spec_from_file_location('update_classes', {script!r})\n"
+                   "module = importlib.util.module_from_spec(spec)\n"
+                   "spec.loader.exec_module(module)\n"
+                   f"module.manual_url = lambda url: {manual_page!r}\n"
+                   f"sys.argv = ['update_classes.py', '--data', {data!r}]\n"
+                   "module.main()\n"]
+    result = subprocess.run(command, cwd=os.path.join(work, "css"), env=env, capture_output=True, text=True)
     if result.returncode:
         raise RuntimeError(result.stdout + result.stderr)
     outputs = dict(line.split("=", 1) for line in open(out_file, encoding="utf-8").read().splitlines() if "=" in line)
@@ -141,12 +152,12 @@ def test_update():
             ("Report counts the classes to check", "**8** (including 3 to check)"),
             ("Report marks the inferred class", "`title__1a2b3` → `title_AAAAAA` (L3 — inferred, please check)"),
             ("Report marks the class found by hand (manual.txt)",
-             "`nickname__00003` → `displayName_PROF01` (L6 — manual.txt)\n"),
+             "`nickname__00003` → `displayName_PROF01` (L6 — renamed)\n"),
             ("Report gives the line of each replacement, without a note when it's automatic",
              "`container__1a2b3` → `container_AAAAAA` (L2)\n"),
             ("Report gives the other possibility of an ambiguous class", "other possibility: `icon_SPLITa`"),
-            ("Report shows the class removed by Discord", "`gone__00002` (L7 — manual.txt): removed\n"),
-            ("Report shows the missing class without a fake lead", "`lost__00001` (L8 — manual.txt): no lead\n"),
+            ("Report shows the class removed by Discord", "`gone__00002` (L7 — removed)\n"),
+            ("Report shows the missing class without a fake lead", "`lost__00001` (L8 — no lead)\n"),
         ]:
             check(label, text in report, f"not found in the report:\n{report}")
         check("One warning per file, linked to the right line", "file=main.css,line=7," in stdout, stdout)
@@ -211,8 +222,19 @@ def test_links():
         check("In the pull request, file names link to the files on its branch",
               f'**<a href="{base}discord-class-updater/main.css">main.css</a>**' in report, report)
         check("In the pull request, line numbers link to the lines",
-              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">L7</a> — manual.txt): removed' in report, report)
+              f'`gone__00002` (<a href="{base}discord-class-updater/main.css#L7">L7</a> — removed)' in report, report)
         check("Links are HTML, so Discord's 500 characters never cut one in the middle", "](" not in report, report)
+        manual = "https://github.com/owner/repo/blob/main/data/manual.txt"
+        shutil.rmtree(css)
+        shutil.copytree(os.path.join(TESTS, "input"), css)
+        stdout, outputs, report = run_action(work, data, github=github, manual_page=manual)
+        check("A replacement from manual.txt links to its line in manual.txt",
+              f'`nickname__00003` → `displayName_PROF01` (<a href="{base}discord-class-updater/main.css#L6">L6</a> — '
+              f'<a href="{manual}#L2">renamed</a>)' in report, report)
+        check("A class removed by Discord links to its line in manual.txt",
+              f'#L7">L7</a> — <a href="{manual}#L3">removed</a>)' in report, report)
+        check("A class not found links to manual.txt, where the fix can be added",
+              f'#L8">L8</a> — <a href="{manual}">no lead</a>)' in report, report)
         stdout, outputs, report = run_action(work, data, github=github)
         check("Without replacements (no pull request), links point to the checked commit",
               f'(<a href="{base}abc123/main.css#L7">L7</a> — ' in report and "discord-class-updater" not in report,

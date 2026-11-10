@@ -56,8 +56,8 @@ MESSAGES = {
         "missing_title": "الفئات غير الموجودة",
         "module": "الوحدة الجديدة المحتملة: {list}",
         "none": "لا توجد أدلة",
-        "colon": ": ",
         "removed": "محذوفة",
+        "renamed": "أُعيدت تسميتها",
         "data": "Discord Stable، الإصدار {build} ({date})",
         "warning": "الفئات غير الموجودة: {n}",
         "stale": "⚠️ لم تُحدَّث البيانات منذ مدة (عدد الأيام: {n}): قد يكون تتبّع Discord متوقفًا، ولن تُكتشف الفئات التي أُعيدت تسميتها منذ ذلك الحين.",
@@ -75,8 +75,8 @@ MESSAGES = {
         "missing_title": "Nicht gefundene Klassen",
         "module": "wahrscheinliches neues Modul: {list}",
         "none": "kein Hinweis",
-        "colon": ": ",
         "removed": "entfernt",
+        "renamed": "umbenannt",
         "data": "Discord Stable Build {build} ({date})",
         "warning": "Nicht gefundene Klassen: {n}",
         "stale": "⚠️ Daten seit {n} Tagen nicht aktualisiert: Die Discord-Überwachung hängt möglicherweise, seitdem umbenannte Klassen werden nicht erkannt.",
@@ -94,8 +94,8 @@ MESSAGES = {
         "missing_title": "Classes not found",
         "module": "probable new module: {list}",
         "none": "no lead",
-        "colon": ": ",
         "removed": "removed",
+        "renamed": "renamed",
         "data": "Discord Stable build {build} ({date})",
         "warning": "Classes not found: {n}",
         "stale": "⚠️ Data not updated for {n} days: Discord tracking may be stuck, classes renamed since then won't be detected.",
@@ -113,8 +113,8 @@ MESSAGES = {
         "missing_title": "Clases no encontradas",
         "module": "nuevo módulo probable: {list}",
         "none": "sin pistas",
-        "colon": ": ",
         "removed": "eliminada",
+        "renamed": "renombrada",
         "data": "Discord Stable build {build} ({date})",
         "warning": "Clases no encontradas: {n}",
         "stale": "⚠️ Datos sin actualizar desde hace {n} días: el seguimiento de Discord puede estar bloqueado, las clases renombradas desde entonces no se detectarán.",
@@ -132,8 +132,8 @@ MESSAGES = {
         "missing_title": "Classes introuvables",
         "module": "nouveau module probable : {list}",
         "none": "aucune piste",
-        "colon": " : ",
         "removed": "supprimée",
+        "renamed": "renommée",
         "data": "Discord Stable build {build} ({date})",
         "warning": "Classes introuvables : {n}",
         "stale": "⚠️ Données non mises à jour depuis {n} jours : le suivi de Discord est peut-être bloqué, les classes renommées depuis ne seront pas détectées.",
@@ -151,8 +151,8 @@ MESSAGES = {
         "missing_title": "Classi non trovate",
         "module": "probabile nuovo modulo: {list}",
         "none": "nessuna pista",
-        "colon": ": ",
         "removed": "rimossa",
+        "renamed": "rinominata",
         "data": "Discord Stable build {build} ({date})",
         "warning": "Classi non trovate: {n}",
         "stale": "⚠️ Dati non aggiornati da {n} giorni: il monitoraggio di Discord potrebbe essere bloccato, le classi rinominate da allora non verranno rilevate.",
@@ -170,8 +170,8 @@ MESSAGES = {
         "missing_title": "見つからないクラス",
         "module": "新しいモジュールの候補：{list}",
         "none": "手がかりなし",
-        "colon": "：",
         "removed": "削除済み",
+        "renamed": "名前変更済み",
         "data": "Discord Stable ビルド {build}（{date}）",
         "warning": "見つからないクラス：{n}",
         "stale": "⚠️ データが {n} 日間更新されていません。Discord の追跡が止まっている可能性があり、それ以降に名前が変わったクラスは検出されません。",
@@ -189,8 +189,8 @@ MESSAGES = {
         "missing_title": "찾을 수 없는 클래스",
         "module": "새 모듈 후보: {list}",
         "none": "단서 없음",
-        "colon": ": ",
         "removed": "삭제됨",
+        "renamed": "이름 변경됨",
         "data": "Discord Stable 빌드 {build} ({date})",
         "warning": "찾을 수 없는 클래스: {n}",
         "stale": "⚠️ 데이터가 {n}일 동안 업데이트되지 않았습니다. Discord 추적이 멈췄을 수 있으며, 그 이후 이름이 바뀐 클래스는 감지되지 않습니다.",
@@ -208,8 +208,8 @@ MESSAGES = {
         "missing_title": "Nieznalezione klasy",
         "module": "prawdopodobny nowy moduł: {list}",
         "none": "brak wskazówek",
-        "colon": ": ",
         "removed": "usunięta",
+        "renamed": "przemianowana",
         "data": "Discord Stable, build {build} ({date})",
         "warning": "Nieznalezione klasy: {n}",
         "stale": "⚠️ Dane nieaktualizowane od {n} dni: śledzenie Discorda może być zablokowane, klasy zmienione od tego czasu nie zostaną wykryte.",
@@ -227,8 +227,8 @@ MESSAGES = {
         "missing_title": "Classes não encontradas",
         "module": "provável novo módulo: {list}",
         "none": "nenhuma pista",
-        "colon": ": ",
         "removed": "removida",
+        "renamed": "renomeada",
         "data": "Discord Stable build {build} ({date})",
         "warning": "Classes não encontradas: {n}",
         "stale": "⚠️ Dados não atualizados há {n} dias: o monitoramento do Discord pode estar travado, as classes renomeadas desde então não serão detectadas.",
@@ -246,8 +246,8 @@ MESSAGES = {
         "missing_title": "Ненайденные классы",
         "module": "вероятный новый модуль: {list}",
         "none": "нет подсказок",
-        "colon": ": ",
         "removed": "удалён",
+        "renamed": "переименован",
         "data": "Discord Stable, сборка {build} ({date})",
         "warning": "Не найдено классов: {n}",
         "stale": "⚠️ Данные не обновлялись {n} дн.: отслеживание Discord, возможно, остановилось, переименованные с тех пор классы не будут обнаружены.",
@@ -265,8 +265,8 @@ MESSAGES = {
         "missing_title": "Bulunamayan sınıflar",
         "module": "olası yeni modül: {list}",
         "none": "ipucu yok",
-        "colon": ": ",
         "removed": "kaldırıldı",
+        "renamed": "yeniden adlandırıldı",
         "data": "Discord Stable, sürüm {build} ({date})",
         "warning": "Bulunamayan sınıflar: {n}",
         "stale": "⚠️ Veriler {n} gündür güncellenmedi: Discord takibi takılmış olabilir, o zamandan beri yeniden adlandırılan sınıflar algılanmayacak.",
@@ -284,8 +284,8 @@ MESSAGES = {
         "missing_title": "Не знайдені класи",
         "module": "ймовірний новий модуль: {list}",
         "none": "немає підказок",
-        "colon": ": ",
         "removed": "видалено",
+        "renamed": "перейменовано",
         "data": "Discord Stable, збірка {build} ({date})",
         "warning": "Не знайдено класів: {n}",
         "stale": "⚠️ Дані не оновлювалися {n} дн.: відстеження Discord, можливо, зупинилося, перейменовані відтоді класи не буде виявлено.",
@@ -303,8 +303,8 @@ MESSAGES = {
         "missing_title": "未找到的类",
         "module": "可能的新模块：{list}",
         "none": "无线索",
-        "colon": "：",
         "removed": "已删除",
+        "renamed": "已重命名",
         "data": "Discord Stable 构建 {build}（{date}）",
         "warning": "未找到的类：{n}",
         "stale": "⚠️ 数据已 {n} 天未更新：Discord 跟踪可能已停止，此后重命名的类将不会被检测到。",
@@ -352,15 +352,17 @@ def load_data(folder):
             parts = line.split()
             if len(parts) == 2:
                 table[parts[0]].append(parts[1])
-    # Changes confirmed by hand: used before the automatic table
-    removed, manual = set(), {}
+    # Changes confirmed by hand: used before the automatic table.
+    # manual_lines: line of each class in manual.txt, for the report links
+    removed, manual, manual_lines = set(), {}, {}
     manual_path = os.path.join(folder, "manual.txt")
     if os.path.exists(manual_path):
         with open(manual_path, encoding="utf-8") as f:
-            for line in f:
+            for number, line in enumerate(f, 1):
                 parts = line.split()
                 if len(parts) != 2 or parts[0].startswith("#"):
                     continue
+                manual_lines[parts[0]] = number
                 if parts[1] == "-":
                     removed.add(parts[0])
                 else:
@@ -371,7 +373,7 @@ def load_data(folder):
     if os.path.exists(builds_path):
         with open(builds_path, encoding="utf-8") as f:
             builds = json.load(f)
-    return live, table, manual, removed, builds
+    return live, table, manual, removed, manual_lines, builds
 
 
 def fetch_data(url):
@@ -614,7 +616,7 @@ def main():
             print(f"Data downloaded from {args.data_url}")
         else:
             print(f"::warning title=Discord Class Updater::{escape_data(t['download_failed'])}")
-    live, table, manual, removed, builds = load_data(data)
+    live, table, manual, removed, manual_lines, builds = load_data(data)
     build = builds.get("stable", {})
     age = data_age(builds)
     stale = age is not None and age > args.max_data_age
@@ -624,7 +626,12 @@ def main():
     modules = ModuleFinder(table, live)
     # Note of the replacements from manual.txt: a file name, the same in every language, linked to the file
     manual_address = manual_url(args.data_url)
-    manual_link = linked("manual.txt", manual_address)
+
+    def manual_page(name):
+        """Address of manual.txt, at the line of this class when it's in it."""
+        if manual_address and name in manual_lines:
+            return f"{manual_address}#L{manual_lines[name]}"
+        return manual_address
     print(f"{len(live)} current Discord classes, {len(files)} files to check")
 
     report_ok, report_missing = [], []
@@ -681,7 +688,7 @@ def main():
                 if a in inferred:
                     notes.append(t["inferred"])
                 if a in by_hand:
-                    notes.append(manual_link)
+                    notes.append(linked(t["renamed"], manual_page(a)))  # links to its line in manual.txt
                 if a in others:
                     notes.append(t["ambiguous"].format(list=", ".join(f"`{c}`" for c in others[a])))
                 report_ok.append(f"- `{a}` → `{replacements[a]}` ({' — '.join(notes)})")
@@ -695,13 +702,18 @@ def main():
             for name in missing:
                 # "L99", like GitHub writes it (#L99): the same in every language, and short
                 line = linked(f"L{lines[name]}", url and f"{url}#L{lines[name]}")
+                # The note links to manual.txt: to the line that says the class was removed,
+                # otherwise to the file, where the fix can be added once checked by hand
+                hint = None if name in removed else modules.hint(name)
                 if name in removed:
-                    note = t["removed"]
+                    note = linked(t["removed"], manual_page(name))
+                elif hint:  # only the words are linked, not the module and its classes
+                    before, after = t["module"].split("{list}", 1)
+                    words = before.rstrip(" :：")
+                    note = linked(words, manual_page(name)) + before[len(words):] + hint + after
                 else:
-                    hint = modules.hint(name)
-                    note = t["module"].format(list=hint) if hint else t["none"]
-                # (L99 — manual.txt): note, with a link to manual.txt, where a fix can be added
-                report_missing.append(f"- `{name}` ({line} — {manual_link}){t['colon']}{note}")
+                    note = linked(t["none"], manual_page(name))
+                report_missing.append(f"- `{name}` ({line} — {note})")
                 nb_missing += 1
 
             # One warning per file (GitHub only shows 10 per step), linking to the first missing class

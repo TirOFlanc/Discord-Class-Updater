@@ -4102,6 +4102,15 @@ clip_2LrOmL
 clip_AqLaeB
 clipsEnabledIndicator_U6LhXD
 clipsGallery_AqLaeB
+clipsModeChevron_OAv3mC
+clipsModeContainer_OAv3mC
+clipsModeKeyCombo_OAv3mC
+clipsModeRowOpen_OAv3mC
+clipsModeRow_OAv3mC
+clipsModeSeparator_OAv3mC
+clipsModeText_OAv3mC
+clipsModeWithShortcut_OAv3mC
+clipsModeWithoutShortcut_OAv3mC
 clipsPlayer_6t5fy-
 clipsRow_2njDLD
 clipsRow_yzLwxU
@@ -6008,6 +6017,7 @@ contents_2i8Bfm
 contents_9OQtot
 contents_CXA5dw
 contents_oITdBA
+contents_qZv3Qq
 contents_ydey4M
 contextBoundary_3DqJuB
 contextCommandMessage_2i8Bfm
@@ -10397,6 +10407,7 @@ hasTooltip__E1q45
 hasTooltip_ge8IFm
 hasTrailing_0PLWhS
 hasTrailing_CJLDJI
+hasUnreadDot_IqWmhA
 hasUnreads_nwIAlp
 hasWarning_IEutSJ
 headerActionsVisible_fBxaQT
@@ -12060,6 +12071,7 @@ illustration_0FCMV2
 illustration_3vxkcg
 illustration_8Prnmt
 illustration_A6Ola4
+illustration_GzEjGT
 illustration_N-Y7ZJ
 illustration_RL7BaR
 illustration_VHp4GX
@@ -12246,6 +12258,7 @@ improved_XFAI1O
 inCall_6Ln5ei
 inCard_nkh6Dx
 inExpressionPicker_1lN7Eh
+inFullscreenFrame_qZv3Qq
 inGameActive_UB4ZYW
 inGameActive_XLKukn
 inGameItemLabelContainer_RGwqSL
@@ -15270,6 +15283,7 @@ nonText_lm2_KW
 nonTier2_YCKlZ1
 nonVisualMediaItemContainer_idVBIj
 nonVisualMediaItem_idVBIj
+noneIcon_NgozOX
 none_1lwQ1X
 none_JFqgFB
 none_nFRzXP
@@ -17818,6 +17832,7 @@ reaction_39obR1
 reaction_MmKct8
 reaction_UNkajC
 reaction_oEcaml
+reaction_vY_q7s
 reactions_HeWz1C
 reactions_LuYMto
 reactions_MmKct8
@@ -21193,6 +21208,7 @@ suggestionsList_AV6l5m
 suggestions_AV6l5m
 summariesBetaTag_j9Vvzj
 summaries_vY_q7s
+summaryActions_vY_q7s
 summaryContainer_FDTnC5
 summaryDetail_kLiT4t
 summaryDividerEnd_a7hhRZ
@@ -22985,9 +23001,11 @@ unreadAccessoryContainer_yoCgi_
 unreadBar_ysO7Gy
 unreadBottom_ysO7Gy
 unreadCount_5w784r
+unreadDot_IqWmhA
 unreadDot_N9h0kO
 unreadDot_SfYygu
 unreadDot_TsSh-L
+unreadDot_i44TZ4
 unreadFavoritesDotPulsing__emG3x
 unreadFavoritesDot__emG3x
 unreadIcon_t1P8Sn

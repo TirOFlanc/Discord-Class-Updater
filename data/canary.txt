@@ -1836,6 +1836,7 @@ bar_UIX3Vg
 bar_X2OUai
 bar_YWogFN
 bar_bWT6VE
+bar_bewfyU
 bar_cFsFXP
 bar_ctJI0k
 bar_dm1lsC
@@ -2438,6 +2439,7 @@ bullet_yRVHqK
 bumpBox_Na9MuQ
 bundleArt_bVDW54
 bundleBackground_Bs1Jwb
+bundleBanner_bewfyU
 bundleContainer_Sy_obt
 bundleContentsSection_gtEi_P
 bundleContents_Sy_obt
@@ -4120,6 +4122,7 @@ clipTriggerBadgeAvatar_P-Cx0B
 clipTriggerBadge_P-Cx0B
 clip_2LrOmL
 clip_AqLaeB
+clip_bewfyU
 clipsEnabledIndicator_U6LhXD
 clipsGallery_AqLaeB
 clipsModeChevron_OAv3mC
@@ -5343,6 +5346,7 @@ container_bAXS8N
 container_bBrC4b
 container_bLMKT5
 container_bNxDj6
+container_bewfyU
 container_bkb4-7
 container_bnp7Q1
 container_bvFqCe
@@ -9860,6 +9864,7 @@ gradient_-6JdM0
 gradient_1i8KgA
 gradient_2i8Bfm
 gradient_BorJ2C
+gradient_IBwvwD
 gradient_LCY8WT
 gradient_PHnyXK
 gradient_Qbh8dz
@@ -11333,6 +11338,8 @@ hexColorPreview_YWrQKs
 hexInputContainer_YWrQKs
 hexInput_FOCwq3
 hexInput_YWrQKs
+hexagonCampaignBackgroundOverlay_-l8fcd
+hexagonCampaignOverlay_-l8fcd
 hiddenAppLauncherAnchor_2x8-Qn
 hiddenAttachment_XyW1ZT
 hiddenAvatar_Ly3Qke
@@ -22364,6 +22371,7 @@ titleEditor_omcAqa
 titleElevated_7NrAL2
 titleExtraPadding_ZWbFoF
 titleGroup_2dzrtJ
+titleGroup_bewfyU
 titleGroup_dcNks8
 titleGroup_dzgIu6
 titleGroup_uWfwNv
@@ -22501,6 +22509,7 @@ title__vUhaG
 title__xBAiH
 title__xoAVS
 title_aUV4Th
+title_bewfyU
 title_c0R49h
 title_c0tu5x
 title_csPsk2

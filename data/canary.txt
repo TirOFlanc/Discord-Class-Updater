@@ -325,6 +325,7 @@ activeButtonChild_plpOf8
 activeButton_0MrDiE
 activeCard_ua3BFY
 activeCircle_tQBDXx
+activeControllerIcon_IZv9tE
 activeDivider_y75PxA
 activeEvent_TNyK-N
 activeFilter_6ew4r1
@@ -906,6 +907,7 @@ artOverlay_9-BcHq
 artOverlay_R69lUn
 artTile_G2Wl9L
 art_-hWC0t
+art_3lradj
 art_3rN_rc
 art_67I0_g
 art_D8O-nd
@@ -970,6 +972,7 @@ assetImage_fjEEwW
 assetLayers_pGS-85
 assetSection_GFcYTa
 assetTile_SIFeFa
+assetTile_i9BE2q
 assetWrapperMasked_1399Om
 assetWrapper_1399Om
 assetWrapper_clpvxq
@@ -984,6 +987,7 @@ asset_X0BdZm
 asset_YGli6m
 asset_Yr443h
 asset_fjEEwW
+asset_i9BE2q
 asset_u8EsgA
 assetsLargeImageActivityFeedTwitch_ZbIvmP
 assetsLargeImageActivityFeedXbox_ZbIvmP
@@ -1601,6 +1605,7 @@ badgeWrapper_wE-IXX
 badge_1gNa8I
 badge_1jaGB6
 badge_2D_9Ek
+badge_3lradj
 badge_4guu7-
 badge_7LxIFp
 badge_8OcjHa
@@ -2340,7 +2345,6 @@ brandLogoContainer_RftUXv
 brandLogo_RftUXv
 brandRefreshBanner_LCY8WT
 brandRefreshBanner_NPgbd9
-brandRefreshCopy_NPgbd9
 brandRefreshSection_yZ_lS-
 brandRefreshTitle_NPgbd9
 brandRefresh_yZ_lS-
@@ -3779,6 +3783,7 @@ checkmark_yLJWMA
 checkoutFooterPortal_MuMT85
 checkoutInlineNoticeContainer_v15Jql
 checkoutModalFooterContent_n6Dflf
+checks_sf7_MP
 cherryBomb_OAgVZM
 chevronButtonContent_hjEaPI
 chevronButton_JdKbWi
@@ -3859,6 +3864,8 @@ chips_uQ8tbE
 choiceContainer_1FzWi5
 choiceHeader_d6AM8Z
 choiceLine_yu1aEm
+choiceList_6VEs7c
+choiceText_6VEs7c
 choiceTitle_yu1aEm
 choiceWrapper_yu1aEm
 choicesContainer_yZtqtW
@@ -4345,6 +4352,7 @@ code_gRSMrg
 code_jKs4FP
 code_qF1Ceg
 code_sBdlOA
+code_sf7_MP
 col2_XBXDcd
 col_oQWonh
 collaborators_QFIYWR
@@ -4499,6 +4507,7 @@ column_md_YFn
 column_nLpEde
 column_nLvZKn
 column_pfg7YF
+column_sf7_MP
 column_vnWdxd
 column_w_ioCB
 column_zj0usA
@@ -4652,10 +4661,13 @@ composerTabReveal_CQ1SDL
 composerTrailingSlotButton_CQ1SDL
 composer_CQ1SDL
 composer_DJmxp2
+conceptCard_6VEs7c
+concept_6VEs7c
+concepts_6VEs7c
 condensedProfilePreview_oQWonh
 condensed_f0Y-Hj
 confettiCanvas_1XqA9O
-confettiCanvas_cjBeSA
+confettiCanvas_AxjYpB
 confettiCanvas_i8LT9Q
 confettiCanvas_idf9mq
 confettiIcon_rx8XLM
@@ -5578,6 +5590,7 @@ container_urGCPP
 container_utcclU
 container_v-SWvq
 container_v0Hfhf
+container_v8-RNu
 container_vBcFCJ
 container_vCSASs
 container_vIIln5
@@ -6397,6 +6410,7 @@ cta_D8O-nd
 cta_EaQw3u
 cta_JssJMN
 cta_KzYe0w
+cta_NPgbd9
 cta_PupK8L
 cta_Vs-TKU
 cta_XFjmsP
@@ -6550,6 +6564,8 @@ date_XFAI1O
 date_dlyOyM
 dayButton_lVGlUj
 dayHeading_dCcwgH
+dayNumberText_i9BE2q
+dayNumber_i9BE2q
 day__vUhaG
 daysRow_lVGlUj
 ddrArrows_jCEr5v
@@ -6745,6 +6761,7 @@ description_L02B3L
 description_Lb4UkJ
 description_LlTAVD
 description_MGYftn
+description_NPgbd9
 description_ODxXvY
 description_POHM-Y
 description_Qp1HN2
@@ -7568,8 +7585,10 @@ dragging_zj0usA
 drawerSizingWrapper_58b0l2
 drawerSizingWrapper_Z0Mo0M
 dropAfterGroupSection_r03v5M
+dropAfter_6VEs7c
 dropAfter_zj0usA
 dropBeforeGroupSection_r03v5M
+dropBefore_6VEs7c
 dropBefore_zj0usA
 dropHovered_k0R3Tk
 dropIndicatorAfter_-DYsIl
@@ -8652,6 +8671,7 @@ fadeInAvatarImg_-9W-th
 fadeInAvatarImg_yvwYgE
 fadeInContent_pGS-85
 fadeInFromTop_0fgkqL
+fadeIn_3lradj
 fadeIn_AFi54G
 fadeIn_F7qvhY
 fadeIn_v8co33
@@ -8854,6 +8874,7 @@ fillOut_oJuRbG
 fillParent_Esjtje
 fill_-o-_S0
 fill_2kXYLF
+fill_3lradj
 fill_8kgd8A
 fill_TPSqXu
 fill_XGGknP
@@ -8915,6 +8936,7 @@ firstPartyCategory_40yGEf
 firstPromotionalAvatar_M9ioIX
 firstRole_U5Umrb
 first_wS56g1
+fitContent_UyQMSC
 fitInAccount_AFi54G
 fixClipping_TA-Cp3
 fixedBarContainer_oPyRni
@@ -9201,6 +9223,7 @@ footer_3h-1-Q
 footer_4jc9pl
 footer_5tvYxx
 footer_6Sxv-M
+footer_6VEs7c
 footer_6bgemo
 footer_6xrjZF
 footer_72PQI1
@@ -9796,6 +9819,7 @@ glowTier2_RftUXv
 glowTier3_RftUXv
 glowTier4_RftUXv
 glow_-FR8F3
+glow_3lradj
 glow_KU0wA7
 glow_Qvb6Lo
 glow_YdUSpd
@@ -9996,6 +10020,7 @@ groupContainer_-jRSmM
 groupContainer_DKMuWq
 groupContent_DKMuWq
 groupDivider_m3psIG
+groupFirstUnlock_3lradj
 groupHeaderRow_-jRSmM
 groupHeader_DKMuWq
 groupHeader_PzTZKu
@@ -10006,6 +10031,7 @@ groupIcon_DKMuWq
 groupIcon__xoAVS
 groupLabel_M3qk4j
 groupLabel_QbZ2-g
+groupLevelUp_3lradj
 groupListings_HJQrQL
 groupMainContent_DKMuWq
 groupMeta_QbZ2-g
@@ -10018,6 +10044,7 @@ groupTitle_qUlUyR
 groupWarning_DKMuWq
 groupWrapper_lm2_KW
 group_2rG0YD
+group_3lradj
 group_8GP31u
 group_DY30Hz
 group_ExYoxz
@@ -11382,6 +11409,7 @@ hiddenVoiceStates_ieJ4Sq
 hidden_-JvGQh
 hidden_0_7_Rr
 hidden_2DNqcO
+hidden_3lradj
 hidden_5dqHTG
 hidden_5x0vse
 hidden_69M0s9
@@ -11466,6 +11494,7 @@ highlight_3ijjdb
 highlight_5GqXgh
 highlight_edinHs
 highlight_hqZPsU
+highlightedOverlayButton_7NOr2f
 highlightedWrapper_NhhdQn
 highlighted_0XT54_
 highlighted_2x8-Qn
@@ -11473,6 +11502,7 @@ highlighted_3emZAO
 highlighted_J1Adu_
 highlighted_TBNqol
 highlighted_lmQhFf
+hintAsset_i9BE2q
 hintSubtleText_x30rfK
 hintText_VEvtF1
 hintText_x30rfK
@@ -12284,6 +12314,7 @@ image_tiTx8t
 image_tvT5v-
 image_uITHYs
 image_v35VuH
+image_v8-RNu
 image_wNVtHP
 image_wRhEA_
 image_wnid5a
@@ -12306,6 +12337,7 @@ improved_XFAI1O
 inCall_6Ln5ei
 inCard_nkh6Dx
 inExpressionPicker_1lN7Eh
+inFlow_UyQMSC
 inFullscreenFrame_qZv3Qq
 inGameActive_UB4ZYW
 inGameActive_XLKukn
@@ -13206,6 +13238,7 @@ largeSeparator_EpdO4n
 largeSpacing_Onug95
 large_-BipLp
 large_0u4qn9
+large_3lradj
 large_3rN_rc
 large_GQQbyK
 large_PaSpLC
@@ -13242,6 +13275,7 @@ layerContainer_VVADeK
 layerForm_oQWonh
 layerPreviewContainer_oQWonh
 layerPreview_oQWonh
+layer_3lradj
 layer_4lMuzg
 layer_AJis7Y
 layer_C_WHpX
@@ -13279,6 +13313,7 @@ layout_Ybm74p
 layout__BLAbN
 layout_cZux1n
 layout_pGJQ7R
+layout_sf7_MP
 layout_xKsXVs
 lazyImgContainer_idVBIj
 lazyImg_idVBIj
@@ -13382,6 +13417,7 @@ legibilityGradient_ZzrVHV
 lensChrome_SX_Cl2
 levelContainer_o7nzA2
 levelDownIcon__zrNpV
+levelImage_6VEs7c
 levelImage_D0Jox3
 levelUpBody_5hwVXB
 levelUpDescription_5hwVXB
@@ -13408,9 +13444,12 @@ lightElevationHigh_LyjY5_
 lightGradient_LCY8WT
 lightIcon_8kgd8A
 lightIcon_IhyaN_
+lightInnerGradient_KUkQ06
 lightOne_TLgD1o
+lightOuterGradient_KUkQ06
 lightOverlay_IhyaN_
 lightOverlay_lUEm2A
+lightPill_KUkQ06
 lightProfileGradient_vJa-rc
 lightRing_6C7JFt
 lightThemeColorOnly_W-mjBG
@@ -13420,6 +13459,7 @@ lightTheme_Jru8ph
 lightTwo_TLgD1o
 lightWhite_IXpFcz
 light_IXpFcz
+light_NPgbd9
 light_ctJI0k
 light_oX1O9t
 lightbox_od1dl1
@@ -13848,6 +13888,7 @@ lockedBadgesSection_ZJqSZM
 lockedContainer_FyHA_s
 lockedEmoji_JBR6wp
 lockedEnd_tfXQFl
+lockedLabel_QYKrWP
 lockedPickerItem_ZJqSZM
 lockedPreviewContainer_ZJqSZM
 lockedPreview_dzgIu6
@@ -14404,6 +14445,7 @@ messageCountIcon_SOY5H6
 messageCountIcon_d5S8Xh
 messageCountText_SOY5H6
 messageCount_Rp_Lxb
+messageCount_vY_q7s
 messageEmbedContenPrimaryLineSkeleton_MVWObz
 messageEmbedContentActionSkeleton_MVWObz
 messageEmbedContentIconSkeleton_MVWObz
@@ -15073,6 +15115,7 @@ newBadgeCutout_imJCJi
 newBadgeHost_cuaHiV
 newBadgeHost_nitlyF
 newBadgeOverflow_SOY5H6
+newBadgePlaying_3lradj
 newBadgeWrapper_SOY5H6
 newBadge_-SUGNi
 newBadge_2SWORW
@@ -15103,6 +15146,7 @@ newContentDot_K8U7Ed
 newContentDot_mgabta
 newContentDot_y4ZEM5
 newContentRow_mgabta
+newFillPlaying_3lradj
 newLine_T14dfz
 newMemberActionBar_2x8-Qn
 newMemberBadge_P4-UkH
@@ -15294,7 +15338,6 @@ noPadding_kQORUk
 noPointerEvents_7NOr2f
 noResultsContainer_Q7s_Rv
 noResultsContainer_ZMTSV1
-noResultsContainer_kyu-6S
 noResultsContainer_mg3aTC
 noResultsContainer_y5H4jf
 noResultsContent_y5H4jf
@@ -15309,7 +15352,6 @@ noResults_R-K6-V
 noResults_Xe75gx
 noResults_ZU6RIJ
 noResults_ffBc3q
-noResults_kyu-6S
 noResults_uFkqU2
 noResults_yLOKc6
 noRoles_4sPjw-
@@ -15347,6 +15389,7 @@ nonTier2_YCKlZ1
 nonVisualMediaItemContainer_idVBIj
 nonVisualMediaItem_idVBIj
 noneIcon_NgozOX
+noneOption_6VEs7c
 none_1lwQ1X
 none_JFqgFB
 none_nFRzXP
@@ -15533,6 +15576,9 @@ offline_GOn4W8
 offline_Iy0c7A
 offline_rzQMrV
 offset_-MQQPo
+oldBadgePlaying_3lradj
+oldFillPlaying_3lradj
+oldGlow_3lradj
 oldNote_nr7Zul
 old_vYDVPJ
 onboardingChangeLogContainer_LajYMK
@@ -15579,6 +15625,7 @@ open_O2ifdm
 open_akUibV
 open_i16Ad0
 open_qs3nO2
+openableTile_i9BE2q
 opencriticContainer_vbNX0y
 opencriticRightContainer_vbNX0y
 opencriticTopCriticContainer_vbNX0y
@@ -15990,6 +16037,7 @@ pageControl_0MrDiE
 pageFooter_b0Gizz
 pageLabel_nkD26S
 pageNumbers_cUz8fW
+pageQuestion_6VEs7c
 pageSizeInput_nkD26S
 pageSizeSelection_nkD26S
 pageSnapAnchor_ak4stN
@@ -16000,6 +16048,7 @@ pageWrapper_4Qm5zV
 page_-hEsUl
 page_4JoJic
 page_4Qm5zV
+page_6VEs7c
 page_7s3UAK
 page_AjBRrC
 page_BOxUgc
@@ -16367,6 +16416,7 @@ permissionLockIcon_ogDlWQ
 permissionRow_88G_dS
 permissionRow_DvUIKH
 permissionRow_PaxA8v
+permissionSearch_4T6RB7
 permissionTitle_6JOTb4
 permissionWarning_V8Qcsn
 permission_-8GDCL
@@ -16423,6 +16473,7 @@ picker_17Efe7
 picker_1lN7Eh
 picker_LV4fBt
 picker_QrLb7B
+picker_sf7_MP
 picker_tPOZtk
 picker_vxox-C
 pictureInPictureVideo_qOjco6
@@ -16442,9 +16493,11 @@ pillIconTotal_rN1Ls3
 pillIcon_p_yaLN
 pillIcon_rN1Ls3
 pillIcon_sPmmqh
+pillInput_6VEs7c
 pillItemSelected_I4ubrz
 pillItemText_I4ubrz
 pillItem_I4ubrz
+pillLabel_6VEs7c
 pillMargin_nkh6Dx
 pillOnline_rN1Ls3
 pillRow_4TCG4u
@@ -16453,6 +16506,7 @@ pillText_sPmmqh
 pill_-PybZ8
 pill_4_iwh6
 pill_66YLV6
+pill_6VEs7c
 pill_Goax4j
 pill_KUkQ06
 pill_QDCvh-
@@ -17275,7 +17329,6 @@ productCardContentContainer_UGbKo5
 productCard_OgNeC3
 productCard__15efM
 productContent_GC8LF3
-productDayNumber_i9BE2q
 productDetailContent__15efM
 productDetails_OgNeC3
 productDetails__15efM
@@ -17624,10 +17677,12 @@ publishingSpinner_gxtY1y
 pulseAnimation_kIZjPZ
 pulseButton_hfM7yP
 pulseGradient_BUFBam
+pulseHidden_mHDwp4
 pulseIcon_hfM7yP
 pulse_8_fPij
 pulse_YWogFN
 pulse__B7Y3X
+pulse_mHDwp4
 pulse_oA3MHg
 pulsingEllipsis_3H5mjG
 pulsing_8_fPij
@@ -17741,9 +17796,11 @@ questionIcon_eICevE
 questionIcon_gjsCOP
 questionMark_GBvv4I
 questionMark_cMquG7
+questionText_6VEs7c
 questionTitle_PvfmDE
 questionWrapper_EVXXpI
 questionWrapper_eICevE
+question_6VEs7c
 question_EVXXpI
 question_HOJNvw
 question_eICevE
@@ -17775,6 +17832,7 @@ radioForeground_SZxRc8
 radioGroupContainer_0AAPiq
 radioGroupContainer_sqa4ec
 radioGroupOption_oJuRbG
+radioGroup_6VEs7c
 radioGroup_Pwp5qW
 radioGroup_QYgmpy
 radioHeader_Ri97vi
@@ -17822,6 +17880,8 @@ rail_f4VuTX
 rail_ncTrRG
 rail_v8co33
 rail_ydey4M
+raisedDoorAsset_i9BE2q
+raisedDoor_i9BE2q
 raisedHandCount_0zxwb-
 raisedHandIcon_0zxwb-
 randomizedRules_oQWonh
@@ -17836,9 +17896,21 @@ rangeSelection_02T8vR
 rangeTrackFill_KcIo31
 rangeTrack_KcIo31
 rankColumn_Yg_nqe
+rankDropZoneActive_6VEs7c
+rankDropZoneRefused_6VEs7c
+rankDropZone_6VEs7c
+rankEmpty_6VEs7c
+rankHandle_6VEs7c
+rankItemDragging_6VEs7c
+rankItem_6VEs7c
+rankLabel_6VEs7c
+rankList_6VEs7c
 rankNumber_Ly3Qke
+rankPosition_6VEs7c
 rankRing_i8iX4X
+rankSection_6VEs7c
 rankText_KBZQCe
+rank_6VEs7c
 rank_DeLaSu
 rank_KBZQCe
 rank_Ly3Qke
@@ -18123,6 +18195,7 @@ reportedMessageActions_HeWz1C
 repositioned_TJpZiO
 requiredError_owUmX8
 requiredItem_8YvAjo
+requiredMark_6VEs7c
 requiredPermissionsBanner_uarXY8
 required_2k8BZI
 required_DUr8vi
@@ -18236,6 +18309,7 @@ results_H8nOze
 results_RYejui
 results_ffBc3q
 retryButton_yu1aEm
+revealStrip_i9BE2q
 revenueShareBenefitCard_oGqn3i
 revenueSharePercentageDark_oGqn3i
 revenueSharePercentageLight_oGqn3i
@@ -18407,6 +18481,7 @@ roleCountText_nqXfgO
 roleDotAccessory_M3qk4j
 roleDotLeft_Wo4EpK
 roleDotRight_Wo4EpK
+roleDotSlot_N7pWzQ
 roleDot_2i8Bfm
 roleDot_88G_dS
 roleDot_CAMiwx
@@ -18563,6 +18638,7 @@ root_p22bPt
 root_qbmAsy
 root_rTsZa_
 root_sKUDgo
+root_sf7_MP
 root_t1zeBE
 root_tNLPJr
 root_vXFZs9
@@ -18626,6 +18702,7 @@ rowDetails_PVs2Ok
 rowDetails_ysRrD_
 rowDivider_5x0vse
 rowDivider_LekV6N
+rowError_6VEs7c
 rowGroup_d5S8Xh
 rowGroup_x1LvFB
 rowGuildName__-eZlF
@@ -18875,8 +18952,12 @@ saturation_qOZw1R
 saveNoticeContainer_FzHZZG
 saveNoticeContainer_UyQMSC
 savedStatus_vqUbC0
+scaleContainer_6VEs7c
 scaleHandle_1HiOnx
 scaleHeader_jSi0CW
+scaleLabels_6VEs7c
+scalePoints_6VEs7c
+scale_6VEs7c
 scale_98D4cN
 scale_dyTp5R
 scale_jSi0CW
@@ -19549,6 +19630,7 @@ selectionGroup_dbxnkK
 selectionGroup_sLUoDH
 selectionIcon_z6Fw-6
 selectionIndicator_z6Fw-6
+selectionRow_UyQMSC
 selectionSection_qIkfG-
 selectionSubSection_qIkfG-
 selection_f4VuTX
@@ -20169,6 +20251,7 @@ smallRegisterLink_8bJOD9
 smallRow_NPXZOq
 small_-BipLp
 small_0u4qn9
+small_3lradj
 small_3rN_rc
 small_7NOr2f
 small_AqLaeB
@@ -21123,7 +21206,10 @@ subnav_8qMUr2
 subscribeButtonWide_HMJaME
 subscribeButton_HMJaME
 subscribeButton_JZRLB9
+subscribeButton_LCY8WT
+subscribeButton_NPgbd9
 subscribeButton_aynOSy
+subscribeButton_hpYwhZ
 subscribeButton_w2kxj3
 subscribeNow_2VKjbN
 subscribeNow_tGpvb_
@@ -21293,6 +21379,7 @@ summaryFeedbackWrapper_a7hhRZ
 summaryFeedback_a7hhRZ
 summaryHeaderClanInfo_FDTnC5
 summaryHeader_FDTnC5
+summaryHeader_vY_q7s
 summaryInfo_dlyOyM
 summaryItem_YMXX4L
 summarySeparator_FDTnC5
@@ -21318,6 +21405,7 @@ surface_EV6q6S
 surface_MAMw2t
 surface_jk-MUB
 surface_pQZaf_
+surface_sf7_MP
 surfaces_MAMw2t
 surfaces_p9RQHW
 surpriseCover_3tF3Yo
@@ -21489,16 +21577,20 @@ tableHeader_XTvD56
 tableHeader_doBhuY
 tableHeaders_doBhuY
 tableOptions_JVBo8P
+tableRadioInput_6VEs7c
+tableRadio_6VEs7c
 tableRowGroup_zgsiD2
 tableRow_Jtnpgj
 tableTitle_EerRtM
 tableTitle_doBhuY
 tableWithoutSeparators_E9Mul6
 tableWrapper_02LA0a
+tableWrapper_6VEs7c
 tableWrapper_KUkQ06
 tableWrapper_twYJsJ
 table_-JvGQh
 table_02LA0a
+table_6VEs7c
 table_72PQI1
 table_88G_dS
 table_8bbvwJ
@@ -21650,9 +21742,11 @@ targetWebhook_LajYMK
 targetWidget_LajYMK
 target_nL08_v
 taskPresetSelect_-6-LQ4
+task_6VEs7c
 tasksButton_akUibV
 tasksClosing_akUibV
 tasksOpen_akUibV
+tasks_6VEs7c
 tasks_akUibV
 teamSetup_B2iun5
 teenName_UpEWJT
@@ -22653,6 +22747,7 @@ toolbar_SX_Cl2
 toolbar_hPmUPu
 toolbar_neq5ug
 toolbar_qaPTLC
+toolbar_sf7_MP
 toolbar_vY_q7s
 toolbar_wNVtHP
 toolbar_wfmW80
@@ -23062,8 +23157,13 @@ unknownSound_t3sUMN
 unknown_SISQ-M
 unknown_TLgD1o
 unknown_sBdlOA
+unlockHiding_Nw13mb
 unlockIcon_eEA71s
+unlockLabelPlaying_Nw13mb
+unlockLabel_Nw13mb
+unlockRevealing_Nw13mb
 unlockTierCtaHeading_7tmNTL
+unlock_mHDwp4
 unlockedDot_Csz0CI
 unlockedIcon_C3UYpl
 unlockedIcon_Csz0CI

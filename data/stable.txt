@@ -13490,6 +13490,7 @@ limitedBackground_qIotUB
 limitedFeatureBorder_qIotUB
 limitedTimeBadge_XBXDcd
 limitedTimeBadge_cvJOaf
+limitedTimeSelectionGroup_dbxnkK
 lineClamp1_MMUIw6
 lineClamp1_ZwpkLh
 lineClamp2Plus_MMUIw6
@@ -14511,6 +14512,7 @@ messageSpine_2i8Bfm
 messageTextArea_Gv2-5Z
 messageTextButton_NxZlvf
 messageText_k8jyN7
+messageUsername_TcSroI
 messageWithAttachments_IWr1Bs
 messageWrapper_Wn95fS
 messageWrapper_cXmH6r
@@ -17595,6 +17597,7 @@ progress_Qj4_D3
 progress_XFAI1O
 progress_ctJI0k
 progress_eIlNkz
+progress_kY8v10
 progress_loRtN1
 progress_nFRzXP
 progress_no-mtA
@@ -17634,7 +17637,10 @@ promotedTagBackground_4sN7lX
 promotedTag_4sN7lX
 promotedTag_9jC23S
 promotedText_2uXjfk
+promoterIcon_kY8v10
 promoterName_CXA5dw
+promoterName_kY8v10
+promoter_kY8v10
 promotionAccountIdentifierAvatar_TaDMX8
 promotionAccountIdentifierBody_TaDMX8
 promotionAccountIdentifierError_TaDMX8
@@ -17785,6 +17791,7 @@ questGrid_M77IY2
 questGrid_iar92T
 questHomeContent_iar92T
 questHomeHeroBackgroundImage_hjotnx
+questHomeHeroLink_hjotnx
 questHomePage_iar92T
 questHomeScroll_iar92T
 questIconContainer_Sh_Ht6

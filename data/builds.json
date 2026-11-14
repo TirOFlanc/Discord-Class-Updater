@@ -1,13 +1,13 @@
 {
   "canary": {
-    "build": "673215",
-    "classes": 24461,
-    "date": "2026-11-13 20:04 UTC"
+    "build": "673811",
+    "classes": 24498,
+    "date": "2026-11-14 07:03 UTC"
   },
-  "last_check": "2026-11-13 20:04 UTC",
+  "last_check": "2026-11-14 07:03 UTC",
   "stable": {
-    "build": "672800",
-    "classes": 24452,
-    "date": "2026-11-13 20:04 UTC"
+    "build": "673764",
+    "classes": 24459,
+    "date": "2026-11-14 07:03 UTC"
   }
 }

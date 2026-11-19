@@ -100,6 +100,8 @@ accountBtnInner_g9DJn9
 accountBtn_g9DJn9
 accountButtonInner_yX-kzH
 accountCard_xu8B3s
+accountChooseAddAccountButton_WN3DB-
+accountChooseContent_WN3DB-
 accountConnectedContainerChild_BmAYlI
 accountConnectedContainer_BmAYlI
 accountConnectedHeader_BmAYlI
@@ -273,6 +275,7 @@ actions_Elr8oR
 actions_GOn4W8
 actions_HLMBUf
 actions_IZv9tE
+actions_KUyZhJ
 actions_KXPGIh
 actions_Lfzq17
 actions_Mzv_GO
@@ -610,6 +613,7 @@ allReferralsSentBorder_4kkZbu
 allowSelection_qvPnAz
 allow_2rG0YD
 allow_8GP31u
+alone_6IM8hR
 alphaBetaTag_mQktSJ
 alphaTag__xoAVS
 altTag_sBdlOA
@@ -1387,7 +1391,6 @@ backButton_CXPwsk
 backButton_NIUjob
 backButton_NKrv-e
 backButton_gY4bnY
-backButton_krOYhC
 backButton_qOjco6
 backButton_rfDq2B
 backButton_wYAXYX
@@ -1824,6 +1827,7 @@ bar_8PBDGr
 bar_AqTeBa
 bar_HhFoZE
 bar_KBZQCe
+bar_KUyZhJ
 bar_O2ifdm
 bar_OnqacX
 bar_P1Eoy1
@@ -2120,6 +2124,7 @@ body_UB4ZYW
 body_UQqFnR
 body_UXxaSc
 body_Vp8y6R
+body_WN3DB-
 body_Wn95fS
 body_Wu0ZxP
 body_Xweo-z
@@ -2808,6 +2813,7 @@ canvas_nsXtHU
 canvas_wpwRpZ
 captchaContainer_UNGyxs
 captionContainer_hFq1lM
+captionDot_hNQR4j
 captionGradient_iPIbS8
 captionIcon_hNQR4j
 captionLabel_hNQR4j
@@ -3659,6 +3665,7 @@ chatMessageAssistant_8XrmtD
 chatMessageSurface_0PRZrk
 chatMessage_37eplx
 chatOpen_s7QiTL
+chatPanelHostFloating_ajKoHp
 chatPanelHostHidden_ajKoHp
 chatPanelHost_ajKoHp
 chatPreview_5JXgdm
@@ -4209,13 +4216,13 @@ closeButton_hzb1TJ
 closeButton_iXc8Nc
 closeButton_idf9mq
 closeButton_kxCM2B
+closeButton_l7oXIt
 closeButton_m1SX1n
 closeButton_mZNRSI
 closeButton_mb9pZg
 closeButton_nOu8a3
 closeButton_oQmK1h
 closeButton_p-KTSd
-closeButton_pI1Qq5
 closeButton_pwDXlN
 closeButton_qIkfG-
 closeButton_sKUDgo
@@ -6925,6 +6932,7 @@ details_wt-YD5
 details_x30rfK
 details_yoCgi_
 details_z264eY
+details_zmReAd
 detectedApplication_kQPUsd
 detectedGameFrame_QYgmpy
 detectedGameIcon_QYgmpy
@@ -6945,6 +6953,8 @@ deviceIcon_bUNrgk
 deviceLabel_bUNrgk
 deviceSelect_fqs12Y
 deviceSubLabel_bUNrgk
+deviceToggleDisabled_KUyZhJ
+deviceToggle_KUyZhJ
 diag1_12gY2-
 diag2_12gY2-
 dialog_HsOb2X
@@ -7230,10 +7240,12 @@ display_Gv2-5Z
 display_NgozOX
 display_hbCisT
 display_xvJRtY
+ditherCanvasRight_wdhBkx
 ditherCanvas_wdhBkx
 ditherConversation_wdhBkx
 ditherHome_wdhBkx
 ditherIntro_wdhBkx
+ditherRight_wdhBkx
 ditherThinking_wdhBkx
 dither_wdhBkx
 diversityEmojiItemImage_eHzdRB
@@ -7491,8 +7503,8 @@ draftBadgeContainer_AWLkYu
 draftBadge_S0d6w-
 draftBadge__15efM
 draftBadge_jGF6_I
-draftChip_krOYhC
 draftSpinner_fFIeP2
+draftTag_krOYhC
 dragAfter_7NrAL2
 dragAndDropContainer_wsmVvi
 dragAndDropTarget_FNEkcu
@@ -8325,6 +8337,7 @@ errorBlock_7un0DK
 errorBlock_utybAV
 errorBody_MdxyIO
 errorBody_TaDMX8
+errorBody_WN3DB-
 errorBoundaryIcon_dolXFt
 errorBoundary_dolXFt
 errorBox_4HfQya
@@ -8341,6 +8354,7 @@ errorContainer_ZWbFoF
 errorContainer_lcPd2W
 errorContainer_sRjXhH
 errorContainer_tvT5v-
+errorContent_WN3DB-
 errorDetails_bu9M3O
 errorDetails_l2fz5u
 errorDisplayName_2Rf5at
@@ -8354,6 +8368,7 @@ errorIcon_LskjUO
 errorIcon_wfmW80
 errorImage_QHVbp3
 errorImage_TaDMX8
+errorImage_WN3DB-
 errorImage_b-mvah
 errorImage_k1RHDu
 errorImage_ybE8N9
@@ -8398,6 +8413,7 @@ errorText_EAE2zZ
 errorText_Ih0khk
 errorText_OgsNUm
 errorText_QIsS6D
+errorText_WN3DB-
 errorText__ThwoA
 errorText_axd_gA
 errorText_q4D1ZT
@@ -8658,8 +8674,10 @@ fadeIn_3lradj
 fadeIn_AFi54G
 fadeIn_F7qvhY
 fadeIn_v8co33
+fadeLeft_l7oXIt
 fadeOut_2DNqcO
 fadeOut_F7qvhY
+fadeRight_l7oXIt
 fadeStart_lgwLHA
 fade_98D4cN
 fade_D8O-nd
@@ -8864,6 +8882,7 @@ filledIcon_YUKqn_
 filledPill_E5LDT0
 filledRemoveButton_E5LDT0
 filledTag_E5LDT0
+filled_6IM8hR
 filled_vDbele
 filmstrip_eFDzrU
 filterBackground_v8aEn1
@@ -9234,6 +9253,7 @@ footer_SOY5H6
 footer_Tek8Yo
 footer_V93FWU
 footer_VlOCYb
+footer_WN3DB-
 footer_WiFU02
 footer_XFAI1O
 footer_XLKukn
@@ -9270,7 +9290,6 @@ footer_omcAqa
 footer_oszuaw
 footer_p-On7-
 footer_pGS-85
-footer_pI1Qq5
 footer_s4Cv6K
 footer_snIQ1H
 footer_srE3KQ
@@ -9762,6 +9781,7 @@ giftSentMessage_-uIKIT
 giftSentToGameNoticeContainerPadding_QegJ3p
 giftText_20JRSQ
 giftTitle_20JRSQ
+giftedSubscriptions_0GyuUa
 giftingBadgeBanner_ZwzaBx
 giftingBadgeFooter_-uIKIT
 giftingButton_VngTsB
@@ -9789,6 +9809,8 @@ glowImage_-FR8F3
 glowImage_uWfwNv
 glowLayerIntro_-FR8F3
 glowLayer_-FR8F3
+glowMask_exL2K9
+glowRight_-FR8F3
 glowTier2_RftUXv
 glowTier3_RftUXv
 glowTier4_RftUXv
@@ -10018,6 +10040,8 @@ groupTitleLink__xoAVS
 groupTitle_DKMuWq
 groupTitle__xoAVS
 groupTitle_qUlUyR
+groupToggleIcon__xoAVS
+groupToggle__xoAVS
 groupWarning_DKMuWq
 groupWrapper_lm2_KW
 group_2rG0YD
@@ -10345,6 +10369,7 @@ h4_csPsk2
 halfHighlight_4kkZbu
 halfInput_KRD9f3
 halfWidth__GKiD4
+half_6IM8hR
 half_nFRzXP
 halloweenAnimationOverlay_M2FQyv
 haloBackground_hFq1lM
@@ -11188,6 +11213,7 @@ heading_KE3oYJ
 heading_KVIPhV
 heading_L_XqWT
 heading_NUIl5Z
+heading_NVxEwq
 heading_NgozOX
 heading_Q7Cp1t
 heading_RL7BaR
@@ -11208,7 +11234,6 @@ heading_mQ3T6n
 heading_mfjrmV
 heading_oKjO_f
 heading_oQmK1h
-heading_pI1Qq5
 heading_pI94My
 heading_srJQZC
 heading_twYJsJ
@@ -11309,14 +11334,12 @@ heroImageButton_omcAqa
 heroImageContainer__9KZT7
 heroImageSkeleton_Ls3EVK
 heroImageSkeleton__9KZT7
-heroImageWithTrialOffer_pI1Qq5
 heroImageWrapper_omcAqa
 heroImage_67wC2_
 heroImage_Ls3EVK
 heroImage_N14QJl
 heroImage__9KZT7
 heroImage_omcAqa
-heroImage_pI1Qq5
 heroImage_rMw7KK
 heroImage_ro3Uxe
 heroLogoNameContainer_XBXDcd
@@ -11659,9 +11682,6 @@ iconCircle_gmkdZC
 iconCircle_tQBDXx
 iconClickable_8ZcKCk
 iconClosed_MdUQoo
-iconColorPink_pI1Qq5
-iconColorPurple_pI1Qq5
-iconColorYellow_pI1Qq5
 iconColor_fzXO3p
 iconContainerApplicationHome_tyrcky
 iconContainerLarge_M3qk4j
@@ -12041,7 +12061,6 @@ icon_oDjP9R
 icon_olbhh9
 icon_opJNsq
 icon_p9RQHW
-icon_pI1Qq5
 icon_pfW0SY
 icon_pjcvYh
 icon_pqX-ln
@@ -12081,6 +12100,7 @@ icon_ybUK7Z
 icon_yoCgi_
 icon_ysRrD_
 icon_zgsiD2
+icon_zmReAd
 icon_ztNr4Q
 iconsContainer_uFkqU2
 iconsContainer_zln_tS
@@ -13692,6 +13712,7 @@ list_xu8B3s
 list_ypDcf7
 list_yz6RlA
 list_zGFyZa
+list_zmReAd
 listboxCompact_C3qxaU
 listboxWide_C3qxaU
 listbox_C3qxaU
@@ -16417,7 +16438,6 @@ perksTitleStackedCards_hNerlt
 perksTitle_hNerlt
 perks_R69lUn
 perks_no-mtA
-perks_pI1Qq5
 perks_zpaDaP
 permissionCheckmark_-8GDCL
 permissionChiplet_whSvVg
@@ -17032,7 +17052,6 @@ premiumTierCardsContainerSettings_yZ_lS-
 premiumTrialBadgeSelected_gLFXov
 premiumTrialBadge_XZc51c
 premiumTrialBadge_gLFXov
-premiumTrialBadge_pI1Qq5
 premiumTryItOutDivider_cuaHiV
 premiumTryItOutIntro_cuaHiV
 premiumTryItOutSection_cuaHiV
@@ -17246,7 +17265,6 @@ preview_Wu0ZxP
 preview_dcNks8
 preview_fXYEi6
 preview_gjSLrr
-preview_krOYhC
 preview_lG0NAh
 preview_lmQhFf
 preview_md_YFn
@@ -17597,14 +17615,14 @@ progressiveBlur_D8O-nd
 progressiveBlur_Lb4UkJ
 progressiveBlur_oKjO_f
 progressiveBlur_w2kxj3
+projectHalf_6IM8hR
 projectHeaderDivider_gxtY1y
 projectHeaderIconActions_gxtY1y
-projectHeaderLeadingActions_gxtY1y
 projectIconButton_krOYhC
+projectIcon_6IM8hR
 projectMainFallback_gxtY1y
+projectName_6IM8hR
 projectTab_rqE2lZ
-projectTileBacking_N9h0kO
-projectTile_N9h0kO
 projectUnavailable_gxtY1y
 promoCardAssetContainer_5cFAmt
 promoCardAssetImageLockedRounded_5cFAmt
@@ -17640,6 +17658,7 @@ promotionBannerContainer_FPIV9y
 promotionBannerOffset_HFMl71
 promotionBodyWrapper_TaDMX8
 promotionBody_TaDMX8
+promotionBody_WN3DB-
 promotionCardLeftContainer_NnWqs2
 promotionCard_NnWqs2
 promotionConfirmUpgrade_TaDMX8
@@ -17648,6 +17667,7 @@ promotionGradient_JrW-zh
 promotionIconImage_NnWqs2
 promotionIcon_NnWqs2
 promotionImage_TaDMX8
+promotionImage_WN3DB-
 promotionIndex_XBXDcd
 promotionLegalese_NnWqs2
 promotionProgressBlue_LZTw4o
@@ -17661,6 +17681,7 @@ promotionTakeoverSummary_XBXDcd
 promotionTakeoverSummary_sIa-bu
 promotionTakeover_XBXDcd
 promotionText_arblTP
+promotionTitle_WN3DB-
 promotion_n-yNGx
 promotionalBackgroundImage_1nVkKR
 promotionalBackgroundImage_nkh6Dx
@@ -18783,6 +18804,7 @@ rowLabel_TCJuwN
 rowLabel_lQvWfQ
 rowLabel_qpHMhc
 rowLeft_KMgdsK
+rowLeft_zmReAd
 rowMeta_ZcyGej
 rowMeta__ThwoA
 rowName_ZcyGej
@@ -18792,6 +18814,7 @@ rowPath_ZcyGej
 rowPortrait_KzYe0w
 rowRecentlyAdded_cSRpF3
 rowRight_KMgdsK
+rowRight_zmReAd
 rowSelected_m0OnQa
 rowSpinner_6Sxv-M
 rowStatic_hNQR4j
@@ -18922,6 +18945,7 @@ row_xFRALB
 row_xcDWbx
 row_xlCdcc
 row_zgsiD2
+row_zmReAd
 row_znaaOa
 rowsContainer_CXh86K
 rowsDisabled_wQNMVz
@@ -19386,6 +19410,7 @@ sectionSpacer_5cFAmt
 sectionSubtitle_ke_0G5
 sectionTitle_-SUGNi
 sectionTitle_1X7XDm
+sectionTitle_1d0xGU
 sectionTitle_4VCFtm
 sectionTitle_5FdZ3J
 sectionTitle_9ec3IA
@@ -19476,6 +19501,7 @@ section_xcDWbx
 section_yjUuDF
 section_zGFyZa
 section_zae0GE
+section_zmReAd
 section_znaaOa
 sectionsContainer_0fgkqL
 sectionsContainer_liAO31
@@ -19743,6 +19769,7 @@ separator_sYzG8R
 separator_vxox-C
 separator_xu8B3s
 separator_ymaupl
+separator_zmReAd
 seperator_dYOeca
 seperator_ifta5m
 sequencedAnimation_evwsFP
@@ -20652,6 +20679,7 @@ splash_Jr2nWU
 splash_hYPoP0
 splash_oEq_gK
 splitGroup_lbddpW
+split_6IM8hR
 split_p1llMl
 spoilerAttachment_XyW1ZT
 spoilerAvatar_N3Anbl
@@ -20923,6 +20951,7 @@ statusPaidIcon_1iGxjJ
 statusPaidIcon_8bbvwJ
 statusPickerModalMenu_nitlyF
 statusPopover_yDAPhH
+statusProjectIn_6IM8hR
 statusRed_zYsR7a
 statusRight_R9rqaI
 statusRow_KG5liV
@@ -21055,7 +21084,6 @@ stickerPreviewDivider_fD1u1f
 stickerPreview_fD1u1f
 stickerPreviews_fD1u1f
 stickerPrimaryAsset_ualTdV
-stickerUnsendable_5z8c5P
 sticker_5z8c5P
 sticker_EHS2sw
 sticker_YtPzLx
@@ -21395,6 +21423,7 @@ successButtons_MGX1Qy
 successContent_MGX1Qy
 successContent_pwDXlN
 successDescription_MGX1Qy
+successHeader_5tvYxx
 successImage_MGX1Qy
 successImage_pwDXlN
 successImg_-uSFYN
@@ -21527,6 +21556,7 @@ switch_NKrv-e
 switches_Xf2YvO
 symbolBackground_CA3Z_c
 symbol_CA3Z_c
+syncShareGroup_gxtY1y
 syncedRole_L02B3L
 syncing_ku2ve4
 syntaxAfter_nsjAhz
@@ -21547,7 +21577,9 @@ systemServiceWarning_DKMuWq
 systemTagWrapper_Vwa3As
 systemTag_bbJCi7
 systemTag_q-l2Gj
+tabActive_l7oXIt
 tabActive_ve0N80
+tabAfterClosable_l7oXIt
 tabBackgroundImage_zln_tS
 tabBarContainer_-GFQJQ
 tabBarContainer_3FXl_j
@@ -21585,7 +21617,9 @@ tabBar_xTP3zy
 tabBar_zrUwGA
 tabBody_zrUwGA
 tabButton_BfN7RR
+tabButton_l7oXIt
 tabButton_ve0N80
+tabClosable_l7oXIt
 tabClosing_ve0N80
 tabContainer_I4ubrz
 tabContainer_L3EMza
@@ -21593,6 +21627,7 @@ tabContent_UYsof2
 tabDisabled_GBvv4I
 tabEntering_ve0N80
 tabHoverGradient_zln_tS
+tabIcon_l7oXIt
 tabItemSelected_I4ubrz
 tabItemSelected_UYsof2
 tabItem_2jjT2l
@@ -21601,9 +21636,11 @@ tabItem_Jtnpgj
 tabItem_UYsof2
 tabLabel_3SsYXF
 tabLabel_LSviKk
+tabLabel_l7oXIt
 tabListItemPill_I4ubrz
 tabListItem_I4ubrz
 tabListScroller_y4ZEM5
+tabList_l7oXIt
 tabMeasurer_Jtnpgj
 tabPanelHidden_TP1WMf
 tabPanelScroller_y4ZEM5
@@ -21623,6 +21660,7 @@ tab_cfQ5Fm
 tab_fgRQ5j
 tab_fv75R2
 tab_grK-Uf
+tab_l7oXIt
 tab_uH52YQ
 tab_uP9HND
 tab_ve0N80
@@ -21698,6 +21736,7 @@ tabs_X-UIDe
 tabs__emG3x
 tabs_fgRQ5j
 tabs_fv75R2
+tabs_l7oXIt
 tabs_qVK4bU
 tabs_uH52YQ
 tabs_uP9HND
@@ -22509,6 +22548,7 @@ titleBar_ngaTpP
 titleBlockWithBack_wRblFq
 titleBlock_wRblFq
 titleButton_NJVMoP
+titleButton_NVxEwq
 titleCaret_vNURip
 titleCase_bbJCi7
 titleCenter_KWWX2H
@@ -22630,6 +22670,7 @@ title_GX4h9d
 title_H_fMGO
 title_HjAsMI
 title_Hp7Rhb
+title_HsOb2X
 title_IM8diO
 title_I_XU7P
 title_I_rpEd
@@ -23118,7 +23159,6 @@ triggerMainContainer_DpUkVj
 triggerSettingsContainer_DpUkVj
 trigger_5C8xF6
 trigger_6FCE-u
-trigger_FfIb_j
 trigger_GNlW7Y
 trigger_GZw1kc
 trigger_PdpLFM
@@ -23232,8 +23272,6 @@ unicodeShortcutInvisible_ufks4w
 unicodeShortcut_ufks4w
 unifiedCheckoutLoadingContainer_FPIV9y
 unifiedReviewStepBodyBottomPadding_v15Jql
-unifyTrialUpsell_K-9txm
-unifyTrialUpsell_nnLXsN
 uninteractive_i0EgQh
 unionpay_4D-4dI
 unionpay_monochrome_4D-4dI
@@ -23278,6 +23316,8 @@ unreadAccessoryContainer_yoCgi_
 unreadBar_ysO7Gy
 unreadBottom_ysO7Gy
 unreadCount_5w784r
+unreadDotBox_6IM8hR
+unreadDot_6IM8hR
 unreadDot_IqWmhA
 unreadDot_N9h0kO
 unreadDot_SfYygu
@@ -23409,8 +23449,6 @@ upsellCardTitle_rCfKFu
 upsellCards_rCfKFu
 upsellCloseIconWrapper_vJa-rc
 upsellCloseIcon_vJa-rc
-upsellClose_HMJaME
-upsellClose_K-9txm
 upsellClose_KrGPlR
 upsellContainerFloating_jFJVCQ
 upsellContainerInline_jFJVCQ
@@ -23425,7 +23463,6 @@ upsellContent_KrGPlR
 upsellContent_MfeS_u
 upsellContent_vJa-rc
 upsellDefaultContent_vJa-rc
-upsellDescription_K-9txm
 upsellDescription_x-SGOT
 upsellFooter_KrGPlR
 upsellFooter_eEA71s
@@ -23438,7 +23475,6 @@ upsellHeader_yLJWMA
 upsellImageWithTrialOffer_XZc51c
 upsellImage_FXDvop
 upsellImage_HMJaME
-upsellImage_K-9txm
 upsellImage_XZc51c
 upsellImage_XzStbz
 upsellImage_ZVQtq6
@@ -23464,10 +23500,8 @@ upsellText_eEA71s
 upsellText_inIaqV
 upsellText_jFJVCQ
 upsellText_jPuskz
-upsellTitle_K-9txm
 upsellTitle_KxXBlr
 upsellTitle_rCfKFu
-upsellWrapper_K-9txm
 upsell_14qEft
 upsell_7V4PrP
 upsell_A7cPID
@@ -23517,7 +23551,6 @@ userGreen_5JXgdm
 userHook_LajYMK
 userIconCircle_-PdA9i
 userIconContainer_d8EjQE
-userIconWrapper_hNQR4j
 userIcon_MRjIbW
 userIcon_SQw-pl
 userInfoCentered_4Y31So
@@ -23994,6 +24027,7 @@ voiceUsers_2NnKyB
 voiceUsers_7FtMGA
 voiceUsers_9U6LUN
 voiceWidgetContainer_DKMuWq
+voicemodGradient_iPIbS8
 volumeButtonIcon_seLrDE
 volumeButtonSlider_QlL4f-
 volumeButton_QlL4f-
@@ -24024,6 +24058,7 @@ voters_S9aZ6q
 votesData_D4-WfD
 votesData_hdMKHE
 waitingPill_wDp5Lr
+wandHalf_6IM8hR
 wandSelected_N9h0kO
 wandSparkleLarge_8XrmtD
 wandSparkleSmall_8XrmtD
@@ -24431,7 +24466,6 @@ wrapper_o7iJXS
 wrapper_oITdBA
 wrapper_oJrxyy
 wrapper_oQjLgZ
-wrapper_pI1Qq5
 wrapper_qZsksx
 wrapper_r1W-NV
 wrapper_rfWwnu

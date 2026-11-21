@@ -3791,7 +3791,6 @@ checkmark_yLJWMA
 checkoutFooterPortal_MuMT85
 checkoutInlineNoticeContainer_v15Jql
 checkoutModalFooterContent_n6Dflf
-checkpointEnabled_bcgTHb
 checks_sf7_MP
 cherryBomb_OAgVZM
 chevronButtonContent_hjEaPI
@@ -10442,6 +10441,7 @@ hasBoostingPill_U8Q-Sg
 hasBottomBar_yz6RlA
 hasBottomContent_UGbKo5
 hasButton_3Rvb29
+hasCTA_bcgTHb
 hasColorGlow_gKpIZP
 hasContent_4TfzT5
 hasContent_SY_P2T

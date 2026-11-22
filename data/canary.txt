@@ -11436,7 +11436,6 @@ hidden_Mzv_GO
 hidden_NUIl5Z
 hidden_NZ34f3
 hidden_Nz_hf6
-hidden_Og6w3q
 hidden_Pwp5qW
 hidden_Q_Lllm
 hidden_RftUXv
@@ -16570,6 +16569,7 @@ pillarMetrics_i8iX4X
 pillarName_i8iX4X
 pills_CXA5dw
 pinIcon_nLtnFF
+pinIcon_ve0N80
 pingCircleError_61u9G9
 pingCircleExcellent_61u9G9
 pingCircleFair_61u9G9
@@ -21618,6 +21618,7 @@ tabBar_xTP3zy
 tabBar_zrUwGA
 tabBody_zrUwGA
 tabButtonContent_ve0N80
+tabButtonFade_ve0N80
 tabButton_BfN7RR
 tabButton_l7oXIt
 tabButton_ve0N80
@@ -21648,9 +21649,11 @@ tabPanelHidden_TP1WMf
 tabPanelScroller_y4ZEM5
 tabPanel_7pDS2B
 tabPanel_TP1WMf
+tabPinned_ve0N80
 tabPreviewClose_GBvv4I
 tabSelected__emG3x
 tabTitle_3SsYXF
+tabUnread_ve0N80
 tabWithTrailControl_ve0N80
 tabWrapper_fgRQ5j
 tab_9mZA96

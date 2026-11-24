@@ -4431,6 +4431,7 @@ collectiblesGradient_JrW-zh
 collectiblesPreview_BThP8L
 collectiblesPreview_mwdTRW
 collectiblesSkuPreview_PJ8wak
+collectionIndexSequencedOfferHeroHeader_XBXDcd
 collectionItemContent_xc-26D
 collectionItemImagePlaceholder_xc-26D
 collectionItemImage_xc-26D
@@ -15680,6 +15681,7 @@ open_O2ifdm
 open_akUibV
 open_i16Ad0
 open_qs3nO2
+openableDoor_IxwVgM
 openableTile_IxwVgM
 opencriticContainer_vbNX0y
 opencriticRightContainer_vbNX0y
@@ -16030,6 +16032,7 @@ overlayTimerValue_tYuRNZ
 overlayTimer_tYuRNZ
 overlayTitleText_7NOr2f
 overlayTitle_7NOr2f
+overlayTitle_tQQC_c
 overlayTop_7NOr2f
 overlayWidgetImage_KOkKTK
 overlayWidgetSlide_KOkKTK
@@ -18407,12 +18410,14 @@ results_RYejui
 results_ffBc3q
 retryButton_yu1aEm
 revealAnimation_IxwVgM
+revealDateFade_IxwVgM
 revealDateLabel_IxwVgM
 revealIdleAnimation_IxwVgM
 revealOnHover_H7UdLB
 revealStripOverIdleAnimation_IxwVgM
 revealStrip_IxwVgM
 reveal_7n2iBD
+revealedProductCard_IxwVgM
 revenueShareBenefitCard_oGqn3i
 revenueSharePercentageDark_oGqn3i
 revenueSharePercentageLight_oGqn3i
@@ -19827,6 +19832,8 @@ sequencedAnimation_evwsFP
 sequencedOfferCarousel_XBXDcd
 sequencedOfferHeader_XBXDcd
 sequencedOfferItem_XBXDcd
+sequencedOfferScrollList_XBXDcd
+sequencedOfferScroller_XBXDcd
 sequencerAnimatedNode_j2jaDD
 sequencerStatic_j2jaDD
 sequencer_j2jaDD
@@ -19856,6 +19863,7 @@ serverSection_mQ3T6n
 serverShopLabelText_ePgMSx
 serverShopLabel_ePgMSx
 serverSubPill_d5S8Xh
+serverSurfaceTable_5gwPwi
 serverTag_E7xgJz
 service_DnqwZl
 service_wfmW80

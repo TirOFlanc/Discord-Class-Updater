@@ -3791,7 +3791,6 @@ checkmark_yLJWMA
 checkoutFooterPortal_MuMT85
 checkoutInlineNoticeContainer_v15Jql
 checkoutModalFooterContent_n6Dflf
-checkpointEnabled_bcgTHb
 checks_sf7_MP
 cherryBomb_OAgVZM
 chevronButtonContent_hjEaPI
@@ -6400,6 +6399,8 @@ ctaReveal_tTlCcY
 ctaReveal_z264eY
 ctaRow_Lb4UkJ
 ctaSection_aOuJto
+ctaSpinnerItem_bcgTHb
+ctaSpinner_bcgTHb
 ctaSubtitle_z8Rc8M
 ctaTitle_z8Rc8M
 ctaVisible_EaQw3u
@@ -10440,6 +10441,7 @@ hasBoostingPill_U8Q-Sg
 hasBottomBar_yz6RlA
 hasBottomContent_UGbKo5
 hasButton_3Rvb29
+hasCTA_bcgTHb
 hasColorGlow_gKpIZP
 hasContent_4TfzT5
 hasContent_SY_P2T
@@ -11434,7 +11436,6 @@ hidden_Mzv_GO
 hidden_NUIl5Z
 hidden_NZ34f3
 hidden_Nz_hf6
-hidden_Og6w3q
 hidden_Pwp5qW
 hidden_Q_Lllm
 hidden_RftUXv
@@ -16568,6 +16569,7 @@ pillarMetrics_i8iX4X
 pillarName_i8iX4X
 pills_CXA5dw
 pinIcon_nLtnFF
+pinIcon_ve0N80
 pingCircleError_61u9G9
 pingCircleExcellent_61u9G9
 pingCircleFair_61u9G9
@@ -21616,6 +21618,7 @@ tabBar_xTP3zy
 tabBar_zrUwGA
 tabBody_zrUwGA
 tabButtonContent_ve0N80
+tabButtonFade_ve0N80
 tabButton_BfN7RR
 tabButton_l7oXIt
 tabButton_ve0N80
@@ -21646,9 +21649,11 @@ tabPanelHidden_TP1WMf
 tabPanelScroller_y4ZEM5
 tabPanel_7pDS2B
 tabPanel_TP1WMf
+tabPinned_ve0N80
 tabPreviewClose_GBvv4I
 tabSelected__emG3x
 tabTitle_3SsYXF
+tabUnread_ve0N80
 tabWithTrailControl_ve0N80
 tabWrapper_fgRQ5j
 tab_9mZA96

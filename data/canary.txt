@@ -1628,6 +1628,7 @@ badge_XtY2mm
 badge_YeZ5Kj
 badge_Yjv1d0
 badge_ZJk0We
+badge_ZWUM0d
 badge_Zil16i
 badge_bUsGtA
 badge_cCA_BL
@@ -2018,7 +2019,6 @@ blurple-light_DASouH
 blurpleTreatment_oXifRZ
 blurredBackground_MZTN9B
 blurred_h7TRgu
-board_7JaBRz
 body-lg/medium_RAOoio
 body-lg/normal_RAOoio
 body-lg/semibold_RAOoio
@@ -2876,7 +2876,6 @@ cardBenefitIcon_7LZP3_
 cardBenefit_7LZP3_
 cardBody_-weL8h
 cardBody_3ijjdb
-cardBody_7JaBRz
 cardBody_Vwa3As
 cardBody_k5CETD
 cardBody_ldBGOa
@@ -3055,7 +3054,6 @@ card_5Yn7E3
 card_6bPiII
 card_76EEFv
 card_7GJfGX
-card_7JaBRz
 card_7LZP3_
 card_7LwIfE
 card_8U9EvC
@@ -4091,6 +4089,7 @@ clickable_W6wEGA
 clickable_WRLIGC
 clickable_Xweo-z
 clickable_YUoOxm
+clickable_ZWUM0d
 clickable_ZjaEbs
 clickable__axdQh
 clickable__be5Bx
@@ -4266,7 +4265,6 @@ closeButton_wGoWhP
 closeButton_wfl_s_
 closeButton_x3HD6i
 closeButton_yu1aEm
-closeButton_zTijXM
 closeButton_zhJF5z
 closeButton_zln_tS
 closeButton_zoUCAE
@@ -4547,7 +4545,6 @@ columns4_cUz8fW
 columns5_cUz8fW
 columns6_cUz8fW
 columnsSpan_BkGrJJ
-columns_7JaBRz
 columns_EpdO4n
 comboBoxInputContainer_vWC4bk
 comboBoxInputScroller_vWC4bk
@@ -5966,6 +5963,7 @@ content_YuplL1
 content_ZIorr0
 content_ZMR-xe
 content_ZVQtq6
+content_ZWUM0d
 content_ZWbFoF
 content_ZbIvmP
 content_ZjlY6O
@@ -6154,6 +6152,7 @@ controls_dfLAdA
 controls_owUmX8
 controls_pFuVlX
 controls_wpwRpZ
+controls_zTijXM
 convenienceGlowGradientActive_HG2xvK
 convenienceGlowGradient_HG2xvK
 conversationContainer_tJSWzx
@@ -6585,6 +6584,7 @@ darkOverlay_lUEm2A
 darkRing_6C7JFt
 dark_arblTP
 darkenImage_LekV6N
+darkening_X8jAsH
 dash_LajYMK
 dataAssurance_ybIyIN
 data__LdbI1
@@ -8736,6 +8736,7 @@ fade_w2kxj3
 fade_yzIZMq
 faded_-PdA9i
 faded_4cz-WN
+faded_8tFvap
 faded_Freh-X
 faded_FyHA_s
 faded_UWRh5Q
@@ -9127,7 +9128,6 @@ folderTarget_nL08_v
 folderTitle_1X7XDm
 followButton_z_gUBg
 followSuccessHeader_wRhEA_
-follow_LRYSOg
 followerBenefitCard_oGqn3i
 followerBenefitText_oGqn3i
 following_fXYEi6
@@ -9481,6 +9481,7 @@ frame_HsOb2X
 frame_LiMjrt
 frame_QsRXyC
 frame_WJj4ku
+frame_X8jAsH
 frame__vwHFq
 frame_dc8uq3
 frame_g7zg24
@@ -10940,7 +10941,6 @@ header_6c9R7U
 header_6zZYhF
 header_72PQI1
 header_78NJ3W
-header_7JaBRz
 header_7KvOkT
 header_7LDgP1
 header_7dkpUR
@@ -11971,7 +11971,6 @@ icon_KyI_aY
 icon_LCl4XD
 icon_LDGylj
 icon_LQmP0J
-icon_LRYSOg
 icon_LajYMK
 icon_LekV6N
 icon_LiOD7I
@@ -14663,8 +14662,6 @@ miniAvatar_JaECsL
 miniGuildIcon_AAMT29
 miniPopover_JyxBSo
 miniPopover_Q_Lllm
-miniProfileBody_7JaBRz
-miniProfile_7JaBRz
 mini_p3RiOL
 mini_preview_AFi54G
 minimapIndicator_PkSv2u
@@ -15115,9 +15112,7 @@ navBarSectionContentContainer_jHfUxk
 navBarSectionContent_jHfUxk
 navBar_jHfUxk
 navButtonActive_58b0l2
-navButtonActive_dyDYQj
 navButton_58b0l2
-navButton_dyDYQj
 navButtons_8Ei6w_
 navContent_S4jOo8
 navDecoration_S4jOo8
@@ -15129,7 +15124,6 @@ navItem_58b0l2
 navItem_GQJi50
 navItem_S4jOo8
 navItem_SVFTGM
-navItem_dyDYQj
 navItem_zP0tg_
 navLabel_S4jOo8
 navLink_EjFwfh
@@ -16178,7 +16172,6 @@ paletteIcon_lUEm2A
 panHint_wNVtHP
 paneInner_SVFTGM
 paneOption_LSN_s0
-pane_7JaBRz
 pane_vY_q7s
 panelButtonContainer_IZv9tE
 panelButtonShineWipeContainer_IZv9tE
@@ -16981,6 +16974,7 @@ poppedOut_hbKzX7
 popularPicksSection_XBXDcd
 portalRoot_3ijjdb
 portraitImage_tiTx8t
+positionContainerAlignLeft_dyDYQj
 positionContainerOnlyEmoji_58b0l2
 positionContainerOnlyEmoji_dyDYQj
 positionContainer_58b0l2
@@ -17310,7 +17304,6 @@ preview_2i8Bfm
 preview_3kXUvP
 preview_4ZmCSI
 preview_5G-eaS
-preview_7JaBRz
 preview_7ne32W
 preview_9EQRxh
 preview_AFi54G
@@ -17569,7 +17562,6 @@ profileViewDisabled_9clQ_c
 profileWidgetCover_R0hw0B
 profile_37eplx
 profile_5G-eaS
-profile_7JaBRz
 profile_bWP3Je
 profile_pHGfKY
 profile_s3DB6Y
@@ -18346,6 +18338,7 @@ resizeEast_X_AbQB
 resizeEast_yjvjn7
 resizeHandleBottomLeft_69M0s9
 resizeHandleBottomRight_69M0s9
+resizeHandleTarget_dyDYQj
 resizeHandleTopLeft_69M0s9
 resizeHandleTopRight_69M0s9
 resizeHandle_-9CJCW
@@ -19543,6 +19536,7 @@ section_UGg8Kk
 section_UWowfY
 section_UYsof2
 section_ZcHFUr
+section__oMJOu
 section__xoAVS
 section_aOF6YT
 section_bYuL-p
@@ -19694,7 +19688,6 @@ selectedSkusContainer_jvrhw8
 selectedSkusList_jvrhw8
 selectedSource_4HfQya
 selectedStorePaginationItem_JIpOwA
-selectedTab_7JaBRz
 selectedTab_tx7CkF
 selectedTableRow_Jtnpgj
 selectedVoiceChannel_rllCD7
@@ -21171,7 +21164,6 @@ sticker_wc8r43
 stickersImage_hNerlt
 stickersList_pWj3yQ
 stickersNavItem_58b0l2
-stickersNavItem_dyDYQj
 stickersRow_nnLXsN
 stickyBannerContainer_6GE03-
 stickyBanner_6GE03-
@@ -21665,6 +21657,7 @@ systemServiceWarning_DKMuWq
 systemTagWrapper_Vwa3As
 systemTag_bbJCi7
 systemTag_q-l2Gj
+tabActive_dyDYQj
 tabActive_l7oXIt
 tabActive_ve0N80
 tabAfterClosable_l7oXIt
@@ -21726,6 +21719,7 @@ tabItem_Jtnpgj
 tabItem_UYsof2
 tabLabel_3SsYXF
 tabLabel_LSviKk
+tabLabel_dyDYQj
 tabLabel_l7oXIt
 tabListItemPill_I4ubrz
 tabListItem_I4ubrz
@@ -21749,6 +21743,7 @@ tab_GBvv4I
 tab_LSviKk
 tab__emG3x
 tab_cfQ5Fm
+tab_dyDYQj
 tab_fgRQ5j
 tab_fv75R2
 tab_grK-Uf
@@ -21820,7 +21815,6 @@ tabletRight_07T6dQ
 tabletSocials_07T6dQ
 tabsContainer_zjGJlN
 tabs_3SsYXF
-tabs_7JaBRz
 tabs_AdrBHW
 tabs_GBvv4I
 tabs_L68mQE
@@ -24129,12 +24123,14 @@ voiceUsers_7FtMGA
 voiceUsers_9U6LUN
 voiceWidgetContainer_DKMuWq
 voicemodGradient_iPIbS8
+volumeBar_zTijXM
 volumeButtonIcon_seLrDE
 volumeButtonSlider_QlL4f-
 volumeButton_QlL4f-
 volumeButton_seLrDE
 volumeControlGroupInline_hFq1lM
 volumeControlGroup_hFq1lM
+volumeIcon_zTijXM
 volumeMuteMark_hFq1lM
 volumePopout_hFq1lM
 volumeSliderWrapper_FJ99sr
@@ -24142,10 +24138,12 @@ volumeSlider_DwQMm_
 volumeSlider_hFq1lM
 volumeSlider_hbKzX7
 volumeSlider_seLrDE
+volumeSlider_zTijXM
 volumeWaveInner_hFq1lM
 volumeWaveMiddle_hFq1lM
 volumeWaveOuter_hFq1lM
 volumeWave_hFq1lM
+volume_zTijXM
 voteCount_S9aZ6q
 voteDefault_S9aZ6q
 votePercentageBar_D4-WfD

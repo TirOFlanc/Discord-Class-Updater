@@ -1333,6 +1333,7 @@ avatar__xBAiH
 avatar_cSRpF3
 avatar_c_drNV
 avatar_d8EjQE
+avatar_dM3t6a
 avatar_f0Y-Hj
 avatar_fEbTbe
 avatar_g6VwXp
@@ -1627,6 +1628,7 @@ badge_XtY2mm
 badge_YeZ5Kj
 badge_Yjv1d0
 badge_ZJk0We
+badge_ZWUM0d
 badge_Zil16i
 badge_bUsGtA
 badge_cCA_BL
@@ -1760,6 +1762,7 @@ bannerWrapper_v5eeZH
 banner_07a9AE
 banner_1qoVzk
 banner_2igI1n
+banner_65FqmR
 banner_67I0_g
 banner_7pDS2B
 banner_97cZH-
@@ -2016,7 +2019,6 @@ blurple-light_DASouH
 blurpleTreatment_oXifRZ
 blurredBackground_MZTN9B
 blurred_h7TRgu
-board_7JaBRz
 body-lg/medium_RAOoio
 body-lg/normal_RAOoio
 body-lg/semibold_RAOoio
@@ -2874,7 +2876,6 @@ cardBenefitIcon_7LZP3_
 cardBenefit_7LZP3_
 cardBody_-weL8h
 cardBody_3ijjdb
-cardBody_7JaBRz
 cardBody_Vwa3As
 cardBody_k5CETD
 cardBody_ldBGOa
@@ -3053,7 +3054,6 @@ card_5Yn7E3
 card_6bPiII
 card_76EEFv
 card_7GJfGX
-card_7JaBRz
 card_7LZP3_
 card_7LwIfE
 card_8U9EvC
@@ -3124,6 +3124,7 @@ card_bcgTHb
 card_c_ash1
 card_d36bJU
 card_dGn55j
+card_dM3t6a
 card_dgf5AJ
 card_djJpbL
 card_dyTp5R
@@ -3464,7 +3465,6 @@ channelIcon_LyN9F3
 channelIcon_MXlLC1
 channelIcon_NNQ_IR
 channelIcon_O0J7OR
-channelIcon_OC_CcB
 channelIcon_SeV6PM
 channelIcon_TCJuwN
 channelIcon_THKl7E
@@ -3491,7 +3491,6 @@ channelInfoContainer_mwVpRn
 channelInfoContainer_tDgX5x
 channelInfoText_mwVpRn
 channelInfo_EpdO4n
-channelInfo_OC_CcB
 channelInfo_R3nPjw
 channelInfo_Wx6SnQ
 channelInfo_kJwzWN
@@ -3540,7 +3539,6 @@ channelName_EpdO4n
 channelName_HBLb84
 channelName_MU-f9x
 channelName_MXlLC1
-channelName_OC_CcB
 channelName_Onug95
 channelName_PNf29Z
 channelName_PzTZKu
@@ -4091,6 +4089,7 @@ clickable_W6wEGA
 clickable_WRLIGC
 clickable_Xweo-z
 clickable_YUoOxm
+clickable_ZWUM0d
 clickable_ZjaEbs
 clickable__axdQh
 clickable__be5Bx
@@ -4266,7 +4265,6 @@ closeButton_wGoWhP
 closeButton_wfl_s_
 closeButton_x3HD6i
 closeButton_yu1aEm
-closeButton_zTijXM
 closeButton_zhJF5z
 closeButton_zln_tS
 closeButton_zoUCAE
@@ -4547,7 +4545,6 @@ columns4_cUz8fW
 columns5_cUz8fW
 columns6_cUz8fW
 columnsSpan_BkGrJJ
-columns_7JaBRz
 columns_EpdO4n
 comboBoxInputContainer_vWC4bk
 comboBoxInputScroller_vWC4bk
@@ -4645,6 +4642,11 @@ compact_oITdBA
 compact_q-l2Gj
 compact_tilrm-
 compact_tm_LPc
+comparisonBadgeGraphic_RXxYOV
+comparisonBadgeInfo_RXxYOV
+comparisonDetailHeader_RXxYOV
+comparisonDetailPanel_RXxYOV
+comparison_dM3t6a
 completedModalContent_1FzWi5
 completedText_NhnBvM
 completed_1tbovV
@@ -5221,7 +5223,6 @@ container_NedsCW
 container_NkbMg8
 container_O2KI4e
 container_OA1iZR
-container_OC_CcB
 container_OVKWNO
 container_OfPEKW
 container_OfZRPz
@@ -5803,6 +5804,7 @@ contentWithMedia_KWWX2H
 contentWithUpsell_i44TZ4
 contentWrapperClickable_v5eeZH
 contentWrapperEmojiPacks_58b0l2
+contentWrapperEmojiPacks_dyDYQj
 contentWrapperExpanded_jdr5pz
 contentWrapperLoading_AOdYmi
 contentWrapper_2Zx6d1
@@ -5815,6 +5817,7 @@ contentWrapper_N34jMW
 contentWrapper_WMUm3U
 contentWrapper_Z0Mo0M
 contentWrapper_aKCmn8
+contentWrapper_dyDYQj
 contentWrapper_jdr5pz
 contentWrapper_sIRx9p
 contentWrapper_v5eeZH
@@ -5960,6 +5963,7 @@ content_YuplL1
 content_ZIorr0
 content_ZMR-xe
 content_ZVQtq6
+content_ZWUM0d
 content_ZWbFoF
 content_ZbIvmP
 content_ZjlY6O
@@ -6148,6 +6152,7 @@ controls_dfLAdA
 controls_owUmX8
 controls_pFuVlX
 controls_wpwRpZ
+controls_zTijXM
 convenienceGlowGradientActive_HG2xvK
 convenienceGlowGradient_HG2xvK
 conversationContainer_tJSWzx
@@ -6579,6 +6584,7 @@ darkOverlay_lUEm2A
 darkRing_6C7JFt
 dark_arblTP
 darkenImage_LekV6N
+darkening_X8jAsH
 dash_LajYMK
 dataAssurance_ybIyIN
 data__LdbI1
@@ -6614,6 +6620,7 @@ defaultColor_HtJY5C
 defaultColor_MMUIw6
 defaultColor_csPsk2
 defaultContainer_BorJ2C
+defaultFont_uKEKOI
 defaultFooterContainer_LQmP0J
 defaultGradient_4JoJic
 defaultIcon_hYPoP0
@@ -7615,6 +7622,7 @@ dragging_pog62O
 dragging_zj0usA
 drawerSizingWrapper_58b0l2
 drawerSizingWrapper_Z0Mo0M
+drawerSizingWrapper_dyDYQj
 drawing_-Swv-I
 dropAfterGroupSection_r03v5M
 dropAfter_6VEs7c
@@ -8202,7 +8210,6 @@ emptyState_C3qxaU
 emptyState_I_XU7P
 emptyState_IqWmhA
 emptyState_NnWqs2
-emptyState_OC_CcB
 emptyState_Og3lGk
 emptyState_SkOY6k
 emptyState_UPjGEs
@@ -8729,6 +8736,7 @@ fade_w2kxj3
 fade_yzIZMq
 faded_-PdA9i
 faded_4cz-WN
+faded_8tFvap
 faded_Freh-X
 faded_FyHA_s
 faded_UWRh5Q
@@ -9120,7 +9128,6 @@ folderTarget_nL08_v
 folderTitle_1X7XDm
 followButton_z_gUBg
 followSuccessHeader_wRhEA_
-follow_LRYSOg
 followerBenefitCard_oGqn3i
 followerBenefitText_oGqn3i
 following_fXYEi6
@@ -9192,7 +9199,6 @@ footerGap_BOOBu-
 footerGlow_djJpbL
 footerGradient_UGbKo5
 footerHeader_oEOllb
-footerIcon_OC_CcB
 footerIcon_bbJCi7
 footerIcon_q-l2Gj
 footerIcon_tPzYCm
@@ -9283,7 +9289,6 @@ footer_LlTAVD
 footer_MeMr9t
 footer_N-Y7ZJ
 footer_NOlkhE
-footer_OC_CcB
 footer_PaxA8v
 footer_PupK8L
 footer_PwiJiV
@@ -9476,6 +9481,7 @@ frame_HsOb2X
 frame_LiMjrt
 frame_QsRXyC
 frame_WJj4ku
+frame_X8jAsH
 frame__vwHFq
 frame_dc8uq3
 frame_g7zg24
@@ -10935,7 +10941,6 @@ header_6c9R7U
 header_6zZYhF
 header_72PQI1
 header_78NJ3W
-header_7JaBRz
 header_7KvOkT
 header_7LDgP1
 header_7dkpUR
@@ -11012,7 +11017,6 @@ header_NOlkhE
 header_NcvRRg
 header_NytGoW
 header_OA1iZR
-header_OC_CcB
 header_ON0h_W
 header_OlkxSE
 header_Onug95
@@ -11967,7 +11971,6 @@ icon_KyI_aY
 icon_LCl4XD
 icon_LDGylj
 icon_LQmP0J
-icon_LRYSOg
 icon_LajYMK
 icon_LekV6N
 icon_LiOD7I
@@ -12051,6 +12054,7 @@ icon_cxf5TV
 icon_d28L5C
 icon_d5S8Xh
 icon_d8EjQE
+icon_dM3t6a
 icon_da8HAn
 icon_dcNks8
 icon_dgf5AJ
@@ -13034,7 +13038,6 @@ items_ydey4M
 jcb_4D-4dI
 jcb_monochrome_4D-4dI
 joinArrow_tYuRNZ
-joinButtonRegion_OC_CcB
 joinButton_9dea1c
 joinButton_hVh8FI
 joinButton_mBjXoo
@@ -13238,6 +13241,7 @@ label__LdbI1
 label_bWP3Je
 label_cR4ic2
 label_csPsk2
+label_dM3t6a
 label_dxHapT
 label_hnSB1X
 label_j5xNzb
@@ -14347,8 +14351,6 @@ memberItem_SISQ-M
 memberListHeader_Xa_Vtp
 memberListItemText_Xa_Vtp
 memberListItem_Xa_Vtp
-memberListWrapper_OC_CcB
-memberList_OC_CcB
 memberNameAndTagContainer_ebzPvR
 memberNameContainer_DC2Jmc
 memberNameContainer_ebzPvR
@@ -14634,6 +14636,7 @@ metricCard_uwUsRp
 metricMeasure_yz6RlA
 metricPrimary_Ly3Qke
 metric_Ly3Qke
+metric_dM3t6a
 metricsContainer_Bhn9Q2
 metricsContainer_uwUsRp
 micIcon_o6X9mC
@@ -14659,8 +14662,6 @@ miniAvatar_JaECsL
 miniGuildIcon_AAMT29
 miniPopover_JyxBSo
 miniPopover_Q_Lllm
-miniProfileBody_7JaBRz
-miniProfile_7JaBRz
 mini_p3RiOL
 mini_preview_AFi54G
 minimapIndicator_PkSv2u
@@ -15127,6 +15128,7 @@ navItem_zP0tg_
 navLabel_S4jOo8
 navLink_EjFwfh
 navList_58b0l2
+navList_dyDYQj
 navNext_ELGJ1P
 navPrev_ELGJ1P
 navRowSelected__xoAVS
@@ -15144,6 +15146,7 @@ nav_S4jOo8
 nav_SVFTGM
 nav_WMUm3U
 nav_cR4ic2
+nav_dyDYQj
 navigationDescription_8AE1Qq
 navigationHeader_lB8uMT
 navigationMenuButton_C10mff
@@ -16169,7 +16172,6 @@ paletteIcon_lUEm2A
 panHint_wNVtHP
 paneInner_SVFTGM
 paneOption_LSN_s0
-pane_7JaBRz
 pane_vY_q7s
 panelButtonContainer_IZv9tE
 panelButtonShineWipeContainer_IZv9tE
@@ -16437,13 +16439,16 @@ perkCardsContainer_3DtxSY
 perkCell_twYJsJ
 perkContainer_o7nzA2
 perkContent_akL5Ip
+perkDescription_QlMsA2
 perkDescription_akL5Ip
 perkDescription_no-mtA
+perkDivider_QlMsA2
 perkIconChatPerks_XZc51c
 perkIconContainer_pfAnCE
 perkIconGuild_XZc51c
 perkIconStream_XZc51c
 perkIconUpload_XZc51c
+perkIcon_QlMsA2
 perkIcon_R69lUn
 perkIcon_akL5Ip
 perkIcon_no-mtA
@@ -16477,6 +16482,7 @@ perksDemoContainer_8eCwJY
 perksDemoText_8eCwJY
 perksHeader_B2Cjs2
 perksHeader_cITv8F
+perksList_QlMsA2
 perksList_XZc51c
 perksTable_0jpYct
 perksTable_cITv8F
@@ -16968,14 +16974,20 @@ poppedOut_hbKzX7
 popularPicksSection_XBXDcd
 portalRoot_3ijjdb
 portraitImage_tiTx8t
+positionContainerAlignLeft_dyDYQj
 positionContainerOnlyEmoji_58b0l2
+positionContainerOnlyEmoji_dyDYQj
 positionContainer_58b0l2
 positionContainer_9vACiA
+positionContainer_dyDYQj
 positionContentOverBackground_CXA5dw
 positionLayerDefaultAlignLeft_58b0l2
+positionLayerDefaultAlignLeft_dyDYQj
 positionLayerDefaultAlignRight_58b0l2
+positionLayerDefaultAlignRight_dyDYQj
 positionLayer_58b0l2
 positionLayer_9vACiA
+positionLayer_dyDYQj
 positionedContainer_ysO7Gy
 positionedLayer_1399Om
 positioner_0n9jnU
@@ -17292,7 +17304,6 @@ preview_2i8Bfm
 preview_3kXUvP
 preview_4ZmCSI
 preview_5G-eaS
-preview_7JaBRz
 preview_7ne32W
 preview_9EQRxh
 preview_AFi54G
@@ -17551,7 +17562,6 @@ profileViewDisabled_9clQ_c
 profileWidgetCover_R0hw0B
 profile_37eplx
 profile_5G-eaS
-profile_7JaBRz
 profile_bWP3Je
 profile_pHGfKY
 profile_s3DB6Y
@@ -18328,6 +18338,7 @@ resizeEast_X_AbQB
 resizeEast_yjvjn7
 resizeHandleBottomLeft_69M0s9
 resizeHandleBottomRight_69M0s9
+resizeHandleTarget_dyDYQj
 resizeHandleTopLeft_69M0s9
 resizeHandleTopRight_69M0s9
 resizeHandle_-9CJCW
@@ -18338,6 +18349,7 @@ resizeHandle_6EXS-A
 resizeHandle_FOCwq3
 resizeHandle_FrbQJp
 resizeHandle_P8Fhjj
+resizeHandle_dyDYQj
 resizeHandle_poo5Jt
 resizeHandle_wmUTyo
 resizeIcon_XLKukn
@@ -18410,6 +18422,7 @@ results_RYejui
 results_ffBc3q
 retryButton_yu1aEm
 revealAnimation_IxwVgM
+revealButton_IxwVgM
 revealDateFade_IxwVgM
 revealDateLabel_IxwVgM
 revealIdleAnimation_IxwVgM
@@ -19142,7 +19155,6 @@ scrollCardItemDense_YuplL1
 scrollCardItem_YuplL1
 scrollContainer_cpKOhU
 scrollContainer_rtROIB
-scrollGradient_OC_CcB
 scrollLeft_KXPGIh
 scrollLeft_s64Ydp
 scrollRight_KXPGIh
@@ -19524,6 +19536,7 @@ section_UGg8Kk
 section_UWowfY
 section_UYsof2
 section_ZcHFUr
+section__oMJOu
 section__xoAVS
 section_aOF6YT
 section_bYuL-p
@@ -19675,7 +19688,6 @@ selectedSkusContainer_jvrhw8
 selectedSkusList_jvrhw8
 selectedSource_4HfQya
 selectedStorePaginationItem_JIpOwA
-selectedTab_7JaBRz
 selectedTab_tx7CkF
 selectedTableRow_Jtnpgj
 selectedVoiceChannel_rllCD7
@@ -19757,6 +19769,7 @@ selected_zYsR7a
 selected_zjGJlN
 selectionBox_9unfHF
 selectionBox_rvSze9
+selectionCircleBorder_IhyaN_
 selectionCircle_IhyaN_
 selectionGroup_dbxnkK
 selectionGroup_sLUoDH
@@ -20491,12 +20504,15 @@ soundText_VACzzt
 soundUpdate_doBhuY
 soundWheel_IuZ2Y3
 soundboardContainer_58b0l2
+soundboardContainer_dyDYQj
 soundboardHeader_58b0l2
+soundboardHeader_dyDYQj
 soundboardImage_hNerlt
 soundboard_EHS2sw
 soundmojiEmoji_t3sUMN
 soundmojiEmoji_uKEb-Y
 soundmojiLabelContainer_58b0l2
+soundmojiLabelContainer_dyDYQj
 sourceIcon_4HfQya
 sourceIcon_kLiT4t
 sourceNameContainer_4HfQya
@@ -21641,6 +21657,7 @@ systemServiceWarning_DKMuWq
 systemTagWrapper_Vwa3As
 systemTag_bbJCi7
 systemTag_q-l2Gj
+tabActive_dyDYQj
 tabActive_l7oXIt
 tabActive_ve0N80
 tabAfterClosable_l7oXIt
@@ -21702,6 +21719,7 @@ tabItem_Jtnpgj
 tabItem_UYsof2
 tabLabel_3SsYXF
 tabLabel_LSviKk
+tabLabel_dyDYQj
 tabLabel_l7oXIt
 tabListItemPill_I4ubrz
 tabListItem_I4ubrz
@@ -21725,6 +21743,7 @@ tab_GBvv4I
 tab_LSviKk
 tab__emG3x
 tab_cfQ5Fm
+tab_dyDYQj
 tab_fgRQ5j
 tab_fv75R2
 tab_grK-Uf
@@ -21796,7 +21815,6 @@ tabletRight_07T6dQ
 tabletSocials_07T6dQ
 tabsContainer_zjGJlN
 tabs_3SsYXF
-tabs_7JaBRz
 tabs_AdrBHW
 tabs_GBvv4I
 tabs_L68mQE
@@ -23209,6 +23227,7 @@ trialBadgeGradientTier0_HMJaME
 trialBadgeGradientTier2_HMJaME
 trialBadgeSparkles_YCKlZ1
 trialBadge_HMJaME
+trialColorThemesBackground_A7cGXu
 trialDividerText_k5CETD
 trialDivider_k5CETD
 trialForAllHeader_y-bNoV
@@ -23222,6 +23241,7 @@ trialPlanSelectHeader_HYpJ9I
 trialRecipientContainer_rLQTGL
 trialRecipientRowDisplayName_rLQTGL
 trialRecipientRow_rLQTGL
+trialRefreshHeader_QF5mJe
 triggerButton_MdUQoo
 triggerContainer_DpUkVj
 triggerContent_GNlW7Y
@@ -23683,6 +23703,7 @@ userTextContainer__emG3x
 userText_I_rpEd
 userTooltip_lXrdH_
 user_0FfRcL
+user_dM3t6a
 user_jBt7uB
 user_rM7J2I
 user_vW8dhG
@@ -23728,6 +23749,7 @@ username_YUoOxm
 username__emG3x
 username_bbJCi7
 username_cSRpF3
+username_dM3t6a
 username_fMOQCt
 username_hm_rAU
 username_ieJ4Sq
@@ -24047,7 +24069,6 @@ voiceChannelHighlightBorder_Wx6SnQ
 voiceChannelHighlightContainer_Wx6SnQ
 voiceChannelHighlightGlow_Wx6SnQ
 voiceChannelInfo_ZbIvmP
-voiceChannelListInvite_OC_CcB
 voiceChannelNameContainer__NMpQm
 voiceChannelName_R0WNX5
 voiceChannelOverflowCount_Bu4Al8
@@ -24093,7 +24114,6 @@ voiceStatusIcon_cSRpF3
 voiceSummaryContainer_hm_rAU
 voiceText_cSRpF3
 voiceUserContainer_ieJ4Sq
-voiceUserRow_OC_CcB
 voiceUserSummary_ysO7Gy
 voiceUserWrapper_FyHA_s
 voiceUser_YUoOxm
@@ -24103,12 +24123,14 @@ voiceUsers_7FtMGA
 voiceUsers_9U6LUN
 voiceWidgetContainer_DKMuWq
 voicemodGradient_iPIbS8
+volumeBar_zTijXM
 volumeButtonIcon_seLrDE
 volumeButtonSlider_QlL4f-
 volumeButton_QlL4f-
 volumeButton_seLrDE
 volumeControlGroupInline_hFq1lM
 volumeControlGroup_hFq1lM
+volumeIcon_zTijXM
 volumeMuteMark_hFq1lM
 volumePopout_hFq1lM
 volumeSliderWrapper_FJ99sr
@@ -24116,10 +24138,12 @@ volumeSlider_DwQMm_
 volumeSlider_hFq1lM
 volumeSlider_hbKzX7
 volumeSlider_seLrDE
+volumeSlider_zTijXM
 volumeWaveInner_hFq1lM
 volumeWaveMiddle_hFq1lM
 volumeWaveOuter_hFq1lM
 volumeWave_hFq1lM
+volume_zTijXM
 voteCount_S9aZ6q
 voteDefault_S9aZ6q
 votePercentageBar_D4-WfD
@@ -24353,6 +24377,7 @@ withDisplayNameStyles_2i8Bfm
 withDisplayNameStyles_PTA1Mz
 withDisplayNameStyles_TBNqol
 withDisplayNameStyles_g6VwXp
+withDisplayNameStyles_uKEKOI
 withDisplayNameStyles_zln_tS
 withDivider_wRbpaT
 withFooter_CKGXbh

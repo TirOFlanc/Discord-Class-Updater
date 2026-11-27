@@ -1102,7 +1102,6 @@ audioControls_FJ99sr
 audioElement_E0Lm4d
 audioElement_seLrDE
 audioMetadata_FJ99sr
-audioRowCountButton_hNFXXu
 audioRowCount_hNFXXu
 audioRowIcon_hNFXXu
 audioRowLabel_hNFXXu
@@ -20641,6 +20640,7 @@ sparkles_QF5mJe
 sparkles_UNkajC
 speakerAvatarPlaceholder_hNFXXu
 speakerAvatar_hNFXXu
+speakerAvatars_hNFXXu
 speakerContainer_CJ15TW
 speakerCount_ZW-j0k
 speakerIcon_FyHA_s
@@ -20648,6 +20648,7 @@ speakerIcon_OBUkmZ
 speakerName_hNFXXu
 speakerRow_hNFXXu
 speakerRows_hNFXXu
+speakerThumbnail_hNFXXu
 speaker_h0DZIP
 speakers_Df2IOv
 speakers_wIG9Rr
